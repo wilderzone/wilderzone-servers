@@ -36,6 +36,8 @@
       <img class="refresh" src="icons/refresh_black_24dp.svg" draggable="false" title="Refresh" alt="Refresh" onclick="emptyPage();getServerData()">
       
       <div id="pageContent">
+        <div class="alert alert_info" style="width:calc(100% - 50px);"><img src="icons/groups-24px.svg" draggable="false" alt=""><p>Loading...</p></div>
+        
         <div class="heading">Griffon's Servers:</div>
         <div id="GRIF" class="contentSection"></div>
         
@@ -71,14 +73,17 @@
       $.ajax({
         dataType:"json",
         url:"registered_servers.json",
+        cache:false,
         success:function(data1){
           rdata = data1;
           $.ajax({
             dataType:"json",
             url:statusURL,
+            cache:false,
             success:function(data2){
               sdata = data2;
               updateServerList();
+              updateCurrentlyOnline();
             },
             error:function(xhr, status, err){
               console.log("Error " + xhr.status);

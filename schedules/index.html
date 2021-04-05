@@ -36,6 +36,8 @@
       <img class="refresh" src="../icons/refresh_black_24dp.svg" draggable="false" title="Refresh" alt="Refresh" onclick="emptyPage();getScheduleData();getCurrentTime()">
       
       <div id="pageContent">
+        <div class="alert hidden" style="width:calc(100% - 50px);"><img src="icons/cancel_24dp.svg" draggable="false" alt=""><p></p></div>
+        
         <table id="scheduleTable" class="hidden">
           <tbody>
           </tbody>
@@ -58,6 +60,7 @@
       $.ajax({
         dataType:"json",
         url:"https://worldtimeapi.org/api/timezone/Etc/GMT/",
+        cache:false,
         success:function(data){
           currentHour = parseInt(data["datetime"].split("T")[1].split(":")[0]) * 2;
           if(parseInt(data["datetime"].split("T")[1].split(":")[1]) >= 30){
@@ -115,6 +118,11 @@
               console.log("Error " + xhr.status);
               var item = '<h2 style="margin-top:100px;text-align:center;">Schedule data couldn&#39;t be retrieved. Please try again later.</h2>';
               $("#pageContent").append(item);
+              
+              var alertMsg = "Error " + xhr.status;
+              $(".alert").children(":nth-child(2)").html(alertMsg);
+              $(".alert").addClass("alert_error");
+              $(".alert").removeClass("hidden");
             }
           });
         },
@@ -122,6 +130,11 @@
           console.log("Error " + xhr.status);
           var item = '<h2 style="margin-top:100px;text-align:center;">Schedule data couldn&#39;t be retrieved. Please try again later.</h2>';
           $("#pageContent").append(item);
+          
+          var alertMsg = "Error " + xhr.status;
+          $(".alert").children(":nth-child(2)").html(alertMsg);
+          $(".alert").addClass("alert_error");
+          $(".alert").removeClass("hidden");
         }
       });
     }
