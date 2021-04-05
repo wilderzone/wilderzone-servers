@@ -3,66 +3,77 @@
     "owner":"GIGA",
     "region":"AUS",
     "mode":"OOTB",
-    "type":"CTF"
+    "type":"CTF",
+    "schedule": "12:00-24:00"
   },
   "AUS Pub Server 2":{
     "owner":"GIGA",
     "region":"AUS",
     "mode":"OOTB",
-    "type":"CTF"
+    "type":"CTF",
+    "schedule": "04:00-16:00"
   },
   "AUS Pub Arena 1":{
     "owner":"GIGA",
     "region":"AUS",
     "mode":"GOTY",
-    "type":"Arena"
+    "type":"Arena",
+    "schedule": "00:00-24:00"
   },
   "G26's EU pub server 1":{
     "owner":"GRIF",
     "region":"EU",
     "mode":"OOTB",
-    "type":"CTF"
+    "type":"CTF",
+    "schedule": "00:00-24:00"
   },
   "Dodge's Arena Server":{
     "owner":"DODG",
     "region":"NA",
     "mode":"GOTY",
-    "type":"Arena"
+    "type":"Arena",
+    "schedule": "00:00-24:00"
   },
   "NA TDM":{
     "owner":"OTHR",
     "region":"NA",
     "mode":"OOTB",
-    "type":"TDM"
+    "type":"TDM",
+    "schedule": "00:00-24:00"
   },
   "Dodge's GOTY Server":{
     "owner":"DODG",
     "region":"NA",
     "mode":"GOTY",
-    "type":"CTF"
+    "type":"CTF",
+    "schedule": "00:00-24:00"
   },
   "Dodge's Map Testing S":{
     "owner":"DODG",
     "region":"NA",
     "mode":"GOTY",
-    "type":"CTF"
+    "type":"CTF",
+    "schedule": "00:00-24:00"
   },
   "G26's EU pub server 2":{
     "owner":"GRIF",
     "region":"EU",
     "mode":"GOTY",
-    "type":"CTF"
+    "type":"CTF",
+    "schedule": "00:00-24:00"
   },
   "Honor Arena 1":{
     "owner":"CHKN",
     "region":"NA",
     "mode":"OOTB",
-    "type":"Arena"
+    "type":"Arena",
+    "schedule": "00:00-24:00"
   },
   "Honor Arena 2":{
     "owner":"CHKN",
     "region":"NA",
     "mode":"OOTB",
-    "type":"Arena"
+    "type":"Arena",
+    "schedule": "00:00-24:00"
   }
 }

@@ -60,24 +60,37 @@
   
   <script src="lib/jquery.min.js"></script>
   <script src="lib/cookieManager.min.js"></script>
-  <script src="status.js"></script>
-  <script src="lib/updateDOM.js"></script>
+  <script src="lib/statusURL.js"></script>
+  <script src="lib/updateServerList.js"></script>
   <script>if(checkCookie("arl") === true){$("#loginButton").attr("href", "admin/");$("#loginButton").children().first().html('Admin<img src="icons/account_circle_24dp.svg" draggable="false" alt="">');}</script>
   <script>
+    var rdata;
     var sdata;
     function getServerData(){
       $.ajax({
-        dataType: "json",
-        url:"registeredServers.json",
-        success:function(data){
-          sdata = data;
-          updateDOM();
+        dataType:"json",
+        url:"registered_servers.json",
+        success:function(data1){
+          rdata = data1;
+          $.ajax({
+            dataType:"json",
+            url:statusURL,
+            success:function(data2){
+              sdata = data2;
+              updateServerList();
+            },
+            error:function(xhr, status, err){
+              console.log("Error " + xhr.status);
+              $("#pageContent").empty();
+              var item = '<h2 style="margin-top:100px;text-align:center;">Server data couldn&#39;t be retrieved. Please try again later.</h2>';
+              $("#pageContent").append(item);
+            }
+          });
         },
         error:function(xhr, status, err){
           console.log("Error " + xhr.status);
           $("#pageContent").empty();
-          var item = '<h2>Server data couldn&#39;t be retrieved. Please try again later.</h2>';
-          
+          var item = '<h2 style="margin-top:100px;text-align:center;">Server data couldn&#39;t be retrieved. Please try again later.</h2>';
           $("#pageContent").append(item);
         }
       });

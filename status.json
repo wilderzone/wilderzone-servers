@@ -1,10 +1,10 @@
-var statusJSON = {
+{
   "online_servers":{
     "AUS Pub Server 1":{
       "mode":"OOTB",
       "type":"CTF",
       "map":"Raindance",
-      "players":["Gigabyte5671","DaSexyChosenOne","Karuciel","Sacrificium","Gredwa","Pyrex","Gryoz"]
+      "players":["DaSexyChosenOne","Karuciel","Sacrificium","Gredwa","Pyrex","Gryoz"]
     },
     "G26's EU pub server 1":{
       "mode":"GOTY",
@@ -43,4 +43,4 @@ var statusJSON = {
       "players":[]
     }
   }
-};
+}

@@ -33,9 +33,13 @@
         </div>
       </div>
       
-      <img class="refresh" src="../icons/refresh_black_24dp.svg" draggable="false" title="Refresh" alt="Refresh" onclick="emptyPage();getServerData()">
+      <img class="refresh" src="../icons/refresh_black_24dp.svg" draggable="false" title="Refresh" alt="Refresh" onclick="emptyPage();getScheduleData();getCurrentTime()">
       
       <div id="pageContent">
+        <table id="scheduleTable" class="hidden">
+          <tbody>
+          </tbody>
+        </table>
       </div>
     </main>
     
@@ -46,22 +50,117 @@
   
   <script src="../lib/jquery.min.js"></script>
   <script src="../lib/cookieManager.min.js"></script>
+  <script src="../lib/statusURL.js"></script>
   <script>if(checkCookie("arl") === true){$("#loginButton").attr("href", "admin/");$("#loginButton").children().first().html('Admin<img src="../icons/account_circle_24dp.svg" draggable="false" alt="">');}</script>
   <script>
-    $.ajax({
-      dataType: "json",
-      url:"../schedules.json",
-      success:function(data){
-        var item = '<h2>Schedule info will go here.</h2>';
-        
-        $("#pageContent").append(item);
-      },
-      error:function(xhr, status, err){
-        console.log("Error " + xhr.status);
-        var item = '<h2>Schedule data couldn&#39;t be retrieved. Please try again later.</h2>';
-        
-        $("#pageContent").append(item);
+    var currentHour = 0;
+    function getCurrentTime(){
+      $.ajax({
+        dataType:"json",
+        url:"http://worldtimeapi.org/api/timezone/Etc/GMT",
+        success:function(data){
+          currentHour = parseInt(data["datetime"].split("T")[1].split(":")[0]) * 2;
+          if(parseInt(data["datetime"].split("T")[1].split(":")[1]) >= 30){
+            currentHour += 1;
+          }
+          console.log("Current Hour: " + (currentHour / 2) + " GMT");
+          emptyPage();
+          getScheduleData();
+        },
+        error:function(xhr, status, err){
+          console.log("Error " + xhr.status);
+        }
+      });
+    }
+    getCurrentTime();
+    
+    var rdata;
+    var sdata;
+    function getScheduleData(){
+      var item = '<tr>'
+               +   '<th>Server</th>'
+               +   '<th>Currently</th>'
+               +   '<th>Times (GMT)</th>'
+               + '</tr>';
+      $("#scheduleTable").children().first().append(item);
+      
+      $.ajax({
+        dataType:"json",
+        url:"../registered_servers.json",
+        success:function(data1){
+          rdata = data1;
+          $.ajax({
+            dataType:"json",
+            url:statusURL,
+            success:function(data2){
+              sdata = data2;
+              $("#scheduleTable").removeClass("hidden");
+              Object.keys(rdata).forEach(function(k){
+                var serverStatus = '<img src="../icons/dot_red_24dp.svg" draggable="false">Offline';
+                Object.keys(sdata["online_servers"]).forEach(function(c){
+                  if(k == c){
+                    serverStatus = '<img src="../icons/dot_green_24dp.svg" draggable="false">Online';
+                  }
+                });
+                var item = '<tr>'
+                         +   '<td>' + k + '</td>'
+                         +   '<td>' + serverStatus + '</td>'
+                         +   '<td>' + timeGraph(rdata[k]["schedule"]) + '</td>'
+                         + '</tr>';
+                
+                $("#scheduleTable").children().first().append(item);
+              });
+            },
+            error:function(xhr, status, err){
+              console.log("Error " + xhr.status);
+              var item = '<h2 style="margin-top:100px;text-align:center;">Schedule data couldn&#39;t be retrieved. Please try again later.</h2>';
+              $("#pageContent").append(item);
+            }
+          });
+        },
+        error:function(xhr, status, err){
+          console.log("Error " + xhr.status);
+          var item = '<h2 style="margin-top:100px;text-align:center;">Schedule data couldn&#39;t be retrieved. Please try again later.</h2>';
+          $("#pageContent").append(item);
+        }
+      });
+    }
+    
+    function timeGraph(time){
+      var startHour = parseInt(time.split("-")[0].split(":")[0]) * 2;
+      var startMinute = parseInt(time.split("-")[0].split(":")[1]);
+      var endHour = parseInt(time.split("-")[1].split(":")[0]) * 2;
+      var endMinute = parseInt(time.split("-")[1].split(":")[1]);
+      if(startMinute > 0){
+        startHour += 1;
       }
-    });
+      if(endMinute > 0){
+        endHour += 1;
+      }
+      
+      var output = "";
+      
+      var i = 0;
+      while(i < 48){
+        if(i == currentHour){
+          output += '<span style="background-color:lightgrey"></span>';
+        }else if(i < startHour){
+          output += '<span style="background-color:#B0C2FF"></span>';
+        }else if(i >= startHour && i < endHour){
+          output += '<span style="background-color:#4570FF"></span>';
+        }else if(i >= endHour){
+          output += '<span style="background-color:#B0C2FF"></span>';
+        }
+        i++;
+      }
+      
+      return output;
+    }
+    
+    getScheduleData();
+    
+    function emptyPage(){
+      $("#scheduleTable").children().first().empty();
+    }
   </script>
 </html>
