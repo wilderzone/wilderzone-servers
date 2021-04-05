@@ -9,31 +9,31 @@
     <meta property="og:description" content="">
     <meta name="author" content="Giga">
     <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Wilderzone Live">
+    <meta property="og:site_name" content="TA Servers">
     <meta property="og:image" content="">
-    <meta property="og:url" content="https://wilderzone.live/servers">
+    <meta property="og:url" content="https://servers.wilderzone.live/">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image:alt" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#ffffff">
-    <link rel="shortcut icon" href="../assets/icons/dns_black_24dp.svg">
-    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="icons/dns_black_24dp.svg">
+    <link rel="stylesheet" href="css/style.css">
   </head>
   
   <body>
     <main>
       <div id="navbar">
-        <img src="../assets/icons/dns_black_24dp.svg" draggable="false" alt=""><div class="title">TA Servers</div>
+        <img src="icons/dns_black_24dp.svg" draggable="false" alt=""><div class="title">TA Servers</div>
         
         <div class="navlinks">
           <a href="" class="activeNav"><p>Server List</p><div></div></a>
-          <a href="schedule/"><p>Schedules</p><div></div></a>
+          <a href="schedules/"><p>Schedules</p><div></div></a>
           <a href="about/"><p>About</p><div></div></a>
-          <a href="login/" style="float: right;" id="loginButton"><p>Login<img src="../assets/icons/login_black_24dp.svg" draggable="false" alt=""></p></a>
+          <a href="login/" style="float: right;" id="loginButton"><p>Login<img src="icons/login_black_24dp.svg" draggable="false" alt=""></p></a>
         </div>
       </div>
       
-      <img class="refresh" src="../assets/icons/refresh_black_24dp.svg" draggable="false" title="Refresh" alt="Refresh" onclick="emptyPage();getServerData()">
+      <img class="refresh" src="icons/refresh_black_24dp.svg" draggable="false" title="Refresh" alt="Refresh" onclick="emptyPage();getServerData()">
       
       <div id="pageContent">
         <div class="heading">Griffon's Servers:</div>
@@ -54,15 +54,15 @@
     </main>
     
     <footer>
-      <p>Designed&nbsp;by&nbsp;Gigabyte5671&nbsp;&copy;2021&nbsp;|&nbsp;Gigabyte#3310&nbsp;|&nbsp;Thanks&nbsp;for&nbsp;your&nbsp;support<img src="../assets/icons/heart-24px.svg" draggable="false" alt=""></p>
+      <p>Designed&nbsp;by&nbsp;Gigabyte5671&nbsp;&copy;2021&nbsp;|&nbsp;Gigabyte#3310&nbsp;|&nbsp;Thanks&nbsp;for&nbsp;your&nbsp;support<img src="icons/heart-24px.svg" draggable="false" alt=""></p>
     </footer>
   </body>
   
-  <script src="../lib/jquery.min.js"></script>
-  <script src="../lib/cookieManager.min.js"></script>
+  <script src="lib/jquery.min.js"></script>
+  <script src="lib/cookieManager.min.js"></script>
   <script src="status.js"></script>
   <script src="updateDOM.js"></script>
-  <script>if(checkCookie("arl") === true){$("#loginButton").attr("href", "admin/");$("#loginButton").children().first().html('Admin<img src="../assets/icons/account_circle_24dp.svg" draggable="false" alt="">');}</script>
+  <script>if(checkCookie("arl") === true){$("#loginButton").attr("href", "admin/");$("#loginButton").children().first().html('Admin<img src="icons/account_circle_24dp.svg" draggable="false" alt="">');}</script>
   <script>
     var sdata;
     function getServerData(){
