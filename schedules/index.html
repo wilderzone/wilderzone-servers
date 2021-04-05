@@ -57,7 +57,7 @@
     function getCurrentTime(){
       $.ajax({
         dataType:"json",
-        url:"http://worldtimeapi.org/api/timezone/Etc/GMT",
+        url:"https://worldtimeapi.org/api/timezone/Etc/GMT/",
         success:function(data){
           currentHour = parseInt(data["datetime"].split("T")[1].split(":")[0]) * 2;
           if(parseInt(data["datetime"].split("T")[1].split(":")[1]) >= 30){
