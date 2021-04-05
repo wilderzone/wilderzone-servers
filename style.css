@@ -1,0 +1,274 @@
+body{
+  margin: 15px;
+  font-family: Segoe UI;
+  background-color: #FCFCFD;
+  user-select: none;
+}
+
+:root{
+  --serverItemHeight: 40px;
+  --serverItemBreak: 6px;
+  --good: #00DF00;
+  --bad: #DF0000;
+  --playerItemHeight: 16px;
+}
+
+#navbar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  height: 45px;
+  background-color: white;
+  box-shadow: 0px 0px 8px grey;
+  overflow: hidden;
+}
+#navbar img{
+  vertical-align: top;
+  margin: 10px;
+}
+#navbar .title{
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 4px;
+  font-size: 24px;
+}
+#navbar .navlinks{
+  display: inline-block;
+  width: calc(100% - 240px);
+  margin-left: 80px;
+}
+#navbar a{
+  display: inline-block;
+  width: 80px;
+  height: 35px;
+  color: grey;
+  font-size: 14px;
+  text-decoration: none;
+}
+#navbar a p{
+  margin-top: 12px;
+  margin-bottom: 4px;
+  text-align: center;
+}
+#navbar a img{
+  margin-top: -2px;
+  margin-left: 4px;
+  opacity: 0.5;
+}
+#navbar a div{
+  width: 0%;
+  height: 3px;
+  background-color: black;
+  transition: 0.2s ease;
+}
+#navbar a:hover{
+  color: black;
+}
+#navbar a:hover img{
+  opacity: 1;
+}
+#navbar a:hover div{
+  width: 100%;
+}
+#navbar .activeNav{
+  color: black;
+}
+#navbar .activeNav img{
+  opacity: 1;
+}
+
+#pageContent{
+  margin-top: 60px;
+}
+
+.heading{
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 5px;
+  font-size: 20px;
+}
+.contentSection{
+  display: block;
+  width: 100%;
+  padding-left: 10px;
+  padding-bottom: 5px;
+  background-color: white;
+  border: 1px solid grey;
+  border-left: 3px solid grey;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.refresh{
+  display: block;
+  position: absolute;
+  top: 55px;
+  right: 0px;
+  width: 24px;
+  height: 24px;
+  margin-right: 15px;
+  opacity: 0.5;
+  cursor: pointer;
+}
+.refresh:hover{
+  opacity: 1;
+}
+
+.serverItem{
+  width: calc(100% - 10px);
+  height: var(--serverItemHeight);
+  margin-top: 10px;
+  margin-bottom: 5px;
+  background-color: white;
+  border: 1px solid grey;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.serverItemInner{
+  width: 100%;
+  height: calc(var(--serverItemHeight) - var(--serverItemBreak));
+  margin-top: calc(var(--serverItemBreak) / 2);
+  overflow: hidden;
+  pointer-events: none;
+}
+.serverItemStatusIndicator{
+  display: inline-block;
+  width: 5px;
+  height: var(--serverItemHeight);
+}
+.Online{
+  background-color: var(--good);
+}
+.Offline{
+  background-color: var(--bad);
+}
+.serverItemInfo{
+  display: inline-block;
+  vertical-align: top;
+  width: 100px;
+  margin-top: 6px;
+  margin-left: 10px;
+  border-right: 1px solid lightgrey;
+}
+.serverItemInfo:nth-child(2){
+  width: 50px;
+}
+.serverItemInfo:nth-child(3){
+  width: 220px;
+}
+.serverItemInfo:nth-child(4){
+  width: 100px;
+}
+.serverItemInfo:nth-child(5){
+  width: 130px;
+}
+.serverItemInfo:last-child{
+  display: inline-block;
+  vertical-align: top;
+  width: 50px;
+  float: right;
+  margin-right: 5px;
+  border: unset;
+  cursor: pointer;
+}
+.serverItemInfo:last-child p{
+  display: inline-block;
+  vertical-align: top;
+  margin-top: unset;
+  margin-right: 8px;
+  user-select: none;
+}
+
+.playerItem{
+  width: calc(100% - 20px);
+  height: var(--playerItemHeight);
+  margin-left: 10px;
+  //border-bottom: 1px solid lightgrey;
+}
+.playerItemInner{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.playerItemInner img{
+  display: inline-block;
+  vertical-align: top;
+  width: 14px;
+  margin-top: 1px;
+  margin-right: 5px;
+}
+.playerItemInner p{
+  display: inline-block;
+  vertical-align: top;
+  margin: unset;
+  font-size: 12px;
+}
+
+
+
+#loginBox{
+  width: 300px;
+  height: 200px;
+  margin: auto;
+  margin-top: 100px;
+  background-color: white;
+  border: 1px solid grey;
+  border-radius: 8px;
+}
+#loginBox p{
+  margin: 5px;
+  margin-left: 15px;
+  font-size: 20px;
+}
+#loginBox form{
+  width: fit-content;
+  margin: auto;
+  margin-top: 26px;
+}
+#loginBox input{
+  font-size: 16px;
+}
+#loginBox form div{
+  width: 130px;
+  height: 20px;
+  background-color: rgba(255,0,0,0.5);
+  border-radius: 3px;
+}
+#loginBox form div img{
+  display: inline-block;
+  width: 16px;
+  //filter: invert(1);
+}
+#loginBox form div p{
+  display: inline-block;
+  //color: white;
+  font-size: 14px;
+}
+
+
+
+footer{
+  display: block;
+  width: fit-content;
+  margin: auto;
+  margin-top: 60px;
+  padding-bottom: 3px;
+  font-size: 12px;
+  border-top: 1px solid black;
+  box-sizing: border-box;
+}
+footer p{
+  margin-top: unset;
+}
+footer img{
+  width: 16px;
+  margin-left: 5px;
+  transform: translateY(4px);
+}
+
+
+.hidden{
+  display: none !important;
+}

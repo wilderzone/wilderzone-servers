@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>TA Servers (demo)</title>
+    <meta property="og:title" content="TA Servers">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta property="og:description" content="">
+    <meta name="author" content="Giga">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Wilderzone Live">
+    <meta property="og:image" content="">
+    <meta property="og:url" content="https://wilderzone.live/servers">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image:alt" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="shortcut icon" href="../assets/icons/dns_black_24dp.svg">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  
+  <body>
+    <main>
+      <div id="navbar">
+        <img src="../assets/icons/dns_black_24dp.svg" draggable="false" alt=""><div class="title">TA Servers</div>
+        
+        <div class="navlinks">
+          <a href="" class="activeNav"><p>Server List</p><div></div></a>
+          <a href="schedule/"><p>Schedules</p><div></div></a>
+          <a href="about/"><p>About</p><div></div></a>
+          <a href="login/" style="float: right;" id="loginButton"><p>Login<img src="../assets/icons/login_black_24dp.svg" draggable="false" alt=""></p></a>
+        </div>
+      </div>
+      
+      <img class="refresh" src="../assets/icons/refresh_black_24dp.svg" draggable="false" title="Refresh" alt="Refresh" onclick="emptyPage();getServerData()">
+      
+      <div id="pageContent">
+        <div class="heading">Griffon's Servers:</div>
+        <div id="GRIF" class="contentSection"></div>
+        
+        <div class="heading">Chicken's Servers:</div>
+        <div id="CHKN" class="contentSection"></div>
+        
+        <div class="heading">Dodge's Servers:</div>
+        <div id="DODG" class="contentSection"></div>
+        
+        <div class="heading">Giga's Servers:</div>
+        <div id="GIGA" class="contentSection"></div>
+        
+        <div class="heading">Other Servers:</div>
+        <div id="OTHR" class="contentSection"></div>
+      </div>
+    </main>
+    
+    <footer>
+      <p>Designed&nbsp;by&nbsp;Gigabyte5671&nbsp;&copy;2021&nbsp;|&nbsp;Gigabyte#3310&nbsp;|&nbsp;Thanks&nbsp;for&nbsp;your&nbsp;support<img src="../assets/icons/heart-24px.svg" draggable="false" alt=""></p>
+    </footer>
+  </body>
+  
+  <script src="../lib/jquery.min.js"></script>
+  <script src="../lib/cookieManager.min.js"></script>
+  <script src="status.js"></script>
+  <script src="updateDOM.js"></script>
+  <script>if(checkCookie("arl") === true){$("#loginButton").attr("href", "admin/");$("#loginButton").children().first().html('Admin<img src="../assets/icons/account_circle_24dp.svg" draggable="false" alt="">');}</script>
+  <script>
+    var sdata;
+    function getServerData(){
+      $.ajax({
+        dataType: "json",
+        url:"registeredServers.json",
+        success:function(data){
+          sdata = data;
+          updateDOM();
+        },
+        error:function(xhr, status, err){
+          console.log("Error " + xhr.status);
+          $("#pageContent").empty();
+          var item = '<h2>Server data couldn&#39;t be retrieved. Please try again later.</h2>';
+          
+          $("#pageContent").append(item);
+        }
+      });
+    }
+    getServerData();
+    
+    function emptyPage(){
+      $("#GRIF").empty();
+      $("#CHKN").empty();
+      $("#DODG").empty();
+      $("#GIGA").empty();
+      $("#OTHR").empty();
+    }
+  </script>
+</html>

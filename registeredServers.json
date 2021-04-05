@@ -1,0 +1,68 @@
+{
+  "AUS Pub Server 1":{
+    "owner":"GIGA",
+    "region":"AUS",
+    "mode":"OOTB",
+    "type":"CTF"
+  },
+  "AUS Pub Server 2":{
+    "owner":"GIGA",
+    "region":"AUS",
+    "mode":"OOTB",
+    "type":"CTF"
+  },
+  "AUS Pub Arena 1":{
+    "owner":"GIGA",
+    "region":"AUS",
+    "mode":"GOTY",
+    "type":"Arena"
+  },
+  "G26's EU pub server 1":{
+    "owner":"GRIF",
+    "region":"EU",
+    "mode":"OOTB",
+    "type":"CTF"
+  },
+  "Dodge's Arena Server":{
+    "owner":"DODG",
+    "region":"NA",
+    "mode":"GOTY",
+    "type":"Arena"
+  },
+  "NA TDM":{
+    "owner":"OTHR",
+    "region":"NA",
+    "mode":"OOTB",
+    "type":"TDM"
+  },
+  "Dodge's GOTY Server":{
+    "owner":"DODG",
+    "region":"NA",
+    "mode":"GOTY",
+    "type":"CTF"
+  },
+  "Dodge's Map Testing S":{
+    "owner":"DODG",
+    "region":"NA",
+    "mode":"GOTY",
+    "type":"CTF"
+  },
+  "G26's EU pub server 2":{
+    "owner":"GRIF",
+    "region":"EU",
+    "mode":"GOTY",
+    "type":"CTF"
+  },
+  "Honor Arena 1":{
+    "owner":"CHKN",
+    "region":"NA",
+    "mode":"OOTB",
+    "type":"Arena"
+  },
+  "Honor Arena 2":{
+    "owner":"CHKN",
+    "region":"NA",
+    "mode":"OOTB",
+    "type":"Arena"
+  }
+}
