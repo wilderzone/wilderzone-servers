@@ -3,7 +3,7 @@ function F4UZG5F3(){
   var MBHZE2KH = sha256($("#password")[0].value);
   $.ajax({
     dataType: "json",
-    url:"acc/" + GK9LXSCX + ".json",
+    url:"https://wilderzone-server-admin.s3.amazonaws.com/" + GK9LXSCX + ".json",
     success:function(OAMPKXZY){
       if(OAMPKXZY.b == MBHZE2KH){
         setCookie("arl", OAMPKXZY.c, 7);
