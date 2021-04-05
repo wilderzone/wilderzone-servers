@@ -1,3 +1,6 @@
+html{
+  height: 100%;
+}
 body{
   margin: 15px;
   font-family: Segoe UI;
@@ -329,6 +332,37 @@ footer img{
   width: 16px;
   margin-left: 5px;
   transform: translateY(4px);
+}
+
+/*=============================================*/
+/*---------------Important Styles--------------*/
+/*=============================================*/
+@media only screen and (max-width: 569px){
+  #navbar img{
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  #navbar .title{
+    margin-top: 9px;
+    font-size: 22px;
+  }
+  #navbar .navlinks{
+    width: calc(100% - 160px);
+    margin-top: 3px;
+    margin-left: 15px;
+  }
+  #navbar .navlinks a{
+    width: 75px;
+  }
+  #loginButton{
+    display: none;
+  }
+  footer{
+    font-size: 10px;
+  }
+  footer img{
+    width: 14px;
+  }
 }
 
 /*=============================================*/
