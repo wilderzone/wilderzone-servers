@@ -307,7 +307,7 @@ body{
 }
 
 /*=============================================*/
-/*-----------------Server List-----------------*/
+/*--------------------About--------------------*/
 /*=============================================*/
 .aboutHeading{
   font-size: 22px;
@@ -326,6 +326,7 @@ body{
 .aboutLink p{
   display: inline-block;
   vertical-align: top;
+  width: 25ch;
   margin-top: 13px;
 }
 .aboutLink a{
