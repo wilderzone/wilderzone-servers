@@ -27,6 +27,9 @@ body{
   box-shadow: 0px 0px 8px grey;
   overflow: hidden;
 }
+#navbar .logo{
+  color: black;
+}
 #navbar img{
   vertical-align: top;
   margin: 10px;
@@ -42,7 +45,7 @@ body{
   width: calc(100% - 240px);
   margin-left: 80px;
 }
-#navbar a{
+#navbar .navlinks a{
   display: inline-block;
   width: 80px;
   height: 35px;
@@ -50,35 +53,35 @@ body{
   font-size: 14px;
   text-decoration: none;
 }
-#navbar a p{
+#navbar .navlinks a p{
   margin-top: 12px;
   margin-bottom: 4px;
   text-align: center;
 }
-#navbar a img{
+#navbar .navlinks a img{
   margin-top: -2px;
   margin-left: 4px;
   opacity: 0.5;
 }
-#navbar a div{
+#navbar .navlinks a div{
   width: 0%;
   height: 3px;
   background-color: black;
   transition: 0.2s ease;
 }
-#navbar a:hover{
+#navbar .navlinks a:hover{
   color: black;
 }
-#navbar a:hover img{
+#navbar .navlinks a:hover img{
   opacity: 1;
 }
-#navbar a:hover div{
+#navbar .navlinks a:hover div{
   width: 100%;
 }
-#navbar .activeNav{
+#navbar .navlinks .activeNav{
   color: black;
 }
-#navbar .activeNav img{
+#navbar .navlinks .activeNav img{
   opacity: 1;
 }
 
