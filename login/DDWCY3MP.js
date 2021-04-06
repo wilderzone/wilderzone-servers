@@ -5,13 +5,13 @@ function F4UZG5F3(){
     dataType: "json",
     url:"https://wilderzone-server-admin.s3.amazonaws.com/" + MBHZE2KH + ".json",
     success:function(OAMPKXZY){
-      if(OAMPKXZY.b == MBHZE2KH){
+      if(OAMPKXZY.a == GK9LXSCX){
         var alertMsg = "Login Successful";
         $(".alert").children(":nth-child(2)").html(alertMsg);
         $(".alert").children(":nth-child(1)").attr("src", "../icons/check_circle_24dp.svg");
         $(".alert").addClass("alert_success");
         $(".alert").removeClass("hidden");
-        setCookie("arl", OAMPKXZY.c, 7);
+        setCookie("arl", OAMPKXZY.c, 1);
         window.location.href = "../admin/";
       }else{
         $(".alert").children(":nth-child(2)").html("Incorrect Credentials");
