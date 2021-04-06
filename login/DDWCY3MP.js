@@ -3,15 +3,14 @@ function F4UZG5F3(){
   var MBHZE2KH = sha256($("#password")[0].value);
   $.ajax({
     dataType: "json",
-    url:"https://wilderzone-server-admin.s3.amazonaws.com/" + MBHZE2KH + ".json",
+    url:"https://wilderzone-server-admin.s3.amazonaws.com/" + sha256(MBHZE2KH) + ".json",
     success:function(OAMPKXZY){
-      if(OAMPKXZY.a == GK9LXSCX){
-        var alertMsg = "Login Successful";
-        $(".alert").children(":nth-child(2)").html(alertMsg);
+      if(OAMPKXZY.a == GK9LXSCX && OAMPKXZY.b == MBHZE2KH){
+        $(".alert").children(":nth-child(2)").html("Login Successful");
         $(".alert").children(":nth-child(1)").attr("src", "../icons/check_circle_24dp.svg");
         $(".alert").addClass("alert_success");
         $(".alert").removeClass("hidden");
-        setCookie("arl", OAMPKXZY.c, 1);
+        setCookie("arl", OAMPKXZY.c + "-" + sha256(MBHZE2KH), 1);
         window.location.href = "../admin/";
       }else{
         $(".alert").children(":nth-child(2)").html("Incorrect Credentials");
