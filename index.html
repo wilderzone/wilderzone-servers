@@ -33,25 +33,40 @@
         </div>
       </div>
       
-      <img class="refresh" src="icons/refresh_black_24dp.svg" draggable="false" title="Refresh" alt="Refresh" onclick="emptyPage();getServerData()">
+      <img class="refresh" src="icons/refresh_black_24dp.svg" draggable="false" title="Refresh" alt="Refresh" onclick="emptyPage2();getServerData()">
       
       <div id="pageContent">
         <div class="alert alert_info" style="width:calc(100% - 50px);"><img src="icons/groups-24px.svg" draggable="false" alt=""><p>Loading...</p></div>
         
         <div class="heading">Griffon's Servers:</div>
-        <div id="GRIF" class="contentSection"></div>
+        <div id="GRIF" class="contentSection emptySection loading">
+          <div class="serverItem emptySection">
+          </div>
+        </div>
         
         <div class="heading">Chicken's Servers:</div>
-        <div id="CHKN" class="contentSection"></div>
+        <div id="CHKN" class="contentSection emptySection loading">
+          <div class="serverItem emptySection">
+          </div>
+        </div>
         
         <div class="heading">Dodge's Servers:</div>
-        <div id="DODG" class="contentSection"></div>
+        <div id="DODG" class="contentSection emptySection loading">
+          <div class="serverItem emptySection">
+          </div>
+        </div>
         
         <div class="heading">Giga's Servers:</div>
-        <div id="GIGA" class="contentSection"></div>
+        <div id="GIGA" class="contentSection emptySection loading">
+          <div class="serverItem emptySection">
+          </div>
+        </div>
         
         <div class="heading">Other Servers:</div>
-        <div id="OTHR" class="contentSection"></div>
+        <div id="OTHR" class="contentSection emptySection loading">
+          <div class="serverItem emptySection">
+          </div>
+        </div>
       </div>
     </main>
     
@@ -82,11 +97,18 @@
             cache:false,
             success:function(data2){
               sdata = data2;
+              emptyPage1();
+              $(".contentSection").removeClass("loading");
+              $(".contentSection").removeClass("emptySection");
               updateServerList();
               updateCurrentlyOnline();
             },
             error:function(xhr, status, err){
               console.log("Error " + xhr.status);
+              $(".alert").children(":nth-child(2)").html("Error: " + xhr.status);
+              $(".alert").children(":nth-child(1)").attr("src", "icons/cancel_24dp.svg");
+              $(".alert").addClass("alert_error");
+              
               $("#pageContent").empty();
               var item = '<h2 style="margin-top:100px;text-align:center;">Server data couldn&#39;t be retrieved. Please try again later.</h2>';
               $("#pageContent").append(item);
@@ -95,6 +117,10 @@
         },
         error:function(xhr, status, err){
           console.log("Error " + xhr.status);
+          $(".alert").children(":nth-child(2)").html("Error: " + xhr.status);
+          $(".alert").children(":nth-child(1)").attr("src", "icons/cancel_24dp.svg");
+          $(".alert").addClass("alert_error");
+          
           $("#pageContent").empty();
           var item = '<h2 style="margin-top:100px;text-align:center;">Server data couldn&#39;t be retrieved. Please try again later.</h2>';
           $("#pageContent").append(item);
@@ -103,12 +129,24 @@
     }
     getServerData();
     
-    function emptyPage(){
+    function emptyPage1(){
       $("#GRIF").empty();
       $("#CHKN").empty();
       $("#DODG").empty();
       $("#GIGA").empty();
       $("#OTHR").empty();
+    }
+    function emptyPage2(){
+      $("#GRIF").empty();
+      $("#GRIF").append('<div class="serverItem emptySection"></div>');
+      $("#CHKN").empty();
+      $("#CHKN").append('<div class="serverItem emptySection"></div>');
+      $("#DODG").empty();
+      $("#DODG").append('<div class="serverItem emptySection"></div>');
+      $("#GIGA").empty();
+      $("#GIGA").append('<div class="serverItem emptySection"></div>');
+      $("#OTHR").empty();
+      $("#OTHR").append('<div class="serverItem emptySection"></div>');
     }
   </script>
 </html>
