@@ -14,6 +14,8 @@ body{
   --good: #00DF00;
   --bad: #DF0000;
   --playerItemHeight: 16px;
+  --smallItemHeight: 50px;
+  --smallItemInnerWidth: 25ch;
 }
 
 #navbar{
@@ -319,14 +321,14 @@ body{
 }
 .aboutLink{
   width: 100%;
-  height: 50px;
+  height: var(--smallItemHeight);
   border-bottom: 1px solid lightgrey;
   box-sizing: border-box;
 }
 .aboutLink p{
   display: inline-block;
   vertical-align: top;
-  width: 25ch;
+  width: var(--smallItemInnerWidth);
   margin-top: 13px;
 }
 .aboutLink a{
@@ -446,6 +448,19 @@ footer img{
 /*=============================================*/
 /*---------------Important Styles--------------*/
 /*=============================================*/
+.emptySection{
+  background-color: lightgrey;
+  border: 1px solid grey;
+  border-radius: 4px;
+}
+.loading{
+  animation: 1s ease loading-pulse infinite;
+}
+@loading-pulse{
+  0%:{opacity: 1;}
+  50%:{opacity: 0.3;}
+  100%:{opacity: 1;}
+}
 .hidden{
   display: none !important;
 }
