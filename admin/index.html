@@ -34,7 +34,11 @@
       </div>
       
       <div id="pageContent">
-        <h2 style="margin-top:100px;text-align:center;">Admin console will go here.</h2>
+        <div class="alert hidden" style="width:calc(100% - 10px);"><img src="../icons/cancel_24dp.svg" draggable="false" alt=""><p></p></div>
+        
+        <h2 style="margin-top:100px;text-align:center;">Admin console.</h2>
+        
+        <div id="adminConsoleContainer" class="loading"></div>
       </div>
     </main>
     
@@ -46,5 +50,5 @@
   <script src="../lib/jquery.min.js"></script>
   <script src="../lib/cookieManager.min.js"></script>
   <script src="dodge.js"></script>
-  <script>if(checkCookie("arl") === false){window.location.replace("https://servers.wilderzone.live/login/");}</script>
+  <script>//if(checkCookie("arl") === false){window.location.replace("https://servers.wilderzone.live/login/");}</script>
 </html>

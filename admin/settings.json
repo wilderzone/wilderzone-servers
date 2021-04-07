@@ -1,0 +1,46 @@
+{
+  "db":{
+    "classes":{
+      "Light":{
+      },
+      "Medium":{
+      },
+      "Heavy":{
+      }
+    },
+    "weapons":{
+      "BXT-1":{
+        "class": "Light",
+        "type": "Specialty",
+        "subtype": "Hitscan"
+      },
+      "Phase Rifle":{
+        "class": "Light",
+        "type": "Specialty",
+        "subtype": "Hitscan"
+      },
+      "Light Spinfusor":{
+        "class": "Light",
+        "type": "Explosive",
+        "subtype": "None"
+      },
+      "Blinksfusor":{
+        "class": "Light",
+        "type": "Explosive",
+        "subtype": "Honor"
+      }
+    }
+  },
+  
+  "settings1":{
+    "name": "",
+    "desc": "",
+    "message": "",
+    "gamemode": "",
+    "maps": [],
+    "classes": ["Light","Medium","Heavy"],
+    "weapons": [],
+    "banned": [],
+    "schedule": ["",""]
+  }
+}
