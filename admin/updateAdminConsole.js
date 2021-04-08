@@ -72,3 +72,9 @@ function updateAdminConsole(){
 }
 
 updateAdminConsole();
+
+function toggleButtonActive(e){
+  if($(e.target).hasClass("active")){
+    
+  }
+}
