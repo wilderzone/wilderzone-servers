@@ -427,6 +427,8 @@ footer img{
   vertical-align: top;
   width: 150px;
   height: 100%;
+  /*border-right: 2px solid lightgrey;*/
+  box-sizing: border-box;
 }
 .adminLeftButton{
   display: block;
@@ -446,6 +448,7 @@ footer img{
   width: 24px;
   margin: 6px;
   opacity: 0.5;
+  pointer-events: none;
 }
 .adminLeftButton p{
   display: inline-block;
@@ -454,6 +457,7 @@ footer img{
   font-size: 18px;
   margin: unset;
   margin-top: 6px;
+  pointer-events: none;
 }
 .adminLeftButton:hover{
   color: black;
@@ -522,6 +526,7 @@ footer img{
   margin: 5px;
   margin-right: 7px;
   opacity: 0.5;
+  pointer-events: none;
 }
 .adminTopButton p{
   display: inline-block;
@@ -529,6 +534,7 @@ footer img{
   font-size: 14px;
   margin: unset;
   margin-top: 3px;
+  pointer-events: none;
 }
 .adminTopButton:hover{
   color: black;
@@ -546,6 +552,31 @@ footer img{
 }
 #adminMain{
   width: 100%;
+}
+.adminControl{
+  width: calc(100% - 20px);
+  height: var(--smallItemHeight);
+  margin: auto;
+  border-bottom: 1px solid lightgrey;
+  box-sizing: border-box;
+}
+.adminControl:last-child{
+  margin-bottom: calc(var(--smallItemHeight) * 2);
+}
+.adminControl p{
+  display: inline-block;
+  vertical-align: top;
+  width: var(--smallItemInnerWidth);
+  margin-top: 13px;
+}
+.adminControl input{
+  margin-top: 14px;
+  margin-left: 14px;
+}
+.adminControl form{
+  display: inline-block;
+  margin-top: 14px;
+  margin-left: 14px;
 }
 
 /*=============================================*/

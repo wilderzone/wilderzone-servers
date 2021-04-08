@@ -1,20 +1,22 @@
+var database_data;
+var settings_data;
+var leftButtonIndex = 0;
+var topButtonIndex = 0;
+
 function getAdminConsole(){
-  var ddata;
-  var sdata;
   $.ajax({
     dataType:"json",
     url:"database.json",
     cache:false,
     success:function(data1){
-      ddata = data1;
+      database_data = data1;
       $.ajax({
         dataType:"json",
         url:"settings.json",
         cache:false,
         success:function(data2){
-          sdata = data2;
+          settings_data = data2;
           updateAdminConsole();
-          
         },
         error:function(xhr, status, err){
           console.log("Error " + xhr.status);
@@ -39,11 +41,6 @@ function updateAdminConsole(){
   $("#adminConsoleContainer").removeClass("emptySection");
   
   var item = '<div id="adminLeft">'
-           +   '<div class="adminLeftButton active"><img src="../icons/dns_black_24dp.svg" draggable="false"><p>1</p></div>'
-           +   '<div class="adminLeftButton"><img src="../icons/dns_black_24dp.svg" draggable="false"><p>2</p></div>'
-           +   '<div class="adminLeftButton"><img src="../icons/dns_black_24dp.svg" draggable="false"><p>3</p></div>'
-           +   '<div class="adminLeftButton"><img src="../icons/dns_black_24dp.svg" draggable="false"><p>4</p></div>'
-           +   '<div class="adminLeftButton"><img src="../icons/dns_black_24dp.svg" draggable="false"><p>5</p></div>'
            + '</div>'
            + '<div id="adminRight">'
            +   '<div id="adminTop">'
@@ -51,30 +48,79 @@ function updateAdminConsole(){
            +       '<div class="adminTopTitle"><p>AUS Pub Server 1</p></div>'
            +     '</span>'
            +     '<span>'
-           +       '<div class="adminTopButton active"><img src="../icons/visibility_24dp.svg" draggable="false"><p>Overview</p></div>'
-           +       '<div class="adminTopButton"><img src="../icons/rules_24dp.svg" draggable="false"><p>Rules</p></div>'
-           +       '<div class="adminTopButton"><img src="../icons/terrain_24dp.svg" draggable="false"><p>Maps</p></div>'
-           +       '<div class="adminTopButton"><img src="../icons/shield_24dp.svg" draggable="false"><p>Classes</p></div>'
-           +       '<div class="adminTopButton"><img src="../icons/double_arrow_24dp.svg" draggable="false"><p>Compute</p></div>'
-           +       '<div class="adminTopButton"><img src="../icons/schedule_24dp.svg" draggable="false"><p>Schedule</p></div>'
-           +       '<div class="adminTopButton"><img src="../icons/code_24dp.svg" draggable="false"><p>Output</p></div>'
            +     '</span>'
            +   '</div>'
            +   '<div id="adminMain">'
-           +     '<div class="aboutSection"><img src="../icons/code_24dp.svg" draggable="false"><p>Info</p></div>'
-           +     '<div class="aboutSection"><img src="../icons/code_24dp.svg" draggable="false"><p>Info</p></div>'
-           +     '<div class="aboutSection"><img src="../icons/code_24dp.svg" draggable="false"><p>Info</p></div>'
-           +     '<div class="aboutSection"><img src="../icons/code_24dp.svg" draggable="false"><p>Info</p></div>'
            +   '</div>'
            + '</div>';
   
   $("#adminConsoleContainer").append(item);
+  
+  //Left List
+  var i = 1;
+  Object.keys(settings_data).forEach(function(k){
+    if(i === 1){var active = " active";}else{var active = "";}
+    var item = '<div id="' + k + '" class="adminLeftButton' + active + '" onclick="switchLeftButton(event)"><img src="../icons/dns_black_24dp.svg" draggable="false"><p>' + i + '</p></div>';
+    $("#adminLeft").append(item);
+    i++;
+  });
+  
+  //Top List
+  var i = 1;
+  Object.keys(settings_data["server" + (leftButtonIndex + 1)]).forEach(function(k){
+    if(i === 1){var active = " active";}else{var active = "";}
+    var item = '<div class="adminTopButton' + active + '" onclick="switchTopButton(event)"><img src="../icons/' + k + '.svg" draggable="false"><p>' + k + '</p></div>';
+    $("#adminTop").children(":nth-child(2)").append(item);
+    i++;
+  });
+  
+  updateMain();
 }
 
-updateAdminConsole();
+function updateMain(){
+  $("#adminMain").empty();
+  //Main
+  Object.keys(settings_data["server" + (leftButtonIndex + 1)][$(".adminTopButton").filter(".active").children(":nth-child(2)").html()]).forEach(function(k){
+    var item = processControlType(settings_data["server" + (leftButtonIndex + 1)][$(".adminTopButton").filter(".active").children(":nth-child(2)").html()][k], k);
+    $("#adminMain").append(item);
+  });
+}
 
-function toggleButtonActive(e){
-  if($(e.target).hasClass("active")){
+getAdminConsole();
+
+function switchLeftButton(e){
+  $(".adminLeftButton").removeClass("active");
+  $(e.target).addClass("active");
+  leftButtonIndex = $(e.target).prevAll().length;
+  updateMain();
+}
+function switchTopButton(e){
+  $(".adminTopButton").removeClass("active");
+  $(e.target).addClass("active");
+  topButtonIndex = $(e.target).prevAll().length;
+  updateMain();
+}
+
+function processControlType(kdata, k){ //Compare the settings_data values to the database_data values to determine the range of a control
+  if(typeof kdata == "string"){ //String
+    var item = '<div class="adminControl"><p>' + k.split("_").join(" ") + ':</p><input type="text" id="Overview-' + k + '" name="' + k.split("_").join(" ") + '" value="' + kdata + '"></div>';
+  }else if(typeof kdata == "object"){ //Array
+    var item = '<div class="adminControl"><p>' + k.split("_").join(" ") + ':</p><form id="Overview-' + k + '">'
+             +   '<select>';
     
+    var i = 0;
+    kdata.forEach(function(h){
+      if(i === 0){
+        item +=    '<option value="' + h + '" selected>' + h + '</option>';
+      }else{
+        item +=    '<option value="' + h + '">' + h + '</option>';
+      }
+      i++;
+    });
+    
+       item +=   '</select>'
+             + '</form>';
   }
+  
+  return item;
 }

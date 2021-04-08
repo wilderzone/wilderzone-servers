@@ -1,46 +1,41 @@
 {
-  "db":{
-    "classes":{
-      "Light":{
-      },
-      "Medium":{
-      },
-      "Heavy":{
-      }
+  "server1":{
+    "Overview":{
+      "Name": "AUS Pub Server 1",
+      "Description": "Crikey!",
+      "Message_of_the_Day": "",
+      "Notes": "I don't have any notes for this server yet.",
+      "Gamemode": ["Arena","CAH","CTF","Rabbit","TDM"]
     },
-    "weapons":{
-      "BXT-1":{
-        "class": "Light",
-        "type": "Specialty",
-        "subtype": "Hitscan"
-      },
-      "Phase Rifle":{
-        "class": "Light",
-        "type": "Specialty",
-        "subtype": "Hitscan"
-      },
-      "Light Spinfusor":{
-        "class": "Light",
-        "type": "Explosive",
-        "subtype": "None"
-      },
-      "Blinksfusor":{
-        "class": "Light",
-        "type": "Explosive",
-        "subtype": "Honor"
-      }
+    "Rules":{
+      
+    },
+    "Maps":{
+      "Map_1": ["Arx Novena","Bella Omega","Blueshift","Canyon Crusade Revival","Crossfire","Dangerous Crossing","Drydock","Hellfire","Icecoaster","Katabatic","Perdition","Permafrost","Raindance","Stonehenge","Sunstar","Tartarus","Temple Ruins","Terminus"],
+      "Map_2": ["Arx Novena","Bella Omega","Blueshift","Canyon Crusade Revival","Crossfire","Dangerous Crossing","Drydock","Hellfire","Icecoaster","Katabatic","Perdition","Permafrost","Raindance","Stonehenge","Sunstar","Tartarus","Temple Ruins","Terminus"],
+      "Map_3": ["Arx Novena","Bella Omega","Blueshift","Canyon Crusade Revival","Crossfire","Dangerous Crossing","Drydock","Hellfire","Icecoaster","Katabatic","Perdition","Permafrost","Raindance","Stonehenge","Sunstar","Tartarus","Temple Ruins","Terminus"],
+      "Map_4": ["Arx Novena","Bella Omega","Blueshift","Canyon Crusade Revival","Crossfire","Dangerous Crossing","Drydock","Hellfire","Icecoaster","Katabatic","Perdition","Permafrost","Raindance","Stonehenge","Sunstar","Tartarus","Temple Ruins","Terminus"],
+      "Map_5": ["Arx Novena","Bella Omega","Blueshift","Canyon Crusade Revival","Crossfire","Dangerous Crossing","Drydock","Hellfire","Icecoaster","Katabatic","Perdition","Permafrost","Raindance","Stonehenge","Sunstar","Tartarus","Temple Ruins","Terminus"],
+      "Map_6": ["Arx Novena","Bella Omega","Blueshift","Canyon Crusade Revival","Crossfire","Dangerous Crossing","Drydock","Hellfire","Icecoaster","Katabatic","Perdition","Permafrost","Raindance","Stonehenge","Sunstar","Tartarus","Temple Ruins","Terminus"],
+      "Map_7": ["Arx Novena","Bella Omega","Blueshift","Canyon Crusade Revival","Crossfire","Dangerous Crossing","Drydock","Hellfire","Icecoaster","Katabatic","Perdition","Permafrost","Raindance","Stonehenge","Sunstar","Tartarus","Temple Ruins","Terminus"],
+      "Map_8": ["Arx Novena","Bella Omega","Blueshift","Canyon Crusade Revival","Crossfire","Dangerous Crossing","Drydock","Hellfire","Icecoaster","Katabatic","Perdition","Permafrost","Raindance","Stonehenge","Sunstar","Tartarus","Temple Ruins","Terminus"],
+      "Map_9": ["Arx Novena","Bella Omega","Blueshift","Canyon Crusade Revival","Crossfire","Dangerous Crossing","Drydock","Hellfire","Icecoaster","Katabatic","Perdition","Permafrost","Raindance","Stonehenge","Sunstar","Tartarus","Temple Ruins","Terminus"],
+      "Map_10": ["Arx Novena","Bella Omega","Blueshift","Canyon Crusade Revival","Crossfire","Dangerous Crossing","Drydock","Hellfire","Icecoaster","Katabatic","Perdition","Permafrost","Raindance","Stonehenge","Sunstar","Tartarus","Temple Ruins","Terminus"],
+      "Map_11": ["Arx Novena","Bella Omega","Blueshift","Canyon Crusade Revival","Crossfire","Dangerous Crossing","Drydock","Hellfire","Icecoaster","Katabatic","Perdition","Permafrost","Raindance","Stonehenge","Sunstar","Tartarus","Temple Ruins","Terminus"],
+      "Map_12": ["Arx Novena","Bella Omega","Blueshift","Canyon Crusade Revival","Crossfire","Dangerous Crossing","Drydock","Hellfire","Icecoaster","Katabatic","Perdition","Permafrost","Raindance","Stonehenge","Sunstar","Tartarus","Temple Ruins","Terminus"],
+      "Map_13": ["Arx Novena","Bella Omega","Blueshift","Canyon Crusade Revival","Crossfire","Dangerous Crossing","Drydock","Hellfire","Icecoaster","Katabatic","Perdition","Permafrost","Raindance","Stonehenge","Sunstar","Tartarus","Temple Ruins","Terminus"]
+    },
+    "Classes":{
+      
+    },
+    "Compute":{
+      
+    },
+    "Schedule":{
+      
+    },
+    "Output":{
+      "Output": "Not available yet."
     }
-  },
-  
-  "settings1":{
-    "name": "",
-    "desc": "",
-    "message": "",
-    "gamemode": "",
-    "maps": [],
-    "classes": ["Light","Medium","Heavy"],
-    "weapons": [],
-    "banned": [],
-    "schedule": ["",""]
   }
 }

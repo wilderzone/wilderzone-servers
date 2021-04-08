@@ -1,0 +1,39 @@
+{
+  "Overview":{
+    "Name": "",
+    "Description": "",
+    "Message_of_the_Day": "",
+    "Notes": "",
+    "Gamemode": ["Arena","CAH","CTF","Rabbit","TDM"]
+  },
+  "Rules":{
+    
+  },
+  "Maps":{
+    "Map_1": ["Arx Novena","Bella Omega","Blueshift","Canyon Crusade Revival","Crossfire","Dangerous Crossing","Drydock","Hellfire","Icecoaster","Katabatic","Perdition","Permafrost","Raindance","Stonehenge","Sunstar","Tartarus","Temple Ruins","Terminus"],
+    "Map_2": ["Arx Novena","Bella Omega","Blueshift","Canyon Crusade Revival","Crossfire","Dangerous Crossing","Drydock","Hellfire","Icecoaster","Katabatic","Perdition","Permafrost","Raindance","Stonehenge","Sunstar","Tartarus","Temple Ruins","Terminus"],
+    "Map_3": ["Arx Novena","Bella Omega","Blueshift","Canyon Crusade Revival","Crossfire","Dangerous Crossing","Drydock","Hellfire","Icecoaster","Katabatic","Perdition","Permafrost","Raindance","Stonehenge","Sunstar","Tartarus","Temple Ruins","Terminus"],
+    "Map_4": ["Arx Novena","Bella Omega","Blueshift","Canyon Crusade Revival","Crossfire","Dangerous Crossing","Drydock","Hellfire","Icecoaster","Katabatic","Perdition","Permafrost","Raindance","Stonehenge","Sunstar","Tartarus","Temple Ruins","Terminus"],
+    "Map_5": ["Arx Novena","Bella Omega","Blueshift","Canyon Crusade Revival","Crossfire","Dangerous Crossing","Drydock","Hellfire","Icecoaster","Katabatic","Perdition","Permafrost","Raindance","Stonehenge","Sunstar","Tartarus","Temple Ruins","Terminus"],
+    "Map_6": ["Arx Novena","Bella Omega","Blueshift","Canyon Crusade Revival","Crossfire","Dangerous Crossing","Drydock","Hellfire","Icecoaster","Katabatic","Perdition","Permafrost","Raindance","Stonehenge","Sunstar","Tartarus","Temple Ruins","Terminus"],
+    "Map_7": ["Arx Novena","Bella Omega","Blueshift","Canyon Crusade Revival","Crossfire","Dangerous Crossing","Drydock","Hellfire","Icecoaster","Katabatic","Perdition","Permafrost","Raindance","Stonehenge","Sunstar","Tartarus","Temple Ruins","Terminus"],
+    "Map_8": ["Arx Novena","Bella Omega","Blueshift","Canyon Crusade Revival","Crossfire","Dangerous Crossing","Drydock","Hellfire","Icecoaster","Katabatic","Perdition","Permafrost","Raindance","Stonehenge","Sunstar","Tartarus","Temple Ruins","Terminus"],
+    "Map_9": ["Arx Novena","Bella Omega","Blueshift","Canyon Crusade Revival","Crossfire","Dangerous Crossing","Drydock","Hellfire","Icecoaster","Katabatic","Perdition","Permafrost","Raindance","Stonehenge","Sunstar","Tartarus","Temple Ruins","Terminus"],
+    "Map_10": ["Arx Novena","Bella Omega","Blueshift","Canyon Crusade Revival","Crossfire","Dangerous Crossing","Drydock","Hellfire","Icecoaster","Katabatic","Perdition","Permafrost","Raindance","Stonehenge","Sunstar","Tartarus","Temple Ruins","Terminus"],
+    "Map_11": ["Arx Novena","Bella Omega","Blueshift","Canyon Crusade Revival","Crossfire","Dangerous Crossing","Drydock","Hellfire","Icecoaster","Katabatic","Perdition","Permafrost","Raindance","Stonehenge","Sunstar","Tartarus","Temple Ruins","Terminus"],
+    "Map_12": ["Arx Novena","Bella Omega","Blueshift","Canyon Crusade Revival","Crossfire","Dangerous Crossing","Drydock","Hellfire","Icecoaster","Katabatic","Perdition","Permafrost","Raindance","Stonehenge","Sunstar","Tartarus","Temple Ruins","Terminus"],
+    "Map_13": ["Arx Novena","Bella Omega","Blueshift","Canyon Crusade Revival","Crossfire","Dangerous Crossing","Drydock","Hellfire","Icecoaster","Katabatic","Perdition","Permafrost","Raindance","Stonehenge","Sunstar","Tartarus","Temple Ruins","Terminus"]
+  },
+  "Classes":{
+    
+  },
+  "Compute":{
+    
+  },
+  "Schedule":{
+    
+  },
+  "Output":{
+    "Output": "Not available yet."
+  }
+}
