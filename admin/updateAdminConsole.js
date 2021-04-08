@@ -39,7 +39,7 @@ function updateAdminConsole(){
   $("#adminConsoleContainer").removeClass("emptySection");
   
   var item = '<div id="adminLeft">'
-           +   '<div class="adminLeftButton"><img src="../icons/dns_black_24dp.svg" draggable="false"><p>1</p></div>'
+           +   '<div class="adminLeftButton active"><img src="../icons/dns_black_24dp.svg" draggable="false"><p>1</p></div>'
            +   '<div class="adminLeftButton"><img src="../icons/dns_black_24dp.svg" draggable="false"><p>2</p></div>'
            +   '<div class="adminLeftButton"><img src="../icons/dns_black_24dp.svg" draggable="false"><p>3</p></div>'
            +   '<div class="adminLeftButton"><img src="../icons/dns_black_24dp.svg" draggable="false"><p>4</p></div>'
@@ -51,7 +51,7 @@ function updateAdminConsole(){
            +       '<div class="adminTopTitle"><p>AUS Pub Server 1</p></div>'
            +     '</span>'
            +     '<span>'
-           +       '<div class="adminTopButton"><img src="../icons/visibility_24dp.svg" draggable="false"><p>Overview</p></div>'
+           +       '<div class="adminTopButton active"><img src="../icons/visibility_24dp.svg" draggable="false"><p>Overview</p></div>'
            +       '<div class="adminTopButton"><img src="../icons/rules_24dp.svg" draggable="false"><p>Rules</p></div>'
            +       '<div class="adminTopButton"><img src="../icons/terrain_24dp.svg" draggable="false"><p>Maps</p></div>'
            +       '<div class="adminTopButton"><img src="../icons/shield_24dp.svg" draggable="false"><p>Classes</p></div>'

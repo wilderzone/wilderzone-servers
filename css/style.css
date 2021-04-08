@@ -432,6 +432,7 @@ footer img{
   display: block;
   width: 100%;
   height: 40px;
+  color: grey;
   border-top: 1px solid grey;
   box-sizing: border-box;
   cursor: pointer;
@@ -444,6 +445,7 @@ footer img{
   vertical-align: top;
   width: 24px;
   margin: 6px;
+  opacity: 0.5;
 }
 .adminLeftButton p{
   display: inline-block;
@@ -451,10 +453,21 @@ footer img{
   width: calc(100% - 36px);
   font-size: 18px;
   margin: unset;
-  margin-top: 5px;
+  margin-top: 6px;
 }
 .adminLeftButton:hover{
+  color: black;
   border-left: 3px solid grey;
+}
+.adminLeftButton:hover img{
+  opacity: 1;
+}
+#adminLeft .active{
+  color: black;
+  border-left: 3px solid black;
+}
+#adminLeft .active img{
+  opacity: 1;
 }
 #adminRight{
   display: inline-block;
@@ -492,6 +505,7 @@ footer img{
   display: inline-block;
   width: 100px;
   height: 100%;
+  color: grey;
   border-top: 1px solid grey;
   border-right: 1px solid grey;
   box-sizing: border-box;
@@ -507,6 +521,7 @@ footer img{
   width: 16px;
   margin: 5px;
   margin-right: 7px;
+  opacity: 0.5;
 }
 .adminTopButton p{
   display: inline-block;
@@ -516,7 +531,18 @@ footer img{
   margin-top: 3px;
 }
 .adminTopButton:hover{
+  color: black;
   border-bottom: 1px solid grey;
+}
+.adminTopButton:hover img{
+  opacity: 1;
+}
+#adminTop .active{
+  color: black;
+  border-bottom: 2px solid grey;
+}
+#adminTop .active img{
+  opacity: 1;
 }
 #adminMain{
   width: 100%;
