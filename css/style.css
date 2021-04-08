@@ -10,8 +10,27 @@ body{
 h2{
   font-size: 22px;
 }
+footer{
+  display: block;
+  width: fit-content;
+  margin: auto;
+  margin-top: 60px;
+  padding-bottom: 3px;
+  font-size: 12px;
+  border-top: 1px solid black;
+  box-sizing: border-box;
+}
+footer p{
+  margin-top: unset;
+}
+footer img{
+  width: 16px;
+  margin-left: 5px;
+  transform: translateY(4px);
+}
 
 :root{
+  --navbarHeight: 45px;
   --serverItemHeight: 40px;
   --serverItemBreak: 6px;
   --good: #00DF00;
@@ -27,7 +46,7 @@ h2{
   left: 0;
   z-index: 10;
   width: 100%;
-  height: 45px;
+  height: var(--navbarHeight);
   background-color: white;
   box-shadow: 0px 0px 8px grey;
   overflow: hidden;
@@ -393,25 +412,114 @@ h2{
   font-size: 14px;
 }
 
-
-
-footer{
+/*=============================================*/
+/*---------------------Admin-------------------*/
+/*=============================================*/
+#adminConsoleContainer{
+  height: 100%;
+  margin-top: 80px;
+  border: 1px solid lightgrey;
+  border-radius: 4px;
+  overflow: hidden;
+}
+#adminLeft{
+  display: inline-block;
+  vertical-align: top;
+  width: 150px;
+  height: 100%;
+}
+.adminLeftButton{
   display: block;
-  width: fit-content;
-  margin: auto;
-  margin-top: 60px;
-  padding-bottom: 3px;
-  font-size: 12px;
-  border-top: 1px solid black;
+  width: 100%;
+  height: 40px;
+  border-top: 1px solid grey;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.adminLeftButton:first-child{
+  border-top: unset;
+}
+.adminLeftButton img{
+  display: inline-block;
+  vertical-align: top;
+  width: 24px;
+  margin: 6px;
+}
+.adminLeftButton p{
+  display: inline-block;
+  vertical-align: top;
+  width: calc(100% - 36px);
+  font-size: 18px;
+  margin: unset;
+  margin-top: 5px;
+}
+.adminLeftButton:hover{
+  border-left: 3px solid grey;
+}
+#adminRight{
+  display: inline-block;
+  vertical-align: top;
+  width: calc(100% - 150px);
+  height: 100%;
+  border-left: 2px solid lightgrey;
   box-sizing: border-box;
 }
-footer p{
-  margin-top: unset;
+#adminTop{
+  display: inline-block;
+  vertical-align: top;
+  width: 100%;
+  height: 69px;
+  border-bottom: 1px solid grey;
+  box-sizing: border-box;
 }
-footer img{
+#adminTop span{
+  display: block;
+  width: 100%;
+  height: 28px;
+}
+#adminTop span:first-child{
+  margin-top: 4px;
+  margin-bottom: 8px;
+}
+.adminTopTitle{
+  margin-left: 10px;
+}
+.adminTopTitle p{
+  margin: unset;
+  font-size: 20px;
+}
+.adminTopButton{
+  display: inline-block;
+  width: 100px;
+  height: 100%;
+  border-top: 1px solid grey;
+  border-right: 1px solid grey;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.adminTopButton:first-child{
+  margin-left: 10px;
+  border-left: 1px solid grey;
+}
+.adminTopButton img{
+  display: inline-block;
+  vertical-align: top;
   width: 16px;
-  margin-left: 5px;
-  transform: translateY(4px);
+  margin: 5px;
+  margin-right: 7px;
+}
+.adminTopButton p{
+  display: inline-block;
+  vertical-align: top;
+  font-size: 14px;
+  margin: unset;
+  margin-top: 3px;
+}
+.adminTopButton:hover{
+  border-bottom: 1px solid grey;
+}
+#adminMain{
+  width: 100%;
 }
 
 /*=============================================*/
