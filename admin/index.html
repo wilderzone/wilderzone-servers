@@ -52,5 +52,5 @@
   <script src="dodge.js"></script>
   <script src="updateAdminConsole.js"></script>
   <script>if(checkCookie("arl") === false){window.location.replace("https://servers.wilderzone.live/login/");}</script>
-  <script>function logoutUser(){checkCookie("arl");window.location.replace("https://servers.wilderzone.live/");}</script>
+  <script>function logoutUser(){setCookie("arl","",-1);window.location.replace("https://servers.wilderzone.live/");}</script>
 </html>
