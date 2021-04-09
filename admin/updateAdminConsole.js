@@ -20,7 +20,10 @@ function getAdminConsole(){
         },
         error:function(xhr, status, err){
           console.log("Error " + xhr.status);
-          $("#pageContent").empty();
+          $(".alert").children(":nth-child(2)").html("Error " + xhr.status);
+          $(".alert").addClass("alert_error");
+          $("#adminConsoleContainer").addClass("hidden");
+          $(".alert").removeClass("hidden");
           var item = '<h2 style="margin-top:100px;text-align:center;">Console data couldn&#39;t be retrieved. Please try again later.</h2>';
           $("#pageContent").append(item);
         }
@@ -28,7 +31,10 @@ function getAdminConsole(){
     },
     error:function(xhr, status, err){
       console.log("Error " + xhr.status);
-      $("#pageContent").empty();
+      $(".alert").children(":nth-child(2)").html("Error " + xhr.status);
+      $(".alert").addClass("alert_error");
+      $("#adminConsoleContainer").addClass("hidden");
+      $(".alert").removeClass("hidden");
       var item = '<h2 style="margin-top:100px;text-align:center;">Console data couldn&#39;t be retrieved. Please try again later.</h2>';
       $("#pageContent").append(item);
     }
@@ -45,7 +51,7 @@ function updateAdminConsole(){
            + '<div id="adminRight">'
            +   '<div id="adminTop">'
            +     '<span>'
-           +       '<div class="adminTopTitle"><p>AUS Pub Server 1</p></div>'
+           +       '<div class="adminTopTitle"><p>' + settings_data["server" + (leftButtonIndex + 1)]["Overview"]["Name"] + '</p></div>'
            +     '</span>'
            +     '<span>'
            +     '</span>'
@@ -74,15 +80,23 @@ function updateAdminConsole(){
     i++;
   });
   
-  updateMain();
+  refreshMain();
 }
 
-function updateMain(){
+function refreshMain(){
   $("#adminMain").empty();
   //Main
-  Object.keys(settings_data["server" + (leftButtonIndex + 1)][$(".adminTopButton").filter(".active").children(":nth-child(2)").html()]).forEach(function(k){
-    var item = processControlType(settings_data["server" + (leftButtonIndex + 1)][$(".adminTopButton").filter(".active").children(":nth-child(2)").html()][k], k);
+  Object.keys(settings_data["server" + (leftButtonIndex + 1)]).forEach(function(m){
+    if(m == $("#adminTop").children(":nth-child(2)").children(":nth-child(" + (leftButtonIndex + 1) + ")").children(":nth-child(2)").html()){
+      var item = '<div id="' + m + '" class="adminPage"></div>';
+    }else{
+      var item = '<div id="' + m + '" class="adminPage hidden"></div>';
+    }
     $("#adminMain").append(item);
+    Object.keys(settings_data["server" + (leftButtonIndex + 1)][m]).forEach(function(k){
+      var item = processControlType(settings_data["server" + (leftButtonIndex + 1)][m][k], m, k);
+      $("#" + m).append(item);
+    });
   });
 }
 
@@ -92,34 +106,81 @@ function switchLeftButton(e){
   $(".adminLeftButton").removeClass("active");
   $(e.target).addClass("active");
   leftButtonIndex = $(e.target).prevAll().length;
-  updateMain();
+  refreshMain();
 }
 function switchTopButton(e){
   $(".adminTopButton").removeClass("active");
   $(e.target).addClass("active");
   topButtonIndex = $(e.target).prevAll().length;
-  updateMain();
+  $(".adminPage").addClass("hidden");
+  $("#" + $(e.target).children(":nth-child(2)").html()).removeClass("hidden");
 }
 
-function processControlType(kdata, k){ //Compare the settings_data values to the database_data values to determine the range of a control
-  if(typeof kdata == "string"){ //String
-    var item = '<div class="adminControl"><p>' + k.split("_").join(" ") + ':</p><input type="text" id="Overview-' + k + '" name="' + k.split("_").join(" ") + '" value="' + kdata + '"></div>';
-  }else if(typeof kdata == "object"){ //Array
-    var item = '<div class="adminControl"><p>' + k.split("_").join(" ") + ':</p><form id="Overview-' + k + '">'
+function processControlType(kdata, o, k){ //Compare the settings_data values to the database_data values to determine the range of a control
+  if(database_data[o][k]["type"] == "info"){ //Info
+    var item = '<div class="adminControl" id="' + o + '-' + k + '"><p>' + k.split("_").join(" ") + ':</p><p>' + kdata + '</p></div>';
+    
+  }else if(database_data[o][k]["type"] == "string"){ //String
+    var item = '<div class="adminControl" id="' + o + '-' + k + '"><p>' + k.split("_").join(" ") + ':</p><input type="text" value="' + kdata + '"></div>';
+    
+  }else if(database_data[o][k]["type"] == "dropdown"){ //Dropdown
+    var item = '<div class="adminControl" id="' + o + '-' + k + '"><p>' + k.split("_").join(" ") + ':</p><form>'
              +   '<select>';
     
-    var i = 0;
-    kdata.forEach(function(h){
-      if(i === 0){
+    database_data[o][k]["options"].forEach(function(h){
+      if(kdata == h){
         item +=    '<option value="' + h + '" selected>' + h + '</option>';
       }else{
         item +=    '<option value="' + h + '">' + h + '</option>';
       }
-      i++;
     });
     
        item +=   '</select>'
              + '</form>';
+    
+  }else if(database_data[o][k]["type"] == "time"){ //Time
+    var item = '<div class="adminControl" id="' + o + '-' + k + '"><p>' + k.split("_").join(" ") + ':</p><form>'
+             +   '<select>';
+    
+    database_data[o][k]["options"].forEach(function(h){
+      if(kdata[0] == h){
+        item +=    '<option value="' + h + '" selected>' + h + '</option>';
+      }else{
+        item +=    '<option value="' + h + '">' + h + '</option>';
+      }
+    });
+    
+       item +=   '</select>'
+             + '</form>'
+             + '<label> &#11834; </label>'
+             + '<form>'
+             +   '<select>';
+    
+    database_data[o][k]["options"].forEach(function(h){
+      if(kdata[1] == h){
+        item +=    '<option value="' + h + '" selected>' + h + '</option>';
+      }else{
+        item +=    '<option value="' + h + '">' + h + '</option>';
+      }
+    });
+    
+       item +=   '</select>'
+             + '</form>';
+    
+  }else if(database_data[o][k]["type"] == "checkbox"){ //Checkbox
+    var item = '<div class="adminControl" id="' + o + '-' + k + '"><p>' + k.split("_").join(" ") + ':</p><div class="checkboxesOuterBound">';
+    database_data[o][k]["options"].forEach(function(h){
+      if(kdata.includes(h)){
+        item +=    '<div class="checkboxesInnerBound"><input type="checkbox" name="' + h + '" value="' + h + '" checked><label for="' + h + '">' + h + '</label></div>';
+      }else{
+        item +=    '<div class="checkboxesInnerBound"><input type="checkbox" name="' + h + '" value="' + h + '"><label for="' + h + '">' + h + '</label></div>';
+      }
+    });
+       item += '</div></div>';
+    
+  }else if(database_data[o][k]["type"] == "output"){ //Output
+    var item = '<div class="adminControl" id="' + o + '-' + k + '"><p>' + k.split("_").join(" ") + ':</p><textarea rows="30" cols="70">' + kdata + '</textarea></div>';
+    
   }
   
   return item;

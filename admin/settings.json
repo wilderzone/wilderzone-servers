@@ -4,38 +4,45 @@
       "Name": "AUS Pub Server 1",
       "Description": "Crikey!",
       "Message_of_the_Day": "",
-      "Notes": "I don't have any notes for this server yet.",
-      "Gamemode": ["Arena","CAH","CTF","Rabbit","TDM"]
+      "Notes": "There are no notes for this server yet."
     },
     "Rules":{
-      
+      "Game_Type": "OOTB",
+      "Game_Mode": "CTF",
+      "Physics_Preset": "Default"
     },
     "Maps":{
-      "Map_1": ["Arx Novena","Bella Omega","Blueshift","Canyon Crusade Revival","Crossfire","Dangerous Crossing","Drydock","Hellfire","Icecoaster","Katabatic","Perdition","Permafrost","Raindance","Stonehenge","Sunstar","Tartarus","Temple Ruins","Terminus"],
-      "Map_2": ["Arx Novena","Bella Omega","Blueshift","Canyon Crusade Revival","Crossfire","Dangerous Crossing","Drydock","Hellfire","Icecoaster","Katabatic","Perdition","Permafrost","Raindance","Stonehenge","Sunstar","Tartarus","Temple Ruins","Terminus"],
-      "Map_3": ["Arx Novena","Bella Omega","Blueshift","Canyon Crusade Revival","Crossfire","Dangerous Crossing","Drydock","Hellfire","Icecoaster","Katabatic","Perdition","Permafrost","Raindance","Stonehenge","Sunstar","Tartarus","Temple Ruins","Terminus"],
-      "Map_4": ["Arx Novena","Bella Omega","Blueshift","Canyon Crusade Revival","Crossfire","Dangerous Crossing","Drydock","Hellfire","Icecoaster","Katabatic","Perdition","Permafrost","Raindance","Stonehenge","Sunstar","Tartarus","Temple Ruins","Terminus"],
-      "Map_5": ["Arx Novena","Bella Omega","Blueshift","Canyon Crusade Revival","Crossfire","Dangerous Crossing","Drydock","Hellfire","Icecoaster","Katabatic","Perdition","Permafrost","Raindance","Stonehenge","Sunstar","Tartarus","Temple Ruins","Terminus"],
-      "Map_6": ["Arx Novena","Bella Omega","Blueshift","Canyon Crusade Revival","Crossfire","Dangerous Crossing","Drydock","Hellfire","Icecoaster","Katabatic","Perdition","Permafrost","Raindance","Stonehenge","Sunstar","Tartarus","Temple Ruins","Terminus"],
-      "Map_7": ["Arx Novena","Bella Omega","Blueshift","Canyon Crusade Revival","Crossfire","Dangerous Crossing","Drydock","Hellfire","Icecoaster","Katabatic","Perdition","Permafrost","Raindance","Stonehenge","Sunstar","Tartarus","Temple Ruins","Terminus"],
-      "Map_8": ["Arx Novena","Bella Omega","Blueshift","Canyon Crusade Revival","Crossfire","Dangerous Crossing","Drydock","Hellfire","Icecoaster","Katabatic","Perdition","Permafrost","Raindance","Stonehenge","Sunstar","Tartarus","Temple Ruins","Terminus"],
-      "Map_9": ["Arx Novena","Bella Omega","Blueshift","Canyon Crusade Revival","Crossfire","Dangerous Crossing","Drydock","Hellfire","Icecoaster","Katabatic","Perdition","Permafrost","Raindance","Stonehenge","Sunstar","Tartarus","Temple Ruins","Terminus"],
-      "Map_10": ["Arx Novena","Bella Omega","Blueshift","Canyon Crusade Revival","Crossfire","Dangerous Crossing","Drydock","Hellfire","Icecoaster","Katabatic","Perdition","Permafrost","Raindance","Stonehenge","Sunstar","Tartarus","Temple Ruins","Terminus"],
-      "Map_11": ["Arx Novena","Bella Omega","Blueshift","Canyon Crusade Revival","Crossfire","Dangerous Crossing","Drydock","Hellfire","Icecoaster","Katabatic","Perdition","Permafrost","Raindance","Stonehenge","Sunstar","Tartarus","Temple Ruins","Terminus"],
-      "Map_12": ["Arx Novena","Bella Omega","Blueshift","Canyon Crusade Revival","Crossfire","Dangerous Crossing","Drydock","Hellfire","Icecoaster","Katabatic","Perdition","Permafrost","Raindance","Stonehenge","Sunstar","Tartarus","Temple Ruins","Terminus"],
-      "Map_13": ["Arx Novena","Bella Omega","Blueshift","Canyon Crusade Revival","Crossfire","Dangerous Crossing","Drydock","Hellfire","Icecoaster","Katabatic","Perdition","Permafrost","Raindance","Stonehenge","Sunstar","Tartarus","Temple Ruins","Terminus"]
+      "Arena_Maps": ["Air Arena","Lava Arena","Walled In","Whiteout"],
+      "CaH_Maps": ["Canyon Crusade Revival","Katabatic","Outskirts","Raindance","Sulfur Cove","Tartarus"],
+      "CTF_Maps": ["Arx Novena","Crossfire","Dangerous Crossing","Drydock","Katabatic","Raindance","Tartarus","Terminus"],
+      "Rabbit_Maps": ["Drydock Night","Inferno","Nightabatic","Outskirts","Quicksand","Sulfur Cove"],
+      "TDM_Maps": ["Drydock Night","Inferno","Miasma","Nightabatic","Outskirts","Quicksand","Sulfur Cove"]
     },
     "Classes":{
-      
+      "Allowed_Classes": ["Light","Medium","Heavy"],
+      "Light_Weapons": ["Light Spinfusor","Bolt Launcher","Light Twinfusor","Light Blinksfusor","Jackal","Light Grenade Launcher","Phase Rifle","BXT1 Rifle","Falcon","Sparrow","Light Assault Rifle","Throwing Knives","Shotgun","Shocklance","Impact Nitron","Explosive Nitron","Sticky Grenades","Claymore Mine","Prism Mine","T5 Grenade","Chaff Grenade"],
+      "Light_Packs": ["Thrust","Energy","Stealth","Utility"],
+      "Medium_Weapons": ["Spinfusor","Thumper","Twinfusor","Thumper DX","Blinksfusor","Arx Buster","Grenade Launcher","Advanced Repair Tool","ELF Projector","Honorfusor","Assault Rifle","Eagle Pistol","Nova Blaster","NJ4 SMG","NJ5-B SMG","Plasma Gun","Sawed-Off Shotgun","Flak Cannon","Motion Sensor","Blackout Grenade","Anti-Personnel Grenade","EMP Grenade","Cluster Grenade"],
+      "Medium_Packs": ["Light Turret","EXR Turret","Drop Station","Jammer","Shield","Utility"],
+      "Heavy_Weapons": ["Heavy Spinfusor","Heavy Bolt Launcher","Heavy Blinksfusor","Heavy Twinfusor","Fusion Mortar","MIRV Launcher","Saber Launcher","Gladiator","Chain Gun","Nova Colt","X1 LMG","Plasma Cannon","Nova Blaster MX","Automatic Shotgun","EFG","Frag Grenade","Mines","Fractal Grenade"],
+      "Heavy_Packs": ["Force Field","Shield","Energy","Utility"]
     },
     "Compute":{
-      
+      "Provider": "Microsoft Azure",
+      "Region": "Australia East",
+      "Server_Type": "Standard F2s"
     },
     "Schedule":{
-      
+      "Monday": ["12:00","24:00"],
+      "Tuesday": ["12:00","24:00"],
+      "Wednesday": ["12:00","24:00"],
+      "Thursday": ["12:00","24:00"],
+      "Friday": ["12:00","24:00"],
+      "Saturday": ["12:00","24:00"],
+      "Sunday": ["12:00","24:00"]
     },
     "Output":{
-      "Output": "Not available yet."
+      "Output": "Output not available yet."
     }
   }
 }

@@ -553,9 +553,12 @@ footer img{
 #adminMain{
   width: 100%;
 }
+.adminPage{
+  width: 100%;
+}
 .adminControl{
   width: calc(100% - 20px);
-  height: var(--smallItemHeight);
+  min-height: var(--smallItemHeight);
   margin: auto;
   border-bottom: 1px solid lightgrey;
   box-sizing: border-box;
@@ -569,6 +572,19 @@ footer img{
   width: var(--smallItemInnerWidth);
   margin-top: 13px;
 }
+.adminControl .checkboxesOuterBound{
+  display: inline-block;
+  vertical-align: top;
+  width: calc(100% - var(--smallItemInnerWidth));
+}
+.adminControl .checkboxesInnerBound{
+  display: inline-block;
+  vertical-align: top;
+  width: 250px;
+}
+.adminControl .checkboxesInnerBound:last-child{
+  margin-bottom: 14px;
+}
 .adminControl input{
   margin-top: 14px;
   margin-left: 14px;
@@ -577,6 +593,13 @@ footer img{
   display: inline-block;
   margin-top: 14px;
   margin-left: 14px;
+}
+.adminControl form:last-child{
+  margin-left: unset;
+}
+.adminControl textarea{
+  margin-top: 14px;
+  margin-bottom: 14px;
 }
 
 /*=============================================*/
@@ -614,6 +637,7 @@ footer img{
 /*---------------Important Styles--------------*/
 /*=============================================*/
 .emptySection{
+  min-height: var(--smallItemHeight);
   background-color: #F1F1F1;
   border: 1px solid lightgrey;
   border-radius: 4px;
