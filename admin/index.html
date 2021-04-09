@@ -33,6 +33,8 @@
         </div>
       </div>
       
+      <img class="refresh" src="../icons/logout_black_24dp.svg" draggable="false" title="Logout" alt="Logout" onclick="logoutUser()">
+      
       <div id="pageContent">
         <div class="alert hidden" style="width:calc(100% - 10px);"><img src="../icons/cancel_24dp.svg" draggable="false" alt=""><p></p></div>
         
@@ -50,4 +52,5 @@
   <script src="dodge.js"></script>
   <script src="updateAdminConsole.js"></script>
   <script>if(checkCookie("arl") === false){window.location.replace("https://servers.wilderzone.live/login/");}</script>
+  <script>function logoutUser(){checkCookie("arl");window.location.replace("https://servers.wilderzone.live/");}</script>
 </html>
