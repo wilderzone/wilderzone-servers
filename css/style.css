@@ -109,14 +109,24 @@ footer img{
   opacity: 1;
 }
 
-#pageContent{
-  margin-top: 60px;
+.refresh{
+  display: block;
+  position: absolute;
+  top: 55px;
+  right: 0px;
+  width: 24px;
+  height: 24px;
+  margin-right: 15px;
+  opacity: 0.5;
+  cursor: pointer;
 }
-
-/*=============================================*/
-/*-----------------Server List-----------------*/
-/*=============================================*/
+.refresh:hover{
+  opacity: 1;
+}
 .alert{
+  position: absolute;
+  top: 55px;
+  left: 15px;
   width: 100%;
   height: 30px;
   padding-left: 10px;
@@ -149,6 +159,14 @@ footer img{
 .alert_error{
   background-color: #DF0000;
 }
+
+#pageContent{
+  margin-top: 100px;
+}
+
+/*=============================================*/
+/*-----------------Server List-----------------*/
+/*=============================================*/
 .heading{
   width: 100%;
   margin-top: 20px;
@@ -165,21 +183,6 @@ footer img{
   border-left: 3px solid grey;
   border-radius: 4px;
   box-sizing: border-box;
-}
-
-.refresh{
-  display: block;
-  position: absolute;
-  top: 55px;
-  right: 0px;
-  width: 24px;
-  height: 24px;
-  margin-right: 15px;
-  opacity: 0.5;
-  cursor: pointer;
-}
-.refresh:hover{
-  opacity: 1;
 }
 
 .serverItem{
@@ -652,4 +655,7 @@ footer img{
 }
 .hidden{
   display: none !important;
+}
+.noclick{
+  pointer-events: none;
 }
