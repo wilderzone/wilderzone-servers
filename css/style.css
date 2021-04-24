@@ -1,8 +1,19 @@
+:root{
+  --bodyMargin: 15px;
+  --navbarHeight: 45px;
+  --serverItemHeight: 40px;
+  --serverItemBreak: 6px;
+  --good: #00DF00;
+  --bad: #DF0000;
+  --playerItemHeight: 16px;
+  --smallItemHeight: 50px;
+  --smallItemInnerWidth: 28ch;
+}
 html{
   height: 100%;
 }
 body{
-  margin: 15px;
+  margin: var(--bodyMargin);
   font-family: Segoe UI;
   background-color: #FCFCFD;
   user-select: none;
@@ -27,17 +38,6 @@ footer img{
   width: 16px;
   margin-left: 5px;
   transform: translateY(4px);
-}
-
-:root{
-  --navbarHeight: 45px;
-  --serverItemHeight: 40px;
-  --serverItemBreak: 6px;
-  --good: #00DF00;
-  --bad: #DF0000;
-  --playerItemHeight: 16px;
-  --smallItemHeight: 50px;
-  --smallItemInnerWidth: 28ch;
 }
 
 #navbar{
@@ -127,7 +127,7 @@ footer img{
   position: absolute;
   top: 55px;
   left: 15px;
-  width: 100%;
+  width: calc(100% - (--bodyMargin * 2));
   height: 30px;
   padding-left: 10px;
   color: white;
