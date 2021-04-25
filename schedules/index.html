@@ -56,23 +56,16 @@
   <script>
     var currentHour = 0;
     function getCurrentTime(){
-      $.ajax({
-        dataType:"json",
-        url:"https://worldtimeapi.org/api/timezone/Etc/GMT/",
-        cache:false,
-        success:function(data){
-          currentHour = parseInt(data["datetime"].split("T")[1].split(":")[0]) * 2;
-          if(parseInt(data["datetime"].split("T")[1].split(":")[1]) >= 30){
-            currentHour += 1;
-          }
-          console.log("Current Hour: " + (currentHour / 2) + " GMT");
-          emptyPage();
-          getScheduleData();
-        },
-        error:function(xhr, status, err){
-          console.log("Error " + xhr.status);
-        }
-      });
+      var date = new Date();
+      var time = date.toString().substr(16,8).split(":");
+      var zone = (parseInt(date.toString().substr(28,3)) * 2) * -1;
+      
+      currentHour = parseInt(time[0]) * 2;
+      if(parseInt(time[1]) >= 30){
+        currentHour += 1;
+      }
+      currentHour += zone;
+      console.log("Current Hour: " + (currentHour / 2) + " GMT");
     }
     getCurrentTime();
     
