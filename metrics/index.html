@@ -2,8 +2,8 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Schedules | TA Servers (demo)</title>
-    <meta property="og:title" content="Schedules | TA Servers">
+    <title>Mertics | TA Servers (demo)</title>
+    <meta property="og:title" content="Metrics | TA Servers">
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta property="og:description" content="">
@@ -11,7 +11,7 @@
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="TA Servers">
     <meta property="og:image" content="">
-    <meta property="og:url" content="https://servers.wilderzone.live/schedules/">
+    <meta property="og:url" content="https://servers.wilderzone.live/metrics/">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image:alt" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,8 +27,8 @@
         
         <div class="navlinks">
           <a href="../"><p>Server List</p><div></div></a>
-          <a href="" class="activeNav"><p>Schedules</p><div></div></a>
-          <a href="../metrics/"><p>Metrics</p><div></div></a>
+          <a href="../schedules/"><p>Schedules</p><div></div></a>
+          <a href="" class="activeNav"><p>Metrics</p><div></div></a>
           <a href="../about/"><p>About</p><div></div></a>
           <a href="../login/" style="float: right;" id="loginButton"><p>Login<img src="../icons/login_black_24dp.svg" draggable="false" alt=""></p></a>
         </div>
@@ -38,10 +38,6 @@
       <div class="alert hidden" style="width:calc(100% - 80px);"><img src="../icons/cancel_24dp.svg" draggable="false" alt=""><p></p></div>
       
       <div id="pageContent">
-        <table id="scheduleTable" class="hidden">
-          <tbody>
-          </tbody>
-        </table>
       </div>
     </main>
     
@@ -52,26 +48,22 @@
   
   <script src="../lib/jquery.min.js"></script>
   <script src="../lib/cookieManager.min.js"></script>
-  <script src="../lib/statusURL.js"></script>
   <script>if(checkCookie("arl") === true){$("#loginButton").attr("href", "../admin/");$("#loginButton").children().first().html('Admin<img src="../icons/account_circle_24dp.svg" draggable="false" alt="">');}</script>
+  <script src="../lib/statusURL.js"></script>
+  <script src="../lib/p5.min.js"></script>
   <script>
-    var currentHour = 0;
-    function getCurrentTime(){
-      var date = new Date();
-      var time = date.toString().substr(16,8).split(":");
-      var zone = (parseInt(date.toString().substr(28,3)) * 2) * -1;
-      
-      currentHour = parseInt(time[0]) * 2;
-      if(parseInt(time[1]) >= 30){
-        currentHour += 1;
-      }
-      currentHour += zone;
-      console.log("Current Hour: " + (currentHour / 2) + " GMT");
-    }
-    getCurrentTime();
-    
-    var rdata;
+    var hdata;
     var sdata;
+    var currentDate;
+    
+    function getCurrentDate(){
+      var months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+      currentDate = new Date();
+      currentDate = currentDate.toUTCString().substr(5,11).split(" ");
+      currentDate = currentDate[0] + "/" + (months.indexOf(currentDate[1]) + 1);
+    }
+    getCurrentDate();
+    
     function getScheduleData(){
       var item = '<tr>'
                +   '<th>Server</th>'
@@ -82,16 +74,16 @@
       
       $.ajax({
         dataType:"json",
-        url:"../registered_servers.json",
+        url:"../histogram.json",
         success:function(data1){
-          rdata = data1;
+          hdata = data1;
           $.ajax({
             dataType:"json",
             url:statusURL,
             success:function(data2){
               sdata = data2;
               $("#scheduleTable").removeClass("hidden");
-              Object.keys(rdata).forEach(function(k){
+              Object.keys(hdata).forEach(function(k){
                 var serverStatus = '<img src="../icons/dot_red_24dp.svg" draggable="false">Offline';
                 Object.keys(sdata["online_servers"]).forEach(function(c){
                   if(k == c){
@@ -101,7 +93,7 @@
                 var item = '<tr>'
                          +   '<td>' + k + '</td>'
                          +   '<td>' + serverStatus + '</td>'
-                         +   '<td>' + timeGraph(rdata[k]["schedule"]) + '</td>'
+                         +   '<td>' + timeGraph(hdata[k]["schedule"]) + '</td>'
                          + '</tr>';
                 
                 $("#scheduleTable").children().first().append(item);
