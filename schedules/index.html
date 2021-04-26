@@ -72,6 +72,9 @@
         currentHour += 1;
       }
       currentHour += zone;
+      if(currentHour < 0){
+        currentHour = 48 + currentHour;
+      }
       console.log("Current Hour: " + (currentHour / 2) + " GMT");
     }
     getCurrentTime();
