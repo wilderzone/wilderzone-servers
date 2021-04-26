@@ -34,10 +34,12 @@
         </div>
       </div>
       
-      <img class="refresh" src="../icons/refresh_black_24dp.svg" draggable="false" title="Refresh" alt="Refresh" onclick="">
+      <img class="refresh" src="../icons/refresh_black_24dp.svg" draggable="false" title="Refresh" alt="Refresh" onclick="clearCanvas();getHistogramData()">
       <div class="alert hidden" style="width:calc(100% - 80px);"><img src="../icons/cancel_24dp.svg" draggable="false" alt=""><p></p></div>
       
       <div id="pageContent">
+        <div style="margin-bottom:4px;">Player Count History</div>
+        <div id="canvas"></div>
       </div>
     </main>
     
@@ -55,16 +57,16 @@
   <script>
     var hdata;
     var currentDate;
+    var months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
     
     function getCurrentDate(){
-      var months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
       currentDate = new Date();
       currentDate = currentDate.toUTCString().substr(5,11).split(" ");
       currentDate = currentDate[0] + "/" + (months.indexOf(currentDate[1]) + 1);
     }
     getCurrentDate();
     
-    function getScheduleData(){
+    function getHistogramData(){
       var item = '<tr>'
                +   '<th>Server</th>'
                +   '<th>Currently</th>'
@@ -92,10 +94,6 @@
       });
     }
     
-    getScheduleData();
-    
-    function emptyPage(){
-      $("#scheduleTable").children().first().empty();
-    }
+    getHistogramData();
   </script>
 </html>
