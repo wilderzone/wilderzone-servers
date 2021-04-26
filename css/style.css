@@ -333,6 +333,36 @@ footer img{
   width: calc(100% / 48);
   height: 24px;
 }
+.scheduleKey{
+  width: calc(19ch + 20px);
+  margin-top: 10px;
+  margin-left: 3px;
+  border: 1px solid grey;
+  box-sizing: border-box;
+}
+.scheduleKey p{
+  margin-top: 1px;
+  margin-bottom: 5px;
+  padding-left: 5px;
+  padding-bottom: 1px;
+  border-bottom: 1px solid grey;
+}
+.scheduleKey span{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+}
+.scheduleKey span p{
+  margin-top: 7px;
+  margin-bottom: 7px;
+  border: unset;
+}
+.scheduleKey span div{
+  width: 20px;
+  height: 30px;
+  margin-right: 5px;
+}
 
 /*=============================================*/
 /*-------------------Metrics-------------------*/

@@ -42,6 +42,12 @@
           <tbody>
           </tbody>
         </table>
+        <div class="scheduleKey hidden">
+          <p><b>Key:</b></p>
+          <span><p>Scheduled Offline:</p><div style="background-color:#B0C2FF;"></div></span>
+          <span><p>Scheduled Online:</p><div style="background-color:#4570FF;"></div></span>
+          <span><p>Current Time:</p><div style="background-color:lightgrey;"></div></span>
+        </div>
       </div>
     </main>
     
@@ -90,7 +96,6 @@
             url:statusURL,
             success:function(data2){
               sdata = data2;
-              $("#scheduleTable").removeClass("hidden");
               Object.keys(rdata).forEach(function(k){
                 var serverStatus = '<img src="../icons/dot_red_24dp.svg" draggable="false">Offline';
                 Object.keys(sdata["online_servers"]).forEach(function(c){
@@ -106,6 +111,8 @@
                 
                 $("#scheduleTable").children().first().append(item);
               });
+              $("#scheduleTable").removeClass("hidden");
+              $(".scheduleKey").removeClass("hidden");
             },
             error:function(xhr, status, err){
               console.log("Error " + xhr.status);
