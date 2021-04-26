@@ -38,7 +38,7 @@
       <div class="alert hidden" style="width:calc(100% - 80px);"><img src="../icons/cancel_24dp.svg" draggable="false" alt=""><p></p></div>
       
       <div id="pageContent">
-        <div id="plotTitle" style="margin-bottom:4px;">Player Count History</div>
+        <div id="plotTitle" style="margin-bottom:4px;">Loading...</div>
         <div id="canvas"></div>
       </div>
     </main>
@@ -81,7 +81,7 @@
         success:function(data1){
           hdata = data1;
           cnv_enable = 1;
-          $("#plotTitle").html($("#plotTitle").html() + " (" + monthsLong[parseInt(Object.keys(hdata)[0].substr(5,2)) - 1] + " " + Object.keys(hdata)[0].substr(0,4) + " to " +  monthsLong[parseInt(Object.keys(hdata)[Object.keys(hdata).length - 1].substr(5,2)) - 1] + " " + Object.keys(hdata)[Object.keys(hdata).length - 1].substr(0,4) + ")")
+          $("#plotTitle").html("Player Count History (" + monthsLong[parseInt(Object.keys(hdata)[0].substr(5,2)) - 1] + " " + Object.keys(hdata)[0].substr(0,4) + " to " +  monthsLong[parseInt(Object.keys(hdata)[Object.keys(hdata).length - 1].substr(5,2)) - 1] + " " + Object.keys(hdata)[Object.keys(hdata).length - 1].substr(0,4) + ")")
         },
         error:function(xhr, status, err){
           console.log("Error " + xhr.status);
