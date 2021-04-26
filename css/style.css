@@ -127,12 +127,13 @@ footer img{
   position: absolute;
   top: 55px;
   left: 15px;
-  width: calc(100% - (--bodyMargin * 2));
+  width: calc(100% - (var(--bodyMargin) * 2));
   height: 30px;
   padding-left: 10px;
   color: white;
   background-color: white;
   border-radius: 8px;
+  box-sizing: border-box;
 }
 .alert img{
   display: inline-block;
