@@ -339,6 +339,7 @@ footer img{
   margin-left: 3px;
   border: 1px solid grey;
   box-sizing: border-box;
+  transform: scale(0.75);
 }
 .scheduleKey p{
   margin-top: 1px;
