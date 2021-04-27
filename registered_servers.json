@@ -4,76 +4,74 @@
     "region":"AUS",
     "mode":"OOTB",
     "type":"CTF",
-    "schedule": "12:00-24:00"
-  },
-  "AUS Pub Server 2":{
-    "owner":"Giga",
-    "region":"AUS",
-    "mode":"OOTB",
-    "type":"CTF",
-    "schedule": "04:00-16:00"
-  },
-  "AUS Pub Arena 1":{
-    "owner":"Giga",
-    "region":"AUS",
-    "mode":"GOTY",
-    "type":"Arena",
-    "schedule": "14:00-22:00"
+    "schedule":{
+      "mon": "00:00-00:00",
+      "tue": "00:00-00:00",
+      "wed": "00:00-00:00",
+      "thu": "00:00-00:00",
+      "fri": "00:00-00:00",
+      "sat": "00:00-00:00",
+      "sun": "00:00-00:00"
+    }
   },
   "G26's EU pub server 1":{
     "owner":"Griffon",
     "region":"EU",
     "mode":"OOTB",
     "type":"CTF",
-    "schedule": "01:00-13:00"
-  },
-  "Dodge's Arena Server":{
-    "owner":"Dodge",
-    "region":"NA",
-    "mode":"GOTY",
-    "type":"Arena",
-    "schedule": "00:00-24:00"
-  },
-  "NA TDM":{
-    "owner":"Other",
-    "region":"NA",
-    "mode":"OOTB",
-    "type":"TDM",
-    "schedule": "00:00-24:00"
-  },
-  "Dodge's GOTY Server":{
-    "owner":"Dodge",
-    "region":"NA",
-    "mode":"GOTY",
-    "type":"CTF",
-    "schedule": "00:00-24:00"
-  },
-  "Dodge's Map Testing S":{
-    "owner":"Dodge",
-    "region":"NA",
-    "mode":"GOTY",
-    "type":"CTF",
-    "schedule": "00:00-24:00"
+    "schedule":{
+      "mon": "17:00-01:00",
+      "tue": "17:00-01:00",
+      "wed": "17:00-01:00",
+      "thu": "17:00-01:00",
+      "fri": "17:00-01:00",
+      "sat": "11:00-01:00",
+      "sun": "11:00-01:00"
+    }
   },
   "G26's EU pub server 2":{
     "owner":"Griffon",
     "region":"EU",
     "mode":"GOTY",
     "type":"CTF",
-    "schedule": "00:00-24:00"
+    "schedule":{
+      "mon": "17:00-01:00",
+      "tue": "17:00-01:00",
+      "wed": "17:00-01:00",
+      "thu": "17:00-01:00",
+      "fri": "17:00-01:00",
+      "sat": "11:00-01:00",
+      "sun": "11:00-01:00"
+    }
   },
-  "Honor Arena 1":{
-    "owner":"Chicken",
+  "G26's NA pub server 1":{
+    "owner":"Griffon",
     "region":"NA",
     "mode":"OOTB",
-    "type":"Arena",
-    "schedule": "00:00-24:00"
+    "type":"CTF",
+    "schedule":{
+      "mon": "23:00-06:00",
+      "tue": "23:00-06:00",
+      "wed": "23:00-06:00",
+      "thu": "23:00-06:00",
+      "fri": "23:00-06:00",
+      "sat": "23:00-06:00",
+      "sun": "23:00-06:00"
+    }
   },
-  "Honor Arena 2":{
-    "owner":"Chicken",
+  "NA TDM":{
+    "owner":"Griffon",
     "region":"NA",
     "mode":"OOTB",
-    "type":"Arena",
-    "schedule": "00:00-24:00"
+    "type":"TDM",
+    "schedule":{
+      "mon": "23:00-06:00",
+      "tue": "23:00-06:00",
+      "wed": "23:00-06:00",
+      "thu": "23:00-06:00",
+      "fri": "23:00-06:00",
+      "sat": "23:00-06:00",
+      "sun": "23:00-06:00"
+    }
   }
 }

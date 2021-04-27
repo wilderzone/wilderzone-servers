@@ -221,17 +221,17 @@ footer img{
   margin-top: 6px;
   margin-left: 10px;
   border-right: 1px solid lightgrey;
-}
+}/*
 .serverItemInfo:nth-child(2){
   width: 50px;
-}
-.serverItemInfo:nth-child(3){
+}*/
+.serverItemInfo:nth-child(2){
   width: 220px;
 }
-.serverItemInfo:nth-child(4){
+.serverItemInfo:nth-child(3){
   width: 100px;
 }
-.serverItemInfo:nth-child(5){
+.serverItemInfo:nth-child(4){
   width: 130px;
 }
 .serverItemInfo:last-child{

@@ -1,47 +1,29 @@
 {
-  "online_players": 17,
-  "online_servers":{
-    "AUS Pub Server 1":{
+  "online_players_list":["DaSexyChosenOne","Karuciel","Sacrificium","Gredwa","Pyrex","Gryoz","Legend911","Frayz0r","Sparx","Agilent","Mikesters","IcedWinds","Mal","Potter","Griffon26","Zeke","Shaoliin"],
+  "online_servers_list":[
+    {
+      "locked":false,
+      "name":"G26's EU pub server 1",
       "mode":"OOTB",
       "type":"CTF",
       "map":"Raindance",
       "players":["DaSexyChosenOne","Karuciel","Sacrificium","Gredwa","Pyrex","Gryoz"]
     },
-    "G26's EU pub server 1":{
+    {
+      "locked":false,
+      "name":"G26's EU pub server 2",
       "mode":"GOTY",
       "type":"CTF",
       "map":"Katabatic",
       "players":["Legend911","Frayz0r","Sparx","Agilent","Mikesters"]
     },
-    "NA TDM":{
+    {
+      "locked":false,
+      "name":"NA TDM",
       "mode":"OOTB",
       "type":"TDM",
       "map":"Katabatic Night",
       "players":["IcedWinds","Mal","Potter","Griffon26","Zeke","Shaoliin"]
-    },
-    "Dodge's Arena Server":{
-      "mode":"GOTY",
-      "type":"Arena",
-      "map":"Lava Arena",
-      "players":[]
-    },
-    "Dodge's GOTY Server":{
-      "mode":"GOTY",
-      "type":"CTF",
-      "map":"Drydock",
-      "players":[]
-    },
-    "Dodge's Map Testing S":{
-      "mode":"GOTY",
-      "type":"CTF",
-      "map":"Test",
-      "players":[]
-    },
-    "G26's EU pub server 2":{
-      "mode":"GOTY",
-      "type":"CTF",
-      "map":"Ice Coaster",
-      "players":[]
     }
-  }
+  ]
 }
