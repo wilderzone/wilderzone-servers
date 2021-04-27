@@ -189,14 +189,26 @@
       
       var i = 0;
       while(i < 48){
-        if(i == gmtHour){
-          output += '<span style="background-color:lightgrey"></span>';
-        }else if(i < startHour){
-          output += '<span style="background-color:#B0C2FF"></span>';
-        }else if(i >= startHour && i < endHour){
-          output += '<span style="background-color:#4570FF"></span>';
-        }else if(i >= endHour){
-          output += '<span style="background-color:#B0C2FF"></span>';
+        if(startHour <= endHour){
+          if(i == gmtHour){ //Current time
+            output += '<span style="background-color:lightgrey"></span>';
+          }else if(i < startHour){ //Before the start hour
+            output += '<span style="background-color:#B0C2FF"></span>';
+          }else if(i >= startHour && i < endHour){ //Between the start hour and the end hour
+            output += '<span style="background-color:#4570FF"></span>';
+          }else if(i >= endHour){ //After the end hour
+            output += '<span style="background-color:#B0C2FF"></span>';
+          }
+        }else{ //If the schedule times wrap
+          if(i == gmtHour){ //Current time
+            output += '<span style="background-color:lightgrey"></span>';
+          }else if(i < endHour){ //Before the start hour
+            output += '<span style="background-color:#4570FF"></span>';
+          }else if(i >= endHour && i < startHour){ //Between the start hour and the end hour
+            output += '<span style="background-color:#B0C2FF"></span>';
+          }else if(i >= startHour){ //After the end hour
+            output += '<span style="background-color:#4570FF"></span>';
+          }
         }
         i++;
       }
