@@ -133,7 +133,7 @@
                 var serverStatus = '<img src="../icons/dot_red_24dp.svg" draggable="false">Offline';
                 sdata["online_servers_list"].forEach(function(c){
                   if(k == c["name"]){
-                    serverStatus = '<img src="../icons/dot_green_24dp.svg" draggable="false">Online';
+                    serverStatus = '<img style="animation:1.2s ease loading infinite;" src="../icons/dot_green_24dp.svg" draggable="false">Online';
                   }
                 });
                 var item = '<tr>'
