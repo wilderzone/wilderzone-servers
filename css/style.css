@@ -295,20 +295,23 @@ footer img{
 }
 #scheduleTable td:nth-child(3){
   padding-left: 1px;
+  background-color:#B0C2FF;
 }
 #scheduleTable td:nth-child(3)::before{
   content: "00:00";
   position: absolute;
   z-index: 1;
-  transform: translateX(0.5ch);
+  transform: translate(0.5ch, 3px);
   color: white;
+  font-size: 12px;
 }
 #scheduleTable td:nth-child(3)::after{
   content: "24:00";
   position: absolute;
   z-index: 1;
-  transform: translateX(-5ch);
+  transform: translate(-5ch, 3px);
   color: white;
+  font-size: 12px;
 }
 #scheduleTable, th, td{
   border: 1px solid grey;
@@ -331,7 +334,16 @@ footer img{
   display: inline-block;
   vertical-align: top;
   width: calc(100% / 48);
-  height: 24px;
+  height: 25px;
+}
+#scheduleTable span p{
+  margin: unset;
+  margin-top: 3px;
+  margin-left: 4px;
+  color: white;
+  font-size: 12px;
+  text-align: center;
+  overflow: show;
 }
 .scheduleKey{
   width: calc(19ch + 20px);

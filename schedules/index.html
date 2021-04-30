@@ -191,21 +191,31 @@
       while(i < 48){
         if(startHour <= endHour){
           if(i == gmtHour){ //Current time
-            output += '<span style="background-color:lightgrey"></span>';
+            output += '<span style="background-color:lightgrey"><p class="hidden">' + Math.trunc(gmtHour / 2) + '</p></span>';
+          }else if(i == startHour - 2){ //Before the start hour
+            output += '<span><p>' + Math.trunc(i / 2) + ':00</p></span>';
           }else if(i < startHour){ //Before the start hour
-            output += '<span style="background-color:#B0C2FF"></span>';
+            output += '<span></span>';
+          }else if(i == startHour){ //On the start hour
+            output += '<span style="background-color:#4570FF"><p>' + Math.trunc(i / 2) + ':00</p></span>';
           }else if(i >= startHour && i < endHour){ //Between the start hour and the end hour
             output += '<span style="background-color:#4570FF"></span>';
-          }else if(i >= endHour){ //After the end hour
-            output += '<span style="background-color:#B0C2FF"></span>';
+          }else if(i == endHour){ //On the end hour
+            output += '<span><p>' + Math.trunc(i / 2) + ':00</p></span>';
+          }else if(i > endHour){ //After the end hour
+            output += '<span></span>';
           }
         }else{ //If the schedule times wrap
           if(i == gmtHour){ //Current time
-            output += '<span style="background-color:lightgrey"></span>';
+            output += '<span style="background-color:lightgrey"><p class="hidden">' + Math.trunc(gmtHour / 2) + '</p></span>';
           }else if(i < endHour){ //Before the start hour
             output += '<span style="background-color:#4570FF"></span>';
+          }else if(i == endHour){ //On the start hour
+            output += '<span><p>' + Math.trunc(i / 2) + ':00</p></span>';
+          }else if(i == startHour - 2){ //On the end hour
+            output += '<span><p>' + Math.trunc(i / 2) + ':00</p></span>';
           }else if(i >= endHour && i < startHour){ //Between the start hour and the end hour
-            output += '<span style="background-color:#B0C2FF"></span>';
+            output += '<span></span>';
           }else if(i >= startHour){ //After the end hour
             output += '<span style="background-color:#4570FF"></span>';
           }
