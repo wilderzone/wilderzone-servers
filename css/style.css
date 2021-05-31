@@ -14,7 +14,7 @@ html{
 }
 body{
   margin: var(--bodyMargin);
-  font-family: Segoe UI;
+  font-family: Segoe UI, sans-serif;
   background-color: #FCFCFD;
   user-select: none;
 }
