@@ -215,23 +215,28 @@ footer img{
   background-color: var(--bad);
 }
 .serverItemInfo{
+  position: relative;
   display: inline-block;
   vertical-align: top;
   width: 100px;
   margin-top: 6px;
   margin-left: 10px;
   border-right: 1px solid lightgrey;
-}/*
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 .serverItemInfo:nth-child(2){
   width: 50px;
-}*/
-.serverItemInfo:nth-child(2){
-  width: 220px;
+  overflow: visible;
 }
 .serverItemInfo:nth-child(3){
-  width: 100px;
+  width: 220px;
 }
 .serverItemInfo:nth-child(4){
+  width: 100px;
+}
+.serverItemInfo:nth-child(5){
   width: 130px;
 }
 .serverItemInfo:last-child{
@@ -249,6 +254,30 @@ footer img{
   margin-top: unset;
   margin-right: 8px;
   user-select: none;
+}
+.OOTB-MODE::after{
+  content: "";
+  position: absolute;
+  z-index: 0;
+  top: 1px;
+  left: -5px;
+  width: calc(100% + 2px);
+  height: calc(100% - 2px);
+  background-color: blue;
+  border-radius: 7px;
+  opacity: 0.4;
+}
+.GOTY-MODE::after{
+  content: "";
+  position: absolute;
+  z-index: 0;
+  top: 1px;
+  left: -5px;
+  width: calc(100% + 2px);
+  height: calc(100% - 2px);
+  background-color: red;
+  border-radius: 7px;
+  opacity: 0.4;
 }
 
 .playerItem{
