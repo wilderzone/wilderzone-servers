@@ -265,7 +265,7 @@ footer img{
   height: calc(100% - 2px);
   background-color: blue;
   border-radius: 7px;
-  opacity: 0.4;
+  opacity: 0.3;
 }
 .GOTY-MODE::after{
   content: "";
@@ -277,7 +277,7 @@ footer img{
   height: calc(100% - 2px);
   background-color: red;
   border-radius: 7px;
-  opacity: 0.4;
+  opacity: 0.3;
 }
 
 .playerItem{
