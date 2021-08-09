@@ -7,7 +7,7 @@
   --bad: #DF0000;
   --playerItemHeight: 16px;
   --smallItemHeight: 50px;
-  --smallItemInnerWidth: 28ch;
+  --smallItemInnerWidth: 22ch;
 }
 html{
   height: 100%;
