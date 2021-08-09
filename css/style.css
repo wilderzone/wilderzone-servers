@@ -221,7 +221,9 @@ footer img{
   width: 100px;
   margin-top: 6px;
   margin-left: 10px;
+  padding-right: 5px;
   border-right: 1px solid lightgrey;
+  box-sizing: border-box;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
