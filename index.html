@@ -37,7 +37,7 @@
         </div>
       </div>
       
-      <div class="refresh" title="Refresh Server Data"><img src="assets/icons/refresh_white_24dp.svg" draggable="false" alt="Refresh Button" onclick="getServerData()"><p>REFRESH</p></div>
+      <div class="refresh refreshButtonIsRefreshing" title="Refresh Server Data" onclick="getServerData()"><span></span><p>REFRESH</p></div>
       <div class="alert alert_info" style="width:calc(100% - 70px);"><img src="assets/icons/groups-24px.svg" draggable="false" alt=""><p>Loading...</p></div>
       
       <div id="pageContent">
@@ -77,6 +77,8 @@
     function getServerData(){
       if(data_fetch_enable == 1){
         data_fetch_enable = 0;
+        $(".refresh").addClass("refreshButtonIsRefreshing");
+        
         $.ajax({
           dataType:"json",
           url:"registered_servers.json",
@@ -91,6 +93,7 @@
                 sdata = data2;
                 updateServerList();
                 updateCurrentlyOnline();
+                $(".refresh").removeClass("refreshButtonIsRefreshing");
                 data_fetch_enable = 1;
               },
               error:function(xhr, status, err){
@@ -98,6 +101,8 @@
                 $(".alert").children(":nth-child(2)").html("Error: " + xhr.status);
                 $(".alert").children(":nth-child(1)").attr("src", "assets/icons/cancel_24dp.svg");
                 $(".alert").addClass("alert_error");
+                
+                $(".refresh").removeClass("refreshButtonIsRefreshing");
                 
                 $("#pageContent").empty();
                 var item = '<h2 style="margin-top:100px;text-align:center;">Server data couldn&#39;t be retrieved. Please try again later.</h2>';
@@ -111,6 +116,8 @@
             $(".alert").children(":nth-child(2)").html("Error: " + xhr.status);
             $(".alert").children(":nth-child(1)").attr("src", "assets/icons/cancel_24dp.svg");
             $(".alert").addClass("alert_error");
+            
+            $(".refresh").removeClass("refreshButtonIsRefreshing");
             
             $("#pageContent").empty();
             var item = '<h2 style="margin-top:100px;text-align:center;">Server data couldn&#39;t be retrieved. Please try again later.</h2>';
