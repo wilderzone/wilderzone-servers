@@ -94,6 +94,7 @@
       if(data_fetch_enable == 1){
         data_fetch_enable = 0;
         $(".refresh").addClass("refreshButtonIsRefreshing");
+        $("title").html("Refreshing...");
         
         $.ajax({
           dataType:"json",
@@ -110,6 +111,7 @@
                 updateServerList();
                 updateCurrentlyOnline();
                 $(".refresh").removeClass("refreshButtonIsRefreshing");
+                $("title").html("Wilderzone Servers");
                 data_fetch_enable = 1;
               },
               error:function(xhr, status, err){
@@ -119,6 +121,7 @@
                 $(".alert").addClass("alert_error");
                 
                 $(".refresh").removeClass("refreshButtonIsRefreshing");
+                $("title").html("Wilderzone Servers");
                 
                 $("#pageContent").empty();
                 var item = '<h2 style="margin-top:100px;text-align:center;">Server data couldn&#39;t be retrieved. Please try again later.</h2>';
@@ -134,6 +137,7 @@
             $(".alert").addClass("alert_error");
             
             $(".refresh").removeClass("refreshButtonIsRefreshing");
+            $("title").html("Wilderzone Servers");
             
             $("#pageContent").empty();
             var item = '<h2 style="margin-top:100px;text-align:center;">Server data couldn&#39;t be retrieved. Please try again later.</h2>';
