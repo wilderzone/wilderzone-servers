@@ -2,56 +2,59 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Mertics | TA Servers (demo)</title>
-    <meta property="og:title" content="Metrics | TA Servers">
-    <meta name="keywords" content="">
-    <meta name="description" content="">
-    <meta property="og:description" content="">
+    <title>Metrics | Wilderzone Servers</title>
+    <meta property="og:title" content="Metrics | Wilderzone Servers">
+    <meta property="og:site_name" content="Wilderzone Servers">
+    <meta name="keywords" content="Tribes, Ascend, Tribes Ascend, Servers, Info, Community">
+    <meta name="description" content="See who's online and what servers are active with the Wilderzone Servers portal.">
+    <meta property="og:description" content="See who's online and what servers are active with the Wilderzone Servers portal.">
     <meta name="author" content="Giga">
     <meta property="og:type" content="website">
-    <meta property="og:site_name" content="TA Servers">
-    <meta property="og:image" content="">
-    <meta property="og:url" content="https://servers.wilderzone.live/metrics/">
+    <meta property="og:url" content="https://servers.wilderzone.live/">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image:alt" content="">
+    <meta property="og:image" content="https://servers.wilderzone.live/assets/images/site_cover.webp">
+    <meta name="twitter:image:alt" content="Website Preview">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#ffffff">
-    <link rel="shortcut icon" href="../icons/dns_black_24dp.svg">
+    <meta name="theme-color" content="#41637C">
+    <link rel="shortcut icon" href="../assets/icons/ta.webp">
     <link rel="stylesheet" href="../css/style.css">
+    <style>@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@1,700&display=swap');</style>
   </head>
   
   <body>
     <main>
+      <div class="site_background"></div>
+      
       <div id="navbar">
-        <a href="../" class="logo"><img src="../icons/dns_black_24dp.svg" draggable="false" alt=""><div class="title">Servers</div></a>
+        <a href="../" class="logo"><img src="../assets/icons/ta.webp" draggable="false" alt=""><div class="title">SERVERS</div></a>
         
         <div class="navlinks">
           <a href="../"><p>Server List</p><div></div></a>
-          <a href="../schedules/"><p>Schedules</p><div></div></a>
+          <!--<a href="../schedules/"><p>Schedules</p><div></div></a>-->
           <a href="" class="activeNav"><p>Metrics</p><div></div></a>
-          <a href="../about/"><p>About</p><div></div></a>
-          <a href="../login/" style="float: right;" id="loginButton"><p>Login<img src="../icons/login_black_24dp.svg" draggable="false" alt=""></p></a>
+          <!--<a href="../about/"><p>About</p><div></div></a>
+          <a href="../login/" style="float: right;" id="loginButton"><p>Login<img src="../icons/login_black_24dp.svg" draggable="false" alt=""></p></a>-->
         </div>
       </div>
       
-      <img class="refresh" src="../icons/refresh_black_24dp.svg" draggable="false" title="Refresh" alt="Refresh" onclick="clearCanvas();getHistogramData()">
-      <div class="alert hidden" style="width:calc(100% - 70px);"><img src="../icons/cancel_24dp.svg" draggable="false" alt=""><p></p></div>
+      <img class="refresh" src="../assets/icons/refresh_black_24dp.svg" draggable="false" title="Refresh" alt="Refresh" onclick="clearCanvas();getHistogramData()">
+      <div class="alert hidden" style="width:calc(100% - 70px);"><img src="../assets/icons/cancel_24dp.svg" draggable="false" alt=""><p></p></div>
       
       <div id="pageContent">
-        <div id="plotTitle" style="margin-bottom:4px;">Loading...</div>
+        <div id="plotTitle" style="margin-bottom:4px;color:white;">Loading...</div>
         <div id="canvas"></div>
       </div>
     </main>
     
     <footer>
-      <p>Designed&nbsp;by&nbsp;Gigabyte5671&nbsp;&copy;2021&nbsp;|&nbsp;Gigabyte#3310&nbsp;|&nbsp;Thanks&nbsp;for&nbsp;your&nbsp;support<img src="../icons/heart-24px.svg" draggable="false" alt=""></p>
+      <p>Designed&nbsp;by&nbsp;Gigabyte5671&nbsp;&copy;2021&nbsp;|&nbsp;Gigabyte#3310&nbsp;|&nbsp;Thanks&nbsp;for&nbsp;your&nbsp;support<img src="../assets/icons/heart-24px.svg" draggable="false" alt=""></p>
     </footer>
   </body>
   
   <script src="../lib/site_message.js"></script>
   <script src="../lib/jquery.min.js"></script>
   <script src="../lib/cookieManager.min.js"></script>
-  <script>if(checkCookie("arl") === true){$("#loginButton").attr("href", "../admin/");$("#loginButton").children().first().html('Admin<img src="../icons/account_circle_24dp.svg" draggable="false" alt="">');}</script>
+  <!--<script>if(checkCookie("arl") === true){$("#loginButton").attr("href", "../admin/");$("#loginButton").children().first().html('Admin<img src="../icons/account_circle_24dp.svg" draggable="false" alt="">');}</script>-->
   <script src="../lib/statusURL.js"></script>
   <script src="../lib/p5.min.js"></script>
   <script src="../lib/drawHistogramPlot.js"></script>
