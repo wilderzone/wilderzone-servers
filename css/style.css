@@ -231,6 +231,9 @@ footer img{
 .alert_info{
   background-color: #4570FF;
 }
+.alert_message{
+  background-color: #8DA1B0;
+}
 .alert_success{
   background-color: #00DF00;
 }
@@ -240,9 +243,19 @@ footer img{
 .alert_error{
   background-color: #DF0000;
 }
+#alert{
+  top: 55px;
+}
+#hirez{
+  top: 88px;
+  background-color: #A5A0FF;
+}
+#message{
+  top: 121px;
+}
 
 #pageContent{
-  margin: 100px 0px 60px 0px;
+  margin: 120px 0px 60px 0px;
 }
 
 /*=============================================*/

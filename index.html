@@ -54,7 +54,9 @@
       </div>
       
       <div class="refresh refreshButtonIsRefreshing" title="Refresh Server Data" onclick="getServerData()"><span></span><p>REFRESH</p></div>
-      <div class="alert alert_info" style="width:calc(100% - 70px);"><img src="assets/icons/groups-24px.svg" draggable="false" alt=""><p>Loading...</p></div>
+      <div id="alert" class="alert alert_info" style="width:calc(100% - 70px);"><img src="assets/icons/groups-24px.svg" draggable="false" alt=""><p>Loading...</p></div>
+      <div id="hirez" class="alert alert_info" style="width:calc(100% - 70px);"><img src="assets/icons/groups-24px.svg" draggable="false" alt=""><p>Loading...</p></div>
+      <!--<div id="message" class="alert alert_message" style="width:calc(100% - 70px);"><img src="assets/icons/info_black_24dp.svg" draggable="false" alt=""><p>Loading...</p></div>-->
       
       <div id="pageContent">
         <div class="heading"></div>
@@ -89,6 +91,7 @@
   <script>
     var rdata;
     var sdata;
+    var hdata;
     var data_fetch_enable = 1;
     function getServerData(){
       if(data_fetch_enable == 1){
@@ -116,9 +119,9 @@
               },
               error:function(xhr, status, err){
                 console.log("Error " + xhr.status);
-                $(".alert").children(":nth-child(2)").html("Error: " + xhr.status);
-                $(".alert").children(":nth-child(1)").attr("src", "assets/icons/cancel_24dp.svg");
-                $(".alert").addClass("alert_error");
+                $("#alert").children(":nth-child(2)").html("Error: " + xhr.status);
+                $("#alert").children(":nth-child(1)").attr("src", "assets/icons/cancel_24dp.svg");
+                $("#alert").addClass("alert_error");
                 
                 $(".refresh").removeClass("refreshButtonIsRefreshing");
                 $("title").html("Wilderzone Servers");
@@ -132,9 +135,9 @@
           },
           error:function(xhr, status, err){
             console.log("Error " + xhr.status);
-            $(".alert").children(":nth-child(2)").html("Error: " + xhr.status);
-            $(".alert").children(":nth-child(1)").attr("src", "assets/icons/cancel_24dp.svg");
-            $(".alert").addClass("alert_error");
+            $("#alert").children(":nth-child(2)").html("Error: " + xhr.status);
+            $("#alert").children(":nth-child(1)").attr("src", "assets/icons/cancel_24dp.svg");
+            $("#alert").addClass("alert_error");
             
             $(".refresh").removeClass("refreshButtonIsRefreshing");
             $("title").html("Wilderzone Servers");
@@ -145,8 +148,39 @@
             data_fetch_enable = 1;
           }
         });
+        
+        $.ajax({
+          dataType:"json",
+          url:"https://wilderzone-cors.herokuapp.com/https://api.steampowered.com/ISteamUserStats/GetNumberOfCurrentPlayers/v1/?appid=17080",
+          cache:false,
+          success:function(data3){
+            console.log(data3);
+            hdata = data3;
+            updateCurrentlyOnline();
+            $(".refresh").removeClass("refreshButtonIsRefreshing");
+            $("title").html("Wilderzone Servers");
+            data_fetch_enable = 1;
+          },
+          error:function(xhr, status, err){
+            console.log("Error " + xhr.status);
+            /*$("#alert").children(":nth-child(2)").html("Error: " + xhr.status);
+            $("#alert").children(":nth-child(1)").attr("src", "assets/icons/cancel_24dp.svg");
+            $("#alert").addClass("alert_error");
+            
+            $(".refresh").removeClass("refreshButtonIsRefreshing");
+            $("title").html("Wilderzone Servers");
+            
+            $("#pageContent").empty();
+            var item = '<h2 style="margin-top:100px;text-align:center;">Server data couldn&#39;t be retrieved. Please try again later.</h2>';
+            $("#pageContent").append(item);*/
+            data_fetch_enable = 1;
+          }
+        });
       }
     }
     getServerData();
+  </script>
+  <script>
+    
   </script>
 </html>
