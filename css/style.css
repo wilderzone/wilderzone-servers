@@ -353,6 +353,7 @@ footer img{
   margin-right: 5px;
   border: unset;
   cursor: pointer;
+  text-overflow: unset;
 }
 .serverItemInfo:last-child p{
   display: inline-block;
