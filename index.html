@@ -119,7 +119,7 @@
               },
               error:function(xhr, status, err){
                 console.log("Error " + xhr.status);
-                $("#alert").children(":nth-child(2)").html("Error: " + xhr.status);
+                $("#alert").children(":nth-child(2)").html("Error: " + xhr.status + (xhr.status == "429" ? ". Too many requests. Please wait a few minutes before refreshing." : ""));
                 $("#alert").children(":nth-child(1)").attr("src", "assets/icons/cancel_24dp.svg");
                 $("#alert").addClass("alert_error");
                 
@@ -135,7 +135,7 @@
           },
           error:function(xhr, status, err){
             console.log("Error " + xhr.status);
-            $("#alert").children(":nth-child(2)").html("Error: " + xhr.status);
+            $("#alert").children(":nth-child(2)").html("Error: " + xhr.status + (xhr.status == "429" ? ". Too many requests. Please wait a few minutes before refreshing." : ""));
             $("#alert").children(":nth-child(1)").attr("src", "assets/icons/cancel_24dp.svg");
             $("#alert").addClass("alert_error");
             
@@ -163,14 +163,14 @@
           },
           error:function(xhr, status, err){
             console.log("Error " + xhr.status);
-            /*$("#alert").children(":nth-child(2)").html("Error: " + xhr.status);
-            $("#alert").children(":nth-child(1)").attr("src", "assets/icons/cancel_24dp.svg");
-            $("#alert").addClass("alert_error");
+            $("#hirez").children(":nth-child(2)").html("Error: " + xhr.status + (xhr.status == "429" ? ". Too many requests. Please wait a few minutes before refreshing." : ""));
+            $("#hirez").children(":nth-child(1)").attr("src", "assets/icons/cancel_24dp.svg");
+            $("#hirez").addClass("alert_error");
             
             $(".refresh").removeClass("refreshButtonIsRefreshing");
             $("title").html("Wilderzone Servers");
             
-            $("#pageContent").empty();
+            /*$("#pageContent").empty();
             var item = '<h2 style="margin-top:100px;text-align:center;">Server data couldn&#39;t be retrieved. Please try again later.</h2>';
             $("#pageContent").append(item);*/
             data_fetch_enable = 1;
