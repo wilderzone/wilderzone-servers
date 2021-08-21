@@ -68,6 +68,7 @@ footer img{
   background-size: cover;
   background-position: center;
   opacity: 0.9;
+  filter: blur(30px);
 }
 
 #navbar{
