@@ -13,6 +13,12 @@
       "type": "string"
     }
   },
+  "Roles":{
+    "Note":{
+      "type": "warn",
+      "info": "This feature has not been implimented yet."
+    }
+  },
   "Rules":{
     "Note":{
       "type": "warn",
