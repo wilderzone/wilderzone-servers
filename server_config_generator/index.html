@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta property="og:title" content="">
+    <meta property="og:site_name" content="">
+    <meta name="description" content="">
+    <meta property="og:description" content="">
+    <meta name="author" content="Gigabyte5671">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary">
+    <meta property="og:url" content="">
+    <meta name="theme-color" content="#FFFFFF">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <style>@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@1,700&display=swap');</style>
+    <link rel="shortcut icon" href="../assets/icons/dns_black_24dp.svg">
+  </head>
+  
+  <body>
+    <main>
+      <h1>Server Config Generator</h1>
+      <div id="config_generator_container">
+        
+      </div>
+      <div id="config_output_container">
+        <div>
+          <img src="../assets/icons/Output.svg" draggable="false">
+          <p>Output</p>
+        </div>
+        <textarea id="config_output" rows="30" cols="70"></textarea>
+      </div>
+    </main>
+  </body>
+  
+  <script src="../lib/jquery.min.js"></script>
+  <script src="updateAdminConsole.js"></script>
+  <script>
+    function changeTab(event){
+      var currentTab = $(".active_config_tab").prevAll().length + 1;
+      var selectedTab = $(event.target).prevAll().length + 1;
+      
+      $(".config_tab").removeClass("active_config_tab");
+      $("#config_tabs").children(":nth-child(" + selectedTab + ")").addClass("active_config_tab");
+      
+      $(".config_section").addClass("hidden");
+      $("#configs").children(":nth-child(" + selectedTab + ")").removeClass("hidden");
+    }
+  </script>
+</html>

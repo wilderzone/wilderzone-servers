@@ -1,0 +1,146 @@
+{
+  "Overview":{
+    "Name":{
+      "type": "string"
+    },
+    "Description":{
+      "type": "string"
+    },
+    "Message_of_the_Day":{
+      "type": "string"
+    },
+    "Notes":{
+      "type": "string"
+    }
+  },
+  "Rules":{
+    "Note":{
+      "type": "warn",
+      "info": "This feature has not been implimented yet."
+    },
+    "Game_Type":{
+      "type": "dropdown",
+      "options": ["GOTY","OOTB"]
+    },
+    "Game_Mode":{
+      "type": "dropdown",
+      "options": ["Arena","CaH","CTF","Rabbit","TDM"]
+    },
+    "Physics_Preset":{
+      "type": "dropdown",
+      "options": ["Default","Impulse"]
+    }
+  },
+  "Maps":{
+    "Arena_Maps":{
+      "type": "toggle",
+      "options": ["Air Arena","Fraytown","Hinterlands","Lava Arena","Undercroft","Walled In","Whiteout"]
+    },
+    "CaH_Maps":{
+      "type": "toggle",
+      "options": ["Canyon Crusade Revival","Katabatic","Outskirts","Raindance","Sulfur Cove","Tartarus"]
+    },
+    "CTF_Maps":{
+      "type": "toggle",
+      "options": ["Arx Novena","Bella Omega","Blueshift","Canyon Crusade Revival","Crossfire","Dangerous Crossing","Drydock","Hellfire","Icecoaster","Katabatic","Perdition","Permafrost","Raindance","Stonehenge","Sunstar","Tartarus","Temple Ruins","Terminus"]
+    },
+    "Rabbit_Maps":{
+      "type": "toggle",
+      "options": ["Drydock Night","Inferno","Miasma","Nightabatic","Outskirts","Quicksand","Sulfur Cove"]
+    },
+    "TDM_Maps":{
+      "type": "toggle",
+      "options": ["Drydock Night","Inferno","Miasma","Nightabatic","Outskirts","Quicksand","Sulfur Cove"]
+    }
+  },
+  "Classes":{
+    "Note":{
+      "type": "warn",
+      "info": "This feature has not been implimented yet."
+    },
+    "Allowed_Classes":{
+      "type": "toggle",
+      "options": ["Light","Medium","Heavy"]
+    },
+    "Light_Weapons":{
+      "type": "toggle",
+      "options": ["Light Spinfusor","Bolt Launcher","Light Twinfusor","Light Blinksfusor","Jackal","Light Grenade Launcher","Phase Rifle","BXT1 Rifle","Falcon","Sparrow","Light Assault Rifle","Throwing Knives","Shotgun","Shocklance","Impact Nitron","Explosive Nitron","Sticky Grenades","Claymore Mine","Prism Mine","T5 Grenade","Chaff Grenade"]
+    },
+    "Light_Packs":{
+      "type": "toggle",
+      "options": ["Thrust","Energy","Stealth","Utility"]
+    },
+    "Medium_Weapons":{
+      "type": "toggle",
+      "options": ["Spinfusor","Thumper","Twinfusor","Thumper DX","Blinksfusor","Arx Buster","Grenade Launcher","Advanced Repair Tool","ELF Projector","Honorfusor","Assault Rifle","Eagle Pistol","Nova Blaster","NJ4 SMG","NJ5-B SMG","Plasma Gun","Sawed-Off Shotgun","Flak Cannon","Motion Sensor","Blackout Grenade","Anti-Personnel Grenade","EMP Grenade","Cluster Grenade"]
+    },
+    "Medium_Packs":{
+      "type": "toggle",
+      "options": ["Light Turret","EXR Turret","Drop Station","Jammer","Shield","Utility"]
+    },
+    "Heavy_Weapons":{
+      "type": "toggle",
+      "options": ["Heavy Spinfusor","Heavy Bolt Launcher","Heavy Blinksfusor","Heavy Twinfusor","Fusion Mortar","MIRV Launcher","Saber Launcher","Gladiator","Chain Gun","Nova Colt","X1 LMG","Plasma Cannon","Nova Blaster MX","Automatic Shotgun","EFG","Frag Grenade","Mines","Fractal Grenade"]
+    },
+    "Heavy_Packs":{
+      "type": "toggle",
+      "options": ["Force Field","Shield","Energy","Utility"]
+    }
+  },
+  "Compute":{
+    "Note":{
+      "type": "warn",
+      "info": "This feature has not been implimented yet."
+    },
+    "Provider":{
+      "type": "info",
+      "info": "Not yet available."
+    },
+    "Region":{
+      "type": "info",
+      "info": "Not yet available."
+    },
+    "Server_Type":{
+      "type": "info",
+      "info": "Not yet available."
+    },
+    "Billing":{
+      "type": "info",
+      "info": "Not yet available."
+    }
+  },
+  "Schedule":{
+    "Note":{
+      "type": "warn",
+      "info": "This feature has not been implimented yet."
+    },
+    "Monday":{
+      "type": "time",
+      "options": ["00:00","00:30","01:00","01:30","02:00","02:30","03:00","03:30","04:00","04:30","05:00","05:30","06:00","06:30","07:00","07:30","08:00","08:30","09:00","09:30","10:00","10:30","11:00","11:30","12:00","12:30","13:00","13:30","14:00","14:30","15:00","15:30","16:00","16:30","17:00","17:30","18:00","18:30","19:00","19:30","20:00","20:30","21:00","21:30","22:00","22:30","23:00","23:30","24:00"]
+    },
+    "Tuesday":{
+      "type": "time",
+      "options": ["00:00","00:30","01:00","01:30","02:00","02:30","03:00","03:30","04:00","04:30","05:00","05:30","06:00","06:30","07:00","07:30","08:00","08:30","09:00","09:30","10:00","10:30","11:00","11:30","12:00","12:30","13:00","13:30","14:00","14:30","15:00","15:30","16:00","16:30","17:00","17:30","18:00","18:30","19:00","19:30","20:00","20:30","21:00","21:30","22:00","22:30","23:00","23:30","24:00"]
+    },
+    "Wednesday":{
+      "type": "time",
+      "options": ["00:00","00:30","01:00","01:30","02:00","02:30","03:00","03:30","04:00","04:30","05:00","05:30","06:00","06:30","07:00","07:30","08:00","08:30","09:00","09:30","10:00","10:30","11:00","11:30","12:00","12:30","13:00","13:30","14:00","14:30","15:00","15:30","16:00","16:30","17:00","17:30","18:00","18:30","19:00","19:30","20:00","20:30","21:00","21:30","22:00","22:30","23:00","23:30","24:00"]
+    },
+    "Thursday":{
+      "type": "time",
+      "options": ["00:00","00:30","01:00","01:30","02:00","02:30","03:00","03:30","04:00","04:30","05:00","05:30","06:00","06:30","07:00","07:30","08:00","08:30","09:00","09:30","10:00","10:30","11:00","11:30","12:00","12:30","13:00","13:30","14:00","14:30","15:00","15:30","16:00","16:30","17:00","17:30","18:00","18:30","19:00","19:30","20:00","20:30","21:00","21:30","22:00","22:30","23:00","23:30","24:00"]
+    },
+    "Friday":{
+      "type": "time",
+      "options": ["00:00","00:30","01:00","01:30","02:00","02:30","03:00","03:30","04:00","04:30","05:00","05:30","06:00","06:30","07:00","07:30","08:00","08:30","09:00","09:30","10:00","10:30","11:00","11:30","12:00","12:30","13:00","13:30","14:00","14:30","15:00","15:30","16:00","16:30","17:00","17:30","18:00","18:30","19:00","19:30","20:00","20:30","21:00","21:30","22:00","22:30","23:00","23:30","24:00"]
+    },
+    "Saturday":{
+      "type": "time",
+      "options": ["00:00","00:30","01:00","01:30","02:00","02:30","03:00","03:30","04:00","04:30","05:00","05:30","06:00","06:30","07:00","07:30","08:00","08:30","09:00","09:30","10:00","10:30","11:00","11:30","12:00","12:30","13:00","13:30","14:00","14:30","15:00","15:30","16:00","16:30","17:00","17:30","18:00","18:30","19:00","19:30","20:00","20:30","21:00","21:30","22:00","22:30","23:00","23:30","24:00"]
+    },
+    "Sunday":{
+      "type": "time",
+      "options": ["00:00","00:30","01:00","01:30","02:00","02:30","03:00","03:30","04:00","04:30","05:00","05:30","06:00","06:30","07:00","07:30","08:00","08:30","09:00","09:30","10:00","10:30","11:00","11:30","12:00","12:30","13:00","13:30","14:00","14:30","15:00","15:30","16:00","16:30","17:00","17:30","18:00","18:30","19:00","19:30","20:00","20:30","21:00","21:30","22:00","22:30","23:00","23:30","24:00"]
+    }
+  }
+}

@@ -1,0 +1,338 @@
+:root{
+  --primary_color: #41637C;
+  --primary_color_dark: #000000;
+  --primary_color_light: #6DACC8;
+  
+  --secondary_color: #B72C2D;
+  --secondary_color_dark: #000000;
+  --secondary_color_light: #D88D8F;
+  
+  --tertiary_color: #AA00FF;
+  
+  --acrylic_lightblue: #4CC2FF;
+}
+
+*{
+  display: flex;
+  font-family: Segoe UI, sans-serif;
+  box-sizing: border-box;
+}
+head{
+  display: none;
+}
+script{
+  display: none;
+}
+body{
+  width: 100%;
+  background-color: white;
+}
+main{
+  flex-direction: column;
+  width: 100%;
+}
+h1{
+  margin: 0px 0px 20px 0px;
+}
+
+
+/*=============================================*/
+/*--------------------Config-------------------*/
+/*=============================================*/
+#config_generator_container{
+  position: relative;
+  flex-direction: row;
+  width: 100%;
+  margin: 30px 0px 30px 0px;
+}
+
+
+#config_left{
+  flex-direction: column;
+  align-items: center;
+  width: 150px;
+  min-width: 150px;
+  height: 100%;
+  border: 1px solid grey;
+  border-right: unset;
+  border-radius: 3px 0px 0px 3px;
+  overflow: hidden;
+}
+.config_left_tab{
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  height: 40px;
+  min-height: 40px;
+  max-height: 40px;
+  border-bottom: 1px solid lightgrey;
+  opacity: 0.6;
+  filter: grayscale(1);
+  transition: 0.2s ease all;
+  cursor: pointer;
+}
+.config_left_tab span{
+  display: block;
+  width: 4px;
+  height: 12px;
+  margin: 0px 0px 0px 3px;
+  background-color: var(--acrylic_lightblue);
+  border-radius: 2px;
+  transition: 0.1s ease all;
+  user-select: none;
+  pointer-events: none;
+}
+.config_left_tab p{
+  width: fit-content;
+  font-size: 16px;
+  margin: 0px 0px 0px 7px;
+  color: black;
+  user-select: none;
+  pointer-events: none;
+}
+.config_left_tab:hover{
+  opacity: 1;
+}
+#config_left .active{
+  opacity: 1;
+  filter: grayscale(0);
+}
+#config_left .active span{
+  height: 60%;
+}
+#new_config_button{
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  min-height: 30px;
+  padding: 0px 10px 0px 0px;
+  opacity: 0.7;
+  filter: grayscale(1);
+  transition: 0.2s ease all;
+  cursor: pointer;
+}
+#new_config_button img{
+  display: block;
+  width: 26px;
+  height: 26px;
+  user-select: none;
+  pointer-events: none;
+}
+#new_config_button p{
+  width: fit-content;
+  font-size: 14px;
+  margin: -1px 0px 0px 2px;
+  color: var(--acrylic_lightblue);
+  user-select: none;
+  pointer-events: none;
+}
+#new_config_button:hover{
+  background-color: #F7F7F7;
+  opacity: 1;
+  filter: grayscale(0);
+}
+
+
+#config_right{
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+  max-height: 400px;
+}
+#config_top_tabs_container{
+  flex-wrap: nowrap;
+  flex-direction: row;
+  width: 100%;
+  height: 28px;
+  margin: -27px 0px 0px 0px;
+}
+.config_top_tab{
+  position: relative;
+  z-index: 1;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  height: 100%;
+  padding: 0px 5px 3px 5px;
+  border-top: 1px solid grey;
+  border-right: 1px solid grey;
+  opacity: 0.6;
+  filter: grayscale(1);
+  transition: 0.2s ease all;
+  cursor: pointer;
+}
+.config_top_tab:first-child{
+  margin-left: 0px;
+  border-left: 1px solid grey;
+  border-radius: 3px 0px 0px 0px;
+}
+.config_top_tab:last-child{
+  border-radius: 0px 3px 0px 0px;
+}
+.config_top_tab::after{
+  content: "";
+  position: absolute;
+  z-index: 1;
+  bottom: 0px;
+  display: block;
+  width: 12px;
+  height: 0px;
+  background-color: var(--acrylic_lightblue);
+  border-radius: 2px;
+  transition: 0.1s ease all;
+  user-select: none;
+  pointer-events: none;
+}
+.config_top_tab img{
+  display: block;
+  width: 16px;
+  margin: 0px;
+  user-select: none;
+  pointer-events: none;
+}
+.config_top_tab p{
+  color: black;
+  font-size: 14px;
+  margin: 0px 0px 0px 5px;
+  user-select: none;
+  pointer-events: none;
+}
+.config_top_tab:hover{
+  opacity: 1;
+}
+.config_top_tab:hover::after{
+  height: 2px;
+}
+#config_top_tabs_container .active{
+  border-bottom: 1px solid white;
+  opacity: 1;
+  filter: grayscale(0);
+}
+#config_top_tabs_container .active::after{
+  width: 70%;
+  height: 3px;
+}
+
+
+#config_main{
+  width: 100%;
+  height: 100%;
+  margin: -1px 0px 0px 0px;
+  border: 1px solid grey;
+  border-radius: 0px 3px 3px 0px;
+  overflow: hidden;
+}
+.config_page{
+  flex-direction: column;
+  width: 100%;
+  padding: 10px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.config_option{
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  padding: 10px 0px 10px 0px;
+  border-bottom: 1px solid lightgrey;
+}
+.config_option:last-child{
+  margin-bottom: 20px;
+}
+.config_option p{
+  margin: 0px;
+}
+.config_option .label{
+  width: fit-content;
+  min-width: 180px;
+  margin: 0px 10px 0px 0px;
+}
+.config_note{
+  min-height: 20px;
+  color: red;
+  font-size: 12px;
+  margin: -5px 0px 5px 0px;
+}
+.config_option input{
+  
+}
+.config_option input:focus{
+  outline-color: var(--acrylic_lightblue);
+}
+.config_option .checkboxesOuterBound{
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 100%;
+  padding: 10px 10px 10px 10px;
+}
+.config_option .checkboxesInnerBound{
+  flex-wrap: nowrap;
+  flex-direction: row;
+  align-items: center;
+  width: 250px;
+  margin: 3px 0px 0px 0px;
+}
+.config_option .checkboxesInnerBound label{
+  margin: -2px 0px 0px 0px;
+}
+.adminControl form{
+  display: inline-block;
+  margin-top: 14px;
+  margin-left: 14px;
+}
+.adminControl form:last-child{
+  margin-left: unset;
+}
+.adminControl textarea{
+  margin-top: 14px;
+  margin-bottom: 14px;
+}
+.config_option textarea:focus{
+  outline-color: var(--acrylic_lightblue);
+}
+
+
+#config_output_container{
+  position: relative;
+  flex-direction: column;
+  width: 100%;
+  margin: 0px 0px 30px 0px;
+  padding: 5px 10px 10px 10px;
+  border: 1px solid grey;
+  border-radius: 3px;
+}
+#config_output_container div{
+  flex-direction: row;
+  align-items: center;
+  width: fit-content;
+}
+#config_output_container div img{
+  display: block;
+  width: 22px;
+  height: 22px;
+}
+#config_output_container div p{
+  margin: 0px 0px 0px 5px;
+  font-size: 14px;
+}
+#config_output{
+  width: 100%;
+  margin: 5px 0px 0px 0px;
+}
+#config_output:focus{
+  outline-color: var(--acrylic_lightblue);
+}
+
+
+
+
+.hidden{
+  display: none !important;
+}
