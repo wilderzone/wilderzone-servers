@@ -280,10 +280,12 @@ function saveConfig(config_target){
         var uipv = getUIParamValue(param + "-" + a.split(" ").join("_"));
         newConfig[param.split("-")[0]][param.split("-")[1]][a.split(" ").join("_")] = uipv;
         if(mslp["cmd"] != "" && uipv != "" && uipv != "false"){
-          if(mslp["type"] == "string"){
-            output += mslp["cmd"].split("$").join("'" + uipv + "'") + "&#13;&#10;";
+          if(param.split("-")[0] == "Maps"){
+            output += mslp["cmd"].split("$").join(a.split(" ").join("")) + "&#13;&#10;";
+          }else if(param.split("-")[0] == "Classes"){
+            output += mslp["cmd"].split("$").join("'" + a.split(" ").join(" ") + "'") + "&#13;&#10;";
           }else{
-            output += mslp["cmd"].split("$").join(uipv) + "&#13;&#10;";
+            output += mslp["cmd"].split("$").join(a.split(" ").join("_")) + "&#13;&#10;";
           }
         }
       });
