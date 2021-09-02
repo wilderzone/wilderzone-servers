@@ -31,8 +31,22 @@ main{
   flex-direction: column;
   width: 100%;
 }
-h1{
+
+#title_bar{
+  flex-direction: row;
+  justify-content: flex-start;
+}
+#title_bar img{
+  display: block;
+  width: 30px;
+  margin: -17px 4px 0px 0px;
+}
+#title_bar h1{
   margin: 0px 0px 20px 0px;
+}
+#title_bar p{
+  margin: 21px 0px 0px 10px;
+  font-family: monospace;
 }
 
 
