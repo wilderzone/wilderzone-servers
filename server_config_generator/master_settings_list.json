@@ -98,6 +98,7 @@
       "Arena_Maps":{
         "type": "toggle",
         "options": ["Air Arena","Fraytown","Hinterlands","Lava Arena","Undercroft","Walled In","Whiteout"],
+        "default": true,
         "cmd": "ServerSettings.MapRotation.add(Maps.Arena.$)"
       },
       "CaH_Maps":{
