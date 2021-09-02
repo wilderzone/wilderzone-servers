@@ -1,0 +1,268 @@
+{
+  "General":{
+    "lua_heading": "SERVER INFO",
+    "parameters":{
+      "Name":{
+        "type": "string",
+        "default": "New Server",
+        "cmd": "ServerSettings.Description = $"
+      },
+      "Description":{
+        "type": "string",
+        "default": "About this server",
+        "cmd": "ServerSettings.MOTD = $"
+      },
+      "Password":{
+        "type": "string",
+        "default": "",
+        "cmd": "ServerSettings.Password = $"
+      },
+      "Notes":{
+        "type": "multiple-string",
+        "cmd": "-- $"
+      }
+    }
+  },
+  "Roles":{
+    "lua_heading": "ADMINISTRATION",
+    "parameters":{
+      "Name":{
+        "type": "string",
+        "default": "New Server",
+        "cmd": ""
+      }
+    },
+    "note": "This feature has not been implimented yet."
+  },
+  "Rules":{
+    "lua_heading": "GAME RULES",
+    "parameters":{
+      "Server_Mode":{
+        "type": "list",
+        "options": ["GOTY","OOTB"],
+        "cmd": "ServerSettings.GameSettingMode = ServerSettings.GameSettingModes.$"
+      },
+      "Game_Type":{
+        "type": "list",
+        "options": ["Arena","CaH","CTF","Rabbit","TDM"]
+      },
+      "Team_Assignment":{
+        "type": "list",
+        "options": ["Balanced","Unbalanced"],
+        "cmd": "ServerSettings.TeamAssignType = TeamAssignTypes.$"
+      },
+      "Auto_Balance":{
+        "type": "toggle",
+        "options": ["Auto Balance"],
+        "default": true,
+        "cmd": "ServerSettings.AutoBalance = $"
+      },
+      "Warmup_Time":{
+        "type": "number",
+        "options": [0,1000],
+        "default": 45,
+        "cmd": "ServerSettings.WarmupTime = $"
+      },
+      "Friendly_Fire":{
+        "type": "toggle",
+        "options": ["Friendly Fire"],
+        "cmd": "ServerSettings.FriendlyFire = $"
+      },
+      "Cap_Limit":{
+        "type": "number",
+        "options": [1,15],
+        "default": 5,
+        "cmd": "ServerSettings.CTFCapLimit = $"
+      },
+      "Physics_Preset":{
+        "type": "list",
+        "options": ["Default","Impulse"]
+      }
+    }
+  },
+  "Maps":{
+    "lua_heading": "MAP ROTATION",
+    "parameters":{
+      "Map_Voting":{
+        "type": "toggle",
+        "options": ["Map Voting"],
+        "default": true,
+        "cmd": "ServerSettings.MapRotation.VotingEnabled = $"
+      },
+      "Map_Voting_Time":{
+        "type": "number",
+        "options": [0,600],
+        "default": 15,
+        "cmd": "ServerSettings.EndMatchWaitTime = $"
+      },
+      "Arena_Maps":{
+        "type": "toggle",
+        "options": ["Air Arena","Fraytown","Hinterlands","Lava Arena","Undercroft","Walled In","Whiteout"],
+        "cmd": "ServerSettings.MapRotation.add(Maps.Arena.$)"
+      },
+      "CaH_Maps":{
+        "type": "toggle",
+        "options": ["Canyon Crusade","Katabatic","Outskirts","Raindance","Sulfur Cove","Tartarus"],
+        "cmd": "ServerSettings.MapRotation.add(Maps.CAH.$)"
+      },
+      "CTF_Maps":{
+        "type": "toggle",
+        "options": ["Arx Novena","Bella Omega","Blueshift","Canyon Crusade","Crossfire","Dangerous Crossing","Drydock","Hellfire","Icecoaster","Katabatic","Perdition","Permafrost","Raindance","Stonehenge","Sunstar","Tartarus","Temple Ruins","Terminus"],
+        "cmd": "ServerSettings.MapRotation.add(Maps.CTF.$)"
+      },
+      "Custom_Maps":{
+        "type": "toggle",
+        "options": ["Blues","Incidamus","Periculo"],
+        "cmd": "ServerSettings.MapRotation.addCustom('TrCTF-$')"
+      },
+      "Blitz_Maps":{
+        "type": "toggle",
+        "options": ["Arx Novena","Bella Omega","Blueshift","Canyon Crusade","Crossfire","Drydock","Hellfire","Katabatic"],
+        "cmd": "ServerSettings.MapRotation.add(Maps.Blitz.$)"
+      },
+      "Rabbit_Maps":{
+        "type": "toggle",
+        "options": ["Drydock Night","Inferno","Miasma","Nightabatic","Outskirts","Quicksand","Sulfur Cove"],
+        "cmd": "ServerSettings.MapRotation.add(Maps.Rabbit.$)"
+      },
+      "TDM_Maps":{
+        "type": "toggle",
+        "options": ["Drydock Night","Inferno","Miasma","Nightabatic","Outskirts","Quicksand","Sulfur Cove"],
+        "cmd": "ServerSettings.MapRotation.add(Maps.TDM.$)"
+      }
+    }
+  },
+  "Classes":{
+    "lua_heading": "CLASSES AND LOADOUTS",
+    "parameters":{
+      "Allowed_Classes":{
+        "type": "toggle",
+        "options": ["Light","Medium","Heavy"],
+        "default": true,
+        "cmd": ""
+      },
+      "Light_Limit":{
+        "type": "number",
+        "options": [0,32],
+        "default": 32,
+        "cmd": "ServerSettings.LightCountLimit = $"
+      },
+      "Medium_Limit":{
+        "type": "number",
+        "options": [0,32],
+        "default": 32,
+        "cmd": "ServerSettings.MediumCountLimit = $"
+      },
+      "Heavy_Limit":{
+        "type": "number",
+        "options": [0,32],
+        "default": 32,
+        "cmd": "ServerSettings.HeavyCountLimit = $"
+      },
+      "Light_Weapons":{
+        "type": "toggle",
+        "options": ["Light Spinfusor","Bolt Launcher","Light Twinfusor","Light Blinksfusor","Jackal","Light Grenade Launcher","Phase Rifle","BXT1 Rifle","Falcon","Sparrow","Light Assault Rifle","Throwing Knives","Shotgun","Shocklance","Impact Nitron","Explosive Nitron","Sticky Grenades","Claymore Mine","Prism Mine","T5 Grenade","Chaff Grenade"],
+        "default": true,
+        "cmd": "ServerSettings.BannedItems.add('Light', $)"
+      },
+      "Light_Packs":{
+        "type": "toggle",
+        "options": ["Thrust","Energy","Stealth","Utility"],
+        "default": true,
+        "cmd": ""
+      },
+      "Light_Energy":{
+        "type": "number",
+        "options": [0,1000],
+        "default": 100,
+        "cmd": "Classes.setProperty('Light', Classes.Properties.EnergyPool, $)"
+      },
+      "Medium_Weapons":{
+        "type": "toggle",
+        "options": ["Spinfusor","Thumper","Twinfusor","Thumper DX","Blinksfusor","Arx Buster","Grenade Launcher","Advanced Repair Tool","ELF Projector","Honorfusor","Assault Rifle","Eagle Pistol","Nova Blaster","NJ4 SMG","NJ5-B SMG","Plasma Gun","Sawed-Off Shotgun","Flak Cannon","Motion Sensor","Blackout Grenade","Anti-Personnel Grenade","EMP Grenade","Cluster Grenade"],
+        "default": true,
+        "cmd": "ServerSettings.BannedItems.add('Medium', $)"
+      },
+      "Medium_Packs":{
+        "type": "toggle",
+        "options": ["Light Turret","EXR Turret","Drop Station","Jammer","Shield","Utility"],
+        "default": true,
+        "cmd": ""
+      },
+      "Medium_Energy":{
+        "type": "number",
+        "options": [0,1000],
+        "default": 110,
+        "cmd": "Classes.setProperty('Medium', Classes.Properties.EnergyPool, $)"
+      },
+      "Heavy_Weapons":{
+        "type": "toggle",
+        "options": ["Heavy Spinfusor","Heavy Bolt Launcher","Heavy Blinksfusor","Heavy Twinfusor","Fusion Mortar","MIRV Launcher","Saber Launcher","Gladiator","Chain Gun","Nova Colt","X1 LMG","Plasma Cannon","Nova Blaster MX","Automatic Shotgun","EFG","Frag Grenade","Mines","Fractal Grenade"],
+        "default": true,
+        "cmd": "ServerSettings.BannedItems.add('Heavy', $)"
+      },
+      "Heavy_Packs":{
+        "type": "toggle",
+        "options": ["Force Field","Shield","Energy","Utility"],
+        "default": true,
+        "cmd": ""
+      },
+      "Heavy_Energy":{
+        "type": "number",
+        "options": [0,1000],
+        "default": 100,
+        "cmd": "Classes.setProperty('Heavy', Classes.Properties.EnergyPool, $)"
+      }
+    }
+  },
+  "Vehicles":{
+    "lua_heading": "VEHICLE RULES",
+    "parameters":{
+      "Shrike_Limit":{
+        "type": "number",
+        "options": [0,8],
+        "cmd": "ServerSettings.ShrikeLimit = $"
+      },
+      "Shrike_Health":{
+        "type": "number",
+        "options": [0,10000],
+        "cmd": "Vehicles.setProperty(vehicleName: 'Shrike', property: 'HealthPool', value: $)"
+      },
+      "Beowulf_Limit":{
+        "type": "number",
+        "options": [0,8],
+        "cmd": "ServerSettings.BeowulfLimit = $"
+      },
+      "Beowulf_Health":{
+        "type": "number",
+        "options": [0,10000],
+        "cmd": "Vehicles.setProperty(vehicleName: 'Beowulf', property: 'HealthPool', value: $)"
+      }
+    }
+  },
+  "Compute":{
+    "lua_heading": 0,
+    "parameters":{
+      "Provider":{
+        "type": "info",
+        "info": "Not yet available."
+      },
+      "Region":{
+        "type": "info",
+        "info": "Not yet available."
+      },
+      "Server_Type":{
+        "type": "info",
+        "info": "Not yet available."
+      },
+      "Uptime":{
+        "type": "info",
+        "info": "Not yet available."
+      },
+      "Billing_Info":{
+        "type": "info",
+        "info": "Not yet available."
+      }
+    }
+  }
+}

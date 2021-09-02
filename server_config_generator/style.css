@@ -46,6 +46,21 @@ h1{
   margin: 30px 0px 30px 0px;
 }
 
+.loading_indicator{
+  width: fit-content;
+  margin: 0px;
+  padding: 2px 15px 5px 15px;
+  color: white;
+  font-weight: bold;
+  background-color: var(--acrylic_lightblue);
+  border-radius: 5px;
+  animation: 1s ease a_loading infinite;
+}
+@keyframes a_loading{
+  0%   {opacity: 1;}
+  50%  {opacity: 0.3;}
+}
+
 
 #config_left{
   flex-direction: column;
@@ -227,6 +242,11 @@ h1{
   border-radius: 0px 3px 3px 0px;
   overflow: hidden;
 }
+.config_folder{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
 .config_page{
   flex-direction: column;
   width: 100%;
@@ -252,7 +272,7 @@ h1{
 .config_option .label{
   width: fit-content;
   min-width: 180px;
-  margin: 0px 10px 0px 0px;
+  margin: -4px 10px 0px 0px;
 }
 .config_note{
   min-height: 20px;
@@ -266,20 +286,20 @@ h1{
 .config_option input:focus{
   outline-color: var(--acrylic_lightblue);
 }
-.config_option .checkboxesOuterBound{
+.config_option .checkboxes_container{
   flex-wrap: wrap;
   flex-direction: row;
   width: 100%;
   padding: 10px 10px 10px 10px;
 }
-.config_option .checkboxesInnerBound{
+.config_option .checkbox_item{
   flex-wrap: nowrap;
   flex-direction: row;
   align-items: center;
   width: 250px;
   margin: 3px 0px 0px 0px;
 }
-.config_option .checkboxesInnerBound label{
+.config_option .checkbox_item label{
   margin: -2px 0px 0px 0px;
 }
 .adminControl form{
@@ -325,6 +345,7 @@ h1{
 #config_output{
   width: 100%;
   margin: 5px 0px 0px 0px;
+  font-family: monospace;
 }
 #config_output:focus{
   outline-color: var(--acrylic_lightblue);
