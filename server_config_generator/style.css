@@ -367,6 +367,13 @@ main{
 
 
 
+@media (prefers-color-scheme: dark){
+  body{
+    filter: invert(1);
+  }
+}
+
+
 
 .hidden{
   display: none !important;
