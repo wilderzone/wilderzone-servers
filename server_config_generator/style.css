@@ -10,6 +10,8 @@
   --tertiary_color: #AA00FF;
   
   --acrylic_lightblue: #4CC2FF;
+  
+  --that_grey: #202020;
 }
 
 *{
@@ -31,6 +33,9 @@ main{
   flex-direction: column;
   width: 100%;
 }
+p{
+  color: black;
+}
 
 #title_bar{
   flex-direction: row;
@@ -43,9 +48,11 @@ main{
 }
 #title_bar h1{
   margin: 0px 0px 20px 0px;
+  color: black;
 }
 #title_bar p{
   margin: 21px 0px 0px 10px;
+  color: black;
   font-family: monospace;
 }
 
@@ -369,7 +376,49 @@ main{
 
 @media (prefers-color-scheme: dark){
   body{
+    background-color: var(--that_grey);
+  }
+  p{
+    color: white;
+  }
+  #title_bar h1{
+    color: white;
+  }
+  #title_bar p{
+    color: white;
+  }
+  .config_left_tab P{
+    color: white;
+  }
+  .config_top_tab img{
     filter: invert(1);
+  }
+  .config_top_tab p{
+    color: white;
+  }
+  #config_top_tabs_container .active{
+    border-bottom: 1px solid var(--that_grey);
+  }
+  .config_option input{
+    color: white;
+    background-color: black;
+  }
+  .config_option select{
+    color: white;
+    background-color: black;
+  }
+  #config_output_container > div:first-child{
+    filter: invert(1);
+  }
+  #config_output_container > div:first-child p{
+    color: black;
+  }
+  textarea{
+    color: white;
+    background-color: black;
+  }
+  .config_option .checkbox_item label{
+    color: white;
   }
 }
 
