@@ -412,6 +412,7 @@ p{
   }
   #config_output_container > div:first-child p{
     color: black;
+    font-weight: bold;
   }
   textarea{
     color: white;
