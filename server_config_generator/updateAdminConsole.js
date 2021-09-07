@@ -116,7 +116,7 @@ function refreshMainSection(){
     });
   });
   
-  saveConfig("test_config");
+  saveAndOutputConfig("test_config");
 }
 
 function processControlType(label, object, parentKey){
@@ -140,7 +140,7 @@ function processControlType(label, object, parentKey){
     
   }else if(type == "multiple-string"){ //Textarea
     var item = '<div class="config_option"><p class="label">' + label.split("_").join(" ") + ':</p>'
-             +   '<textarea id="' + parentKey + '-' + label + '" rows="7" cols="60" onchange="handleInput(event,' + "'" + parentKey + '-' + label + "'" + ')">' + defaultValue + '</textarea>'
+             +   '<textarea id="' + parentKey + '-' + label + '" rows="7" cols="60" spellcheck="false" onchange="handleInput(event,' + "'" + parentKey + '-' + label + "'" + ')">' + defaultValue + '</textarea>'
              + '</div>';
     
   }else if(type == "number"){ //Number
@@ -168,7 +168,11 @@ function processControlType(label, object, parentKey){
   }else if(type == "list"){ //Dropdown List
     var opts = "";
     options.forEach(function(o){
-      opts += '<option value="' + o.split(" ").join("") + '">' + o + '</option>';
+      var selected = "";
+      if(defaultValue == o){
+        selected = ' selected="true"';
+      }
+      opts += '<option value="' + o.split(" ").join("") + '"' + selected + '>' + o + '</option>';
     });
     
     var item = '<div class="config_option"><p class="label">' + label.split("_").join(" ") + ':</p><form>'
@@ -250,12 +254,12 @@ function handleInput(event){
   
   $("#config_output").html(output);
   */
-  saveConfig("test_config");
+  saveAndOutputConfig("test_config");
 }
 
 
 
-function saveConfig(config_target){
+function saveAndOutputConfig(config_target){
   user_settings["Configs"][config_target] = new Object();
   var newConfig = new Object();
   var output = SCG_Message;
@@ -266,26 +270,30 @@ function saveConfig(config_target){
   });
   
   listOfParams.forEach(function(param){
-    var mslp = master_settings_list[param.split("-")[0]]["parameters"][param.split("-")[1]];
-    if(master_settings_list[param.split("-")[0]] != previousParentKey){
-      output += createLuaHeading(master_settings_list[param.split("-")[0]]["lua_heading"]);
-      previousParentKey = master_settings_list[param.split("-")[0]];
+    var parentKey = param.split("-")[0];
+    var paramKey = param.split("-")[1];
+    var mslp = master_settings_list[parentKey]["parameters"][paramKey];
+    if(master_settings_list[parentKey] != previousParentKey){
+      output += createLuaHeading(master_settings_list[parentKey]["lua_heading"]);
+      previousParentKey = master_settings_list[parentKey];
     }
     
     if(mslp["type"] == "toggle"){
       mslp["options"].forEach(function(a){
-        newConfig[param.split("-")[0]][param.split("-")[1]] = new Object();
+        newConfig[parentKey][paramKey] = new Object();
       });
       mslp["options"].forEach(function(a){
         var uipv = getUIParamValue(param + "-" + a.split(" ").join("_"));
-        newConfig[param.split("-")[0]][param.split("-")[1]][a.split(" ").join("_")] = uipv;
-        if(mslp["cmd"] != "" && uipv != "" && uipv != "false"){
-          if(param.split("-")[0] == "Maps"){
-            output += mslp["cmd"].split("$").join(a.split(" ").join("")) + "&#13;&#10;";
-          }else if(param.split("-")[0] == "Classes"){
-            output += mslp["cmd"].split("$").join("'" + a.split(" ").join(" ") + "'") + "&#13;&#10;";
-          }else{
-            output += mslp["cmd"].split("$").join(a.split(" ").join("_")) + "&#13;&#10;";
+        newConfig[parentKey][paramKey][a.split(" ").join("_")] = uipv;
+        if(mslp["cmd"] != "" && uipv != ""){
+          if((mslp["cmd_condition"] == "" && uipv == "true") || (mslp["cmd_condition"] == "inverted" && uipv == "false")){
+            var joiner = "_";
+            if(parentKey == "Maps"){
+              joiner = "";
+            }else if(parentKey == "Classes"){
+              joiner = " ";
+            }
+            output += mslp["cmd"].split("$").join(a.split(" ").join(joiner)) + "&#13;&#10;";
           }
         }
       });
@@ -300,7 +308,7 @@ function saveConfig(config_target){
           output += mslp["cmd"].split("$").join(uipv) + "&#13;&#10;";
         }
       }
-      newConfig[param.split("-")[0]][param.split("-")[1]] = uipv;
+      newConfig[parentKey][paramKey] = uipv;
     }
   });
   

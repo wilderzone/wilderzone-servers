@@ -5,21 +5,25 @@
       "Name":{
         "type": "string",
         "default": "New Server",
-        "cmd": "ServerSettings.Description = $"
+        "cmd": "ServerSettings.Description = $",
+        "cmd_condition": ""
       },
       "Description":{
         "type": "string",
         "default": "About this server",
-        "cmd": "ServerSettings.MOTD = $"
+        "cmd": "ServerSettings.MOTD = $",
+        "cmd_condition": ""
       },
       "Password":{
         "type": "string",
         "default": "",
-        "cmd": "ServerSettings.Password = $"
+        "cmd": "ServerSettings.Password = $",
+        "cmd_condition": ""
       },
       "Notes":{
         "type": "multiple-string",
-        "cmd": "-- $"
+        "cmd": "-- $",
+        "cmd_condition": ""
       }
     }
   },
@@ -29,7 +33,8 @@
       "Name":{
         "type": "string",
         "default": "New Server",
-        "cmd": ""
+        "cmd": "",
+        "cmd_condition": ""
       }
     },
     "note": "This feature has not been implimented yet."
@@ -40,43 +45,54 @@
       "Server_Mode":{
         "type": "list",
         "options": ["GOTY","OOTB"],
-        "cmd": "ServerSettings.GameSettingMode = ServerSettings.GameSettingModes.$"
+        "default": "OOTB",
+        "cmd": "ServerSettings.GameSettingMode = ServerSettings.GameSettingModes.$",
+        "cmd_condition": ""
       },
       "Game_Type":{
         "type": "list",
-        "options": ["Arena","CaH","CTF","Rabbit","TDM"]
+        "options": ["Arena","CaH","CTF","Rabbit","TDM"],
+        "cmd": "",
+        "cmd_condition": ""
       },
       "Team_Assignment":{
         "type": "list",
         "options": ["Balanced","Unbalanced"],
-        "cmd": "ServerSettings.TeamAssignType = TeamAssignTypes.$"
+        "cmd": "ServerSettings.TeamAssignType = TeamAssignTypes.$",
+        "cmd_condition": ""
       },
       "Auto_Balance":{
         "type": "toggle",
         "options": ["Auto Balance"],
         "default": true,
-        "cmd": "ServerSettings.AutoBalance = $"
+        "cmd": "ServerSettings.AutoBalance = $",
+        "cmd_condition": ""
       },
       "Warmup_Time":{
         "type": "number",
         "options": [0,1000],
         "default": 45,
-        "cmd": "ServerSettings.WarmupTime = $"
+        "cmd": "ServerSettings.WarmupTime = $",
+        "cmd_condition": ""
       },
       "Friendly_Fire":{
         "type": "toggle",
         "options": ["Friendly Fire"],
-        "cmd": "ServerSettings.FriendlyFire = $"
+        "cmd": "ServerSettings.FriendlyFire = $",
+        "cmd_condition": ""
       },
       "Cap_Limit":{
         "type": "number",
         "options": [1,15],
         "default": 5,
-        "cmd": "ServerSettings.CTFCapLimit = $"
+        "cmd": "ServerSettings.CTFCapLimit = $",
+        "cmd_condition": ""
       },
       "Physics_Preset":{
         "type": "list",
-        "options": ["Default","Impulse"]
+        "options": ["Default","Impulse"],
+        "cmd": "",
+        "cmd_condition": ""
       }
     }
   },
@@ -87,49 +103,58 @@
         "type": "toggle",
         "options": ["Map Voting"],
         "default": true,
-        "cmd": "ServerSettings.MapRotation.VotingEnabled = $"
+        "cmd": "ServerSettings.MapRotation.VotingEnabled = $",
+        "cmd_condition": ""
       },
       "Map_Voting_Time":{
         "type": "number",
         "options": [0,600],
         "default": 15,
-        "cmd": "ServerSettings.EndMatchWaitTime = $"
+        "cmd": "ServerSettings.EndMatchWaitTime = $",
+        "cmd_condition": ""
       },
       "Arena_Maps":{
         "type": "toggle",
         "options": ["Air Arena","Fraytown","Hinterlands","Lava Arena","Undercroft","Walled In","Whiteout"],
         "default": true,
-        "cmd": "ServerSettings.MapRotation.add(Maps.Arena.$)"
+        "cmd": "ServerSettings.MapRotation.add(Maps.Arena.$)",
+        "cmd_condition": ""
       },
       "CaH_Maps":{
         "type": "toggle",
         "options": ["Canyon Crusade","Katabatic","Outskirts","Raindance","Sulfur Cove","Tartarus"],
-        "cmd": "ServerSettings.MapRotation.add(Maps.CAH.$)"
+        "cmd": "ServerSettings.MapRotation.add(Maps.CAH.$)",
+        "cmd_condition": ""
       },
       "CTF_Maps":{
         "type": "toggle",
         "options": ["Arx Novena","Bella Omega","Blueshift","Canyon Crusade","Crossfire","Dangerous Crossing","Drydock","Hellfire","Icecoaster","Katabatic","Perdition","Permafrost","Raindance","Stonehenge","Sunstar","Tartarus","Temple Ruins","Terminus"],
-        "cmd": "ServerSettings.MapRotation.add(Maps.CTF.$)"
+        "cmd": "ServerSettings.MapRotation.add(Maps.CTF.$)",
+        "cmd_condition": ""
       },
       "Custom_Maps":{
         "type": "toggle",
         "options": ["Blues","Incidamus","Periculo"],
-        "cmd": "ServerSettings.MapRotation.addCustom('TrCTF-$')"
+        "cmd": "ServerSettings.MapRotation.addCustom('TrCTF-$')",
+        "cmd_condition": ""
       },
       "Blitz_Maps":{
         "type": "toggle",
         "options": ["Arx Novena","Bella Omega","Blueshift","Canyon Crusade","Crossfire","Drydock","Hellfire","Katabatic"],
-        "cmd": "ServerSettings.MapRotation.add(Maps.Blitz.$)"
+        "cmd": "ServerSettings.MapRotation.add(Maps.Blitz.$)",
+        "cmd_condition": ""
       },
       "Rabbit_Maps":{
         "type": "toggle",
         "options": ["Drydock Night","Inferno","Miasma","Nightabatic","Outskirts","Quicksand","Sulfur Cove"],
-        "cmd": "ServerSettings.MapRotation.add(Maps.Rabbit.$)"
+        "cmd": "ServerSettings.MapRotation.add(Maps.Rabbit.$)",
+        "cmd_condition": ""
       },
       "TDM_Maps":{
         "type": "toggle",
         "options": ["Drydock Night","Inferno","Miasma","Nightabatic","Outskirts","Quicksand","Sulfur Cove"],
-        "cmd": "ServerSettings.MapRotation.add(Maps.TDM.$)"
+        "cmd": "ServerSettings.MapRotation.add(Maps.TDM.$)",
+        "cmd_condition": ""
       }
     }
   },
@@ -140,79 +165,92 @@
         "type": "toggle",
         "options": ["Light","Medium","Heavy"],
         "default": true,
-        "cmd": ""
+        "cmd": "",
+        "cmd_condition": ""
       },
       "Light_Limit":{
         "type": "number",
         "options": [0,32],
         "default": 32,
-        "cmd": "ServerSettings.LightCountLimit = $"
+        "cmd": "ServerSettings.LightCountLimit = $",
+        "cmd_condition": ""
       },
       "Medium_Limit":{
         "type": "number",
         "options": [0,32],
         "default": 32,
-        "cmd": "ServerSettings.MediumCountLimit = $"
+        "cmd": "ServerSettings.MediumCountLimit = $",
+        "cmd_condition": ""
       },
       "Heavy_Limit":{
         "type": "number",
         "options": [0,32],
         "default": 32,
-        "cmd": "ServerSettings.HeavyCountLimit = $"
+        "cmd": "ServerSettings.HeavyCountLimit = $",
+        "cmd_condition": ""
       },
       "Light_Weapons":{
         "type": "toggle",
         "options": ["Light Spinfusor","Bolt Launcher","Light Twinfusor","Light Blinksfusor","Jackal","Light Grenade Launcher","Phase Rifle","BXT1 Rifle","Falcon","Sparrow","Light Assault Rifle","Throwing Knives","Shotgun","Shocklance","Impact Nitron","Explosive Nitron","Sticky Grenades","Claymore Mine","Prism Mine","T5 Grenade","Chaff Grenade"],
         "default": true,
-        "cmd": "ServerSettings.BannedItems.add('Light', $)"
+        "cmd": "ServerSettings.BannedItems.add('Light', $)",
+        "cmd_condition": "inverted"
       },
       "Light_Packs":{
         "type": "toggle",
         "options": ["Thrust","Energy","Stealth","Utility"],
         "default": true,
-        "cmd": ""
+        "cmd": "",
+        "cmd_condition": "inverted"
       },
       "Light_Energy":{
         "type": "number",
         "options": [0,1000],
         "default": 100,
-        "cmd": "Classes.setProperty('Light', Classes.Properties.EnergyPool, $)"
+        "cmd": "Classes.setProperty('Light', Classes.Properties.EnergyPool, $)",
+        "cmd_condition": ""
       },
       "Medium_Weapons":{
         "type": "toggle",
         "options": ["Spinfusor","Thumper","Twinfusor","Thumper DX","Blinksfusor","Arx Buster","Grenade Launcher","Advanced Repair Tool","ELF Projector","Honorfusor","Assault Rifle","Eagle Pistol","Nova Blaster","NJ4 SMG","NJ5-B SMG","Plasma Gun","Sawed-Off Shotgun","Flak Cannon","Motion Sensor","Blackout Grenade","Anti-Personnel Grenade","EMP Grenade","Cluster Grenade"],
         "default": true,
-        "cmd": "ServerSettings.BannedItems.add('Medium', $)"
+        "cmd": "ServerSettings.BannedItems.add('Medium', $)",
+        "cmd_condition": "inverted"
       },
       "Medium_Packs":{
         "type": "toggle",
         "options": ["Light Turret","EXR Turret","Drop Station","Jammer","Shield","Utility"],
         "default": true,
-        "cmd": ""
+        "cmd": "",
+        "cmd_condition": "inverted"
       },
       "Medium_Energy":{
         "type": "number",
         "options": [0,1000],
         "default": 110,
-        "cmd": "Classes.setProperty('Medium', Classes.Properties.EnergyPool, $)"
+        "cmd": "Classes.setProperty('Medium', Classes.Properties.EnergyPool, $)",
+        "cmd_condition": ""
       },
       "Heavy_Weapons":{
         "type": "toggle",
         "options": ["Heavy Spinfusor","Heavy Bolt Launcher","Heavy Blinksfusor","Heavy Twinfusor","Fusion Mortar","MIRV Launcher","Saber Launcher","Gladiator","Chain Gun","Nova Colt","X1 LMG","Plasma Cannon","Nova Blaster MX","Automatic Shotgun","EFG","Frag Grenade","Mines","Fractal Grenade"],
         "default": true,
-        "cmd": "ServerSettings.BannedItems.add('Heavy', $)"
+        "cmd": "ServerSettings.BannedItems.add('Heavy', $)",
+        "cmd_condition": "inverted"
       },
       "Heavy_Packs":{
         "type": "toggle",
         "options": ["Force Field","Shield","Energy","Utility"],
         "default": true,
-        "cmd": ""
+        "cmd": "",
+        "cmd_condition": "inverted"
       },
       "Heavy_Energy":{
         "type": "number",
         "options": [0,1000],
         "default": 100,
-        "cmd": "Classes.setProperty('Heavy', Classes.Properties.EnergyPool, $)"
+        "cmd": "Classes.setProperty('Heavy', Classes.Properties.EnergyPool, $)",
+        "cmd_condition": ""
       }
     }
   },
@@ -222,22 +260,30 @@
       "Shrike_Limit":{
         "type": "number",
         "options": [0,8],
-        "cmd": "ServerSettings.ShrikeLimit = $"
+        "default": 8,
+        "cmd": "ServerSettings.ShrikeLimit = $",
+        "cmd_condition": ""
       },
       "Shrike_Health":{
         "type": "number",
         "options": [0,10000],
-        "cmd": "Vehicles.setProperty(vehicleName: 'Shrike', property: 'HealthPool', value: $)"
+        "default": 0,
+        "cmd": "Vehicles.setProperty(vehicleName: 'Shrike', property: 'HealthPool', value: $)",
+        "cmd_condition": ""
       },
       "Beowulf_Limit":{
         "type": "number",
         "options": [0,8],
-        "cmd": "ServerSettings.BeowulfLimit = $"
+        "default": 8,
+        "cmd": "ServerSettings.BeowulfLimit = $",
+        "cmd_condition": ""
       },
       "Beowulf_Health":{
         "type": "number",
         "options": [0,10000],
-        "cmd": "Vehicles.setProperty(vehicleName: 'Beowulf', property: 'HealthPool', value: $)"
+        "default": 0,
+        "cmd": "Vehicles.setProperty(vehicleName: 'Beowulf', property: 'HealthPool', value: $)",
+        "cmd_condition": ""
       }
     }
   },
