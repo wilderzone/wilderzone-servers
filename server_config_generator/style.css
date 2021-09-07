@@ -387,6 +387,9 @@ p{
   #title_bar p{
     color: white;
   }
+  #new_config_button:hover{
+    background-color: #2D2D2D;
+  }
   .config_left_tab P{
     color: white;
   }
