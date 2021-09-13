@@ -4,6 +4,7 @@
   --serverItemHeight: 40px;
   --serverItemBreak: 6px;
   --good: #00DF00;
+  --neutral: #F5B041;
   --bad: #DF0000;
   --playerItemHeight: 16px;
   --smallItemHeight: 50px;
@@ -315,6 +316,9 @@ footer img{
 .Online{
   background-color: var(--good);
 }
+.Neutral{
+  background-color: var(--neutral);
+}
 .Offline{
   background-color: var(--bad);
 }
@@ -361,6 +365,18 @@ footer img{
   margin-top: unset;
   margin-right: 8px;
   user-select: none;
+}
+.LOBBY-MODE::after{
+  content: "";
+  position: absolute;
+  z-index: 0;
+  top: 1px;
+  left: -5px;
+  width: calc(100% + 2px);
+  height: calc(100% - 2px);
+  background-color: orange;
+  border-radius: 7px;
+  opacity: 0.3;
 }
 .OOTB-MODE::after{
   content: "";
