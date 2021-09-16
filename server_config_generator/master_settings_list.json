@@ -257,32 +257,67 @@
   "Vehicles":{
     "lua_heading": "VEHICLE RULES",
     "parameters":{
+      "Grav_Cycle_Limit":{
+        "type": "number",
+        "options": [0,8],
+        "default": 4,
+        "cmd": "ServerSettings.GravCycleLimit = $",
+        "cmd_condition": ""
+      },
+      "Grav_Cycle_Health":{
+        "type": "number",
+        "options": [0,100000],
+        "default": 1400,
+        "cmd": "Vehicles.setProperty(vehicleName: 'GravCycle', property: 'HealthPool', value: $)",
+        "cmd_condition": ""
+      },
+      "Grav_Cycle_Energy":{
+        "type": "number",
+        "options": [0,10000],
+        "default": 100,
+        "cmd": "Vehicles.setProperty(vehicleName: 'GravCycle', property: 'EnergyPool', value: $)",
+        "cmd_condition": ""
+      },
       "Shrike_Limit":{
         "type": "number",
         "options": [0,8],
-        "default": 8,
+        "default": 2,
         "cmd": "ServerSettings.ShrikeLimit = $",
         "cmd_condition": ""
       },
       "Shrike_Health":{
         "type": "number",
-        "options": [0,10000],
-        "default": 0,
+        "options": [0,100000],
+        "default": 1400,
         "cmd": "Vehicles.setProperty(vehicleName: 'Shrike', property: 'HealthPool', value: $)",
+        "cmd_condition": ""
+      },
+      "Shrike_Energy":{
+        "type": "number",
+        "options": [0,10000],
+        "default": 100,
+        "cmd": "Vehicles.setProperty(vehicleName: 'Shrike', property: 'EnergyPool', value: $)",
         "cmd_condition": ""
       },
       "Beowulf_Limit":{
         "type": "number",
         "options": [0,8],
-        "default": 8,
+        "default": 2,
         "cmd": "ServerSettings.BeowulfLimit = $",
         "cmd_condition": ""
       },
       "Beowulf_Health":{
         "type": "number",
-        "options": [0,10000],
-        "default": 0,
+        "options": [0,100000],
+        "default": 8000,
         "cmd": "Vehicles.setProperty(vehicleName: 'Beowulf', property: 'HealthPool', value: $)",
+        "cmd_condition": ""
+      },
+      "Beowulf_Energy":{
+        "type": "number",
+        "options": [0,10000],
+        "default": 100,
+        "cmd": "Vehicles.setProperty(vehicleName: 'Beowulf', property: 'EnergyPool', value: $)",
         "cmd_condition": ""
       }
     }
