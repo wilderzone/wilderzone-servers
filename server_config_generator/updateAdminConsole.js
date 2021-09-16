@@ -339,21 +339,25 @@ function getUIParamValue(ID){
 }
 
 function createLuaHeading(string){
-  var output = "&#13;&#10;";
-  var L = 50;
-  var hyphen = "-";
-  var i = 0;
-  while(i < ((L - 2 - Math.floor(string.length / 2)) / 2)){
-    output += hyphen; 
-    i++;
+  if(string !== 0){
+    var output = "&#13;&#10;";
+    var L = 50;
+    var hyphen = "-";
+    var i = 0;
+    while(i < ((L - 2 - Math.floor(string.length / 2)) / 2)){
+      output += hyphen; 
+      i++;
+    }
+    output += " " + string + " ";
+    i = 0;
+    while(i < ((L - 2 - Math.floor(string.length / 2)) / 2)){
+      output += hyphen; 
+      i++;
+    }
+    return output + "&#13;&#10;";
+  }else{
+    return "&#13;&#10;---&#13;&#10;";
   }
-  output += " " + string + " ";
-  i = 0;
-  while(i < ((L - 2 - Math.floor(string.length / 2)) / 2)){
-    output += hyphen; 
-    i++;
-  }
-  return output + "&#13;&#10;";
 }
 
 
