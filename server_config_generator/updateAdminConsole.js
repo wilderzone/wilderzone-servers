@@ -78,6 +78,9 @@ function populateGenerator(){
   
   //Main Section
   refreshMainSection();
+  
+  //Unhide Output Window
+  $("#config_output_container").removeClass("hidden");
 }
 
 function switchLeftButton(e){
