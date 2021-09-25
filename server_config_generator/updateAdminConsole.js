@@ -184,6 +184,22 @@ function processControlType(label, object, parentKey){
              +   '</select>'
              + '</form></div>';
     
+  }else if(type == "dictionary"){ //JSON Dictionary
+    var opts = "";
+    Object.keys(options).forEach(function(o){
+      var selected = "";
+      if(defaultValue == o){
+        selected = ' selected="true"';
+      }
+      opts += '<option value="' + o.split(" ").join("") + '"' + selected + '>' + o + '</option>';
+    });
+    
+    var item = '<div class="config_option"><p class="label">' + label.split("_").join(" ") + ':</p><form>'
+             +   '<select id="' + parentKey + '-' + label + '" onchange="handleInput(event,' + "'" + parentKey + '-' + label + "'" + ')">'
+             +     opts
+             +   '</select>'
+             + '</form></div>';
+    
   }else if(type == "time"){ //Time
     /*
     var item = '<div class="config_option"><p class="label">' + label.split("_").join(" ") + ':</p><form>'
@@ -362,6 +378,27 @@ function createLuaHeading(string){
 
 
 
+/*
+function adminRolesBlock(roles){
+  var thing = "require('admin')"
+            + ""
+            + "local roles = {"
+            +   "{"
+            +     "name     = 'admin',"
+            +     "password = '" +  + "'," 
+            +     "commands = {'NextMap', 'NextMapName', 'StartMap', 'EndMap'},"
+            +     "canLua   = true, -- Admin can execute arbitrary Lua!"
+            +   "},"
+            +   "{"
+            +     "name     = 'mod',"
+            +     "password = '" +  + "',"
+            +     "commands = {'NextMap', 'NextMapName', 'StartMap', 'EndMap'},"
+            +     "canLua   = false,"
+            +   "},"
+            + "}"
+            + "doSetupRoles(roles)";
+}
+*/
 
 
 
