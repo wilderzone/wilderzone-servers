@@ -30,14 +30,14 @@
   "Roles":{
     "lua_heading": "ADMINISTRATION",
     "parameters":{
-      "Name":{
-        "type": "string",
-        "default": "New Server",
-        "cmd": "",
+      "Enable_Admin_Roles":{
+        "type": "toggle",
+        "options": ["Enable"],
+        "default": true,
+        "cmd": "require('admin')",
         "cmd_condition": ""
       }
-    },
-    "note": "This feature has not been implimented yet."
+    }
   },
   "Rules":{
     "lua_heading": "GAME RULES",
