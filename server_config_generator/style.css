@@ -275,6 +275,28 @@ p{
   overflow-x: hidden;
   overflow-y: auto;
 }
+.config_multi_option{
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  padding: 1px 0px 20px 0px;
+}
+.config_multi_option > p{
+  width: 100%;
+  min-width: 100%;
+  margin: 0px 0px 0px 0px;
+  margin-right: auto;
+  padding: 0px 0px 5px 0px;
+  border-bottom: 1px solid lightgrey;
+}
+.config_multi_option .config_option{
+  margin-left: 20px;
+  width: calc(100% - 20px);
+  padding-bottom: 0px;
+  border-bottom: unset;
+}
 .config_option{
   flex-wrap: wrap;
   flex-direction: row;
@@ -285,7 +307,7 @@ p{
   border-bottom: 1px solid lightgrey;
 }
 .config_option:last-child{
-  margin-bottom: 20px;
+  margin-bottom: 0px;
 }
 .config_option p{
   margin: 0px;

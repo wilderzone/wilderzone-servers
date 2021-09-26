@@ -112,10 +112,21 @@ function refreshMainSection(){
         var item = '<div id="' + m + '-PAGE" class="config_page ' + uc + ' hidden"></div>';
       }
       $("#config_main").append(item);
-      Object.keys(master_settings_list[m]["parameters"]).forEach(function(k){
-        var item = processControlType(k, master_settings_list[m]["parameters"][k], m);
-        $("#" + m + "-PAGE").append(item);
-      });
+      if(master_settings_list[m]["sections"]){
+        Object.keys(master_settings_list[m]["sections"]).forEach(function(k2){
+          var item = '<div class="config_multi_option"><p>' + k2.toString().split("_").join(" ") + '</p>';
+          Object.keys(master_settings_list[m]["sections"][k2]["parameters"]).forEach(function(k){
+            item += processControlType(k, master_settings_list[m]["sections"][k2]["parameters"][k], m);
+          });
+          item += '</div>';
+          $("#" + m + "-PAGE").append(item);
+        });
+      }else{
+        Object.keys(master_settings_list[m]["parameters"]).forEach(function(k){
+          var item = processControlType(k, master_settings_list[m]["parameters"][k], m);
+          $("#" + m + "-PAGE").append(item);
+        });
+      }
     });
   });
   

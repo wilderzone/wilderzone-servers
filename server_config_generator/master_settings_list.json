@@ -203,9 +203,16 @@
         "cmd": "",
         "cmd_condition": "inverted"
       },
+      "Light_Health":{
+        "type": "number",
+        "options": [0,10000],
+        "default": 1000,
+        "cmd": "Classes.setProperty('Light', Classes.Properties.HealthPool, $)",
+        "cmd_condition": ""
+      },
       "Light_Energy":{
         "type": "number",
-        "options": [0,1000],
+        "options": [0,10000],
         "default": 100,
         "cmd": "Classes.setProperty('Light', Classes.Properties.EnergyPool, $)",
         "cmd_condition": ""
@@ -224,9 +231,16 @@
         "cmd": "",
         "cmd_condition": "inverted"
       },
+      "Medium_Health":{
+        "type": "number",
+        "options": [0,10000],
+        "default": 1500,
+        "cmd": "Classes.setProperty('Medium', Classes.Properties.HealthPool, $)",
+        "cmd_condition": ""
+      },
       "Medium_Energy":{
         "type": "number",
-        "options": [0,1000],
+        "options": [0,10000],
         "default": 110,
         "cmd": "Classes.setProperty('Medium', Classes.Properties.EnergyPool, $)",
         "cmd_condition": ""
@@ -245,12 +259,230 @@
         "cmd": "",
         "cmd_condition": "inverted"
       },
+      "Heavy_Health":{
+        "type": "number",
+        "options": [0,10000],
+        "default": 3000,
+        "cmd": "Classes.setProperty('Heavy', Classes.Properties.HealthPool, $)",
+        "cmd_condition": ""
+      },
       "Heavy_Energy":{
         "type": "number",
-        "options": [0,1000],
+        "options": [0,10000],
         "default": 100,
         "cmd": "Classes.setProperty('Heavy', Classes.Properties.EnergyPool, $)",
         "cmd_condition": ""
+      }
+    }
+  },
+  "Weapons":{
+    "lua_heading": "WEAPONS",
+    "parameters":{
+    },
+    "sections":{
+      "Snumper":{
+        "parameters":{
+          "Damage":{
+            "type": "number",
+            "options": [0,1000000],
+            "default": 300,
+            "cmd": "",
+            "cmd_condition": ""
+          },
+          "Direct_Hit_Multiplier":{
+            "type": "number",
+            "options": [0,100],
+            "default": 1,
+            "cmd": "",
+            "cmd_condition": ""
+          },
+          "Fire_Interval":{
+            "type": "number",
+            "options": [0,100],
+            "default": 1,
+            "cmd": "",
+            "cmd_condition": ""
+          },
+          "Clip_Ammo":{
+            "type": "number",
+            "options": [1,100],
+            "default": 4,
+            "cmd": "",
+            "cmd_condition": ""
+          },
+          "Reload_Time":{
+            "type": "number",
+            "options": [1,100],
+            "default": 4,
+            "cmd": "",
+            "cmd_condition": ""
+          },
+          "Projectile_Speed":{
+            "type": "number",
+            "options": [0,1000000],
+            "default": 98000,
+            "cmd": "",
+            "cmd_condition": ""
+          },
+          "Projectile_Inheritance":{
+            "type": "number",
+            "options": [0,100],
+            "default": 0,
+            "cmd": "",
+            "cmd_condition": ""
+          },
+          "Projectile_Lifespan":{
+            "type": "number",
+            "options": [0,1000],
+            "default": 5,
+            "cmd": "",
+            "cmd_condition": ""
+          },
+          "Projectile_Gravity":{
+            "type": "number",
+            "options": [0,100],
+            "default": 0,
+            "cmd": "",
+            "cmd_condition": ""
+          },
+          "Impact_Momentum":{
+            "type": "number",
+            "options": [0,1000000],
+            "default": 0,
+            "cmd": "",
+            "cmd_condition": ""
+          },
+          "Self-Impact_Momentum_Multiplier":{
+            "type": "number",
+            "options": [0,100],
+            "default": 0,
+            "cmd": "",
+            "cmd_condition": ""
+          },
+          "Explosive_Radius":{
+            "type": "number",
+            "options": [0,1000000],
+            "default": 30,
+            "cmd": "",
+            "cmd_condition": ""
+          },
+          "Gib_Strength":{
+            "type": "number",
+            "options": [0,1000],
+            "default": 120,
+            "cmd": "",
+            "cmd_condition": ""
+          },
+          "Options":{
+            "type": "toggle",
+            "options": ["Single Reload","Does Gib"],
+            "default": true,
+            "cmd": "",
+            "cmd_condition": ""
+          }
+        }
+      },
+      "Spinfusor":{
+        "parameters":{
+          "Damage":{
+            "type": "number",
+            "options": [0,1000000],
+            "default": 300,
+            "cmd": "",
+            "cmd_condition": ""
+          },
+          "Direct_Hit_Multiplier":{
+            "type": "number",
+            "options": [0,100],
+            "default": 1,
+            "cmd": "",
+            "cmd_condition": ""
+          },
+          "Fire_Interval":{
+            "type": "number",
+            "options": [0,100],
+            "default": 1,
+            "cmd": "",
+            "cmd_condition": ""
+          },
+          "Clip_Ammo":{
+            "type": "number",
+            "options": [1,100],
+            "default": 4,
+            "cmd": "",
+            "cmd_condition": ""
+          },
+          "Reload_Time":{
+            "type": "number",
+            "options": [1,100],
+            "default": 4,
+            "cmd": "",
+            "cmd_condition": ""
+          },
+          "Projectile_Speed":{
+            "type": "number",
+            "options": [0,1000000],
+            "default": 98000,
+            "cmd": "",
+            "cmd_condition": ""
+          },
+          "Projectile_Inheritance":{
+            "type": "number",
+            "options": [0,100],
+            "default": 0,
+            "cmd": "",
+            "cmd_condition": ""
+          },
+          "Projectile_Lifespan":{
+            "type": "number",
+            "options": [0,1000],
+            "default": 5,
+            "cmd": "",
+            "cmd_condition": ""
+          },
+          "Projectile_Gravity":{
+            "type": "number",
+            "options": [0,100],
+            "default": 0,
+            "cmd": "",
+            "cmd_condition": ""
+          },
+          "Impact_Momentum":{
+            "type": "number",
+            "options": [0,1000000],
+            "default": 0,
+            "cmd": "",
+            "cmd_condition": ""
+          },
+          "Self-Impact_Momentum_Multiplier":{
+            "type": "number",
+            "options": [0,100],
+            "default": 0,
+            "cmd": "",
+            "cmd_condition": ""
+          },
+          "Explosive_Radius":{
+            "type": "number",
+            "options": [0,1000000],
+            "default": 30,
+            "cmd": "",
+            "cmd_condition": ""
+          },
+          "Gib_Strength":{
+            "type": "number",
+            "options": [0,1000],
+            "default": 120,
+            "cmd": "",
+            "cmd_condition": ""
+          },
+          "Options":{
+            "type": "toggle",
+            "options": ["Single Reload","Does Gib"],
+            "default": true,
+            "cmd": "",
+            "cmd_condition": ""
+          }
+        }
       }
     }
   },
