@@ -247,7 +247,7 @@
       },
       "Heavy_Weapons":{
         "type": "toggle",
-        "options": ["Heavy Spinfusor","Heavy Bolt Launcher","Heavy Blinksfusor","Heavy Twinfusor","Fusion Mortar","MIRV Launcher","Saber Launcher","Gladiator","Chain Gun","Nova Colt","X1 LMG","Plasma Cannon","Nova Blaster MX","Automatic Shotgun","EFG","Frag Grenade","Mines","Fractal Grenade"],
+        "options": ["Heavy Spinfusor","Heavy Bolt Launcher","Heavy Blinksfusor","Heavy Twinfusor","Fusion Mortar","MIRV Launcher","Saber Launcher","Gladiator","Chain Gun","Nova Slug","X1 Rifle","Plasma Cannon","Nova Colt MKD","Automatic Shotgun","ElfFlak","Frag Grenade","Mines","Fractal Grenade"],
         "default": true,
         "cmd": "ServerSettings.BannedItems.add('Heavy', $)",
         "cmd_condition": "inverted"
