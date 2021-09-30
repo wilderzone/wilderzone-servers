@@ -3,18 +3,21 @@
     "lua_heading": "SERVER INFO",
     "parameters":{
       "Name":{
+        "control_id": "General.Name",
         "type": "string",
         "default": "New Server",
         "cmd": "ServerSettings.Description = $",
         "cmd_condition": ""
       },
       "Description":{
+        "control_id": "General.Description",
         "type": "string",
         "default": "About this server",
         "cmd": "ServerSettings.MOTD = $",
         "cmd_condition": ""
       },
       "Password":{
+        "control_id": "General.Password",
         "type": "string",
         "default": "",
         "cmd": "ServerSettings.Password = $",
@@ -31,6 +34,7 @@
     "lua_heading": "ADMINISTRATION",
     "parameters":{
       "Enable_Admin_Roles":{
+        "control_id": "Roles.Enable",
         "type": "toggle",
         "options": ["Enable"],
         "default": true,
@@ -43,6 +47,7 @@
     "lua_heading": "GAME RULES",
     "parameters":{
       "Server_Mode":{
+        "control_id": "Rules.ServerMode",
         "type": "list",
         "options": ["GOTY","OOTB"],
         "default": "OOTB",
@@ -50,25 +55,29 @@
         "cmd_condition": ""
       },
       "Game_Type":{
+        "control_id": "Rules.GameType",
         "type": "list",
         "options": ["Arena","CaH","CTF","Rabbit","TDM"],
         "cmd": "",
         "cmd_condition": ""
       },
       "Team_Assignment":{
+        "control_id": "Rules.TeamAssignment",
         "type": "list",
         "options": ["Balanced","Unbalanced"],
         "cmd": "ServerSettings.TeamAssignType = TeamAssignTypes.$",
         "cmd_condition": ""
       },
       "Auto_Balance":{
+        "control_id": "Rules.AutoBalance",
         "type": "toggle",
         "options": ["Auto Balance"],
         "default": true,
-        "cmd": "ServerSettings.AutoBalance = $",
+        "cmd": "ServerSettings.AutoBalance = true",
         "cmd_condition": ""
       },
       "Warmup_Time":{
+        "control_id": "Rules.WarmupTime",
         "type": "number",
         "options": [0,1000],
         "default": 45,
@@ -76,12 +85,14 @@
         "cmd_condition": ""
       },
       "Friendly_Fire":{
+        "control_id": "Rules.FriendlyFire",
         "type": "toggle",
         "options": ["Friendly Fire"],
-        "cmd": "ServerSettings.FriendlyFire = $",
+        "cmd": "ServerSettings.FriendlyFire = true",
         "cmd_condition": ""
       },
       "Cap_Limit":{
+        "control_id": "Rules.CapLimit",
         "type": "number",
         "options": [1,15],
         "default": 5,
@@ -89,8 +100,9 @@
         "cmd_condition": ""
       },
       "Physics_Preset":{
+        "control_id": "Rules.PhysicsPreset",
         "type": "list",
-        "options": ["Default","Impulse"],
+        "options": ["Standard","Accelerate","Impulse","Quake: Ascend","Rock Bounce","Scramble","Freedom"],
         "cmd": "",
         "cmd_condition": ""
       }
@@ -100,6 +112,7 @@
     "lua_heading": "MAP ROTATION",
     "parameters":{
       "Map_Voting":{
+        "control_id": "Maps.Voting",
         "type": "toggle",
         "options": ["Map Voting"],
         "default": true,
@@ -107,6 +120,7 @@
         "cmd_condition": ""
       },
       "Map_Voting_Time":{
+        "control_id": "Maps.VotingTime",
         "type": "number",
         "options": [0,600],
         "default": 15,
@@ -114,47 +128,61 @@
         "cmd_condition": ""
       },
       "Arena_Maps":{
+        "control_id": "Maps.ArenaMaps",
         "type": "toggle",
         "options": ["Air Arena","Fraytown","Hinterlands","Lava Arena","Undercroft","Walled In","Whiteout"],
         "default": true,
         "cmd": "ServerSettings.MapRotation.add(Maps.Arena.$)",
-        "cmd_condition": ""
+        "cmd_condition": "",
+        "depends_on": ["Rules.GameType being Arena"]
       },
       "CaH_Maps":{
+        "control_id": "Maps.CaHMaps",
         "type": "toggle",
         "options": ["Canyon Crusade","Katabatic","Outskirts","Raindance","Sulfur Cove","Tartarus"],
         "cmd": "ServerSettings.MapRotation.add(Maps.CAH.$)",
-        "cmd_condition": ""
+        "cmd_condition": "",
+        "depends_on": ["Rules.GameType being CaH"]
       },
       "CTF_Maps":{
+        "control_id": "Maps.CTFMaps",
         "type": "toggle",
         "options": ["Arx Novena","Bella Omega","Blueshift","Canyon Crusade","Crossfire","Dangerous Crossing","Drydock","Hellfire","Icecoaster","Katabatic","Perdition","Permafrost","Raindance","Stonehenge","Sunstar","Tartarus","Temple Ruins","Terminus"],
         "cmd": "ServerSettings.MapRotation.add(Maps.CTF.$)",
-        "cmd_condition": ""
+        "cmd_condition": "",
+        "depends_on": ["Rules.GameType being CTF"]
       },
       "Custom_Maps":{
+        "control_id": "Maps.CustomMaps",
         "type": "toggle",
         "options": ["Blues","Incidamus","Periculo"],
         "cmd": "ServerSettings.MapRotation.addCustom('TrCTF-$')",
-        "cmd_condition": ""
+        "cmd_condition": "",
+        "depends_on": ["Rules.GameType being CTF"]
       },
       "Blitz_Maps":{
+        "control_id": "Maps.BlitzMaps",
         "type": "toggle",
         "options": ["Arx Novena","Bella Omega","Blueshift","Canyon Crusade","Crossfire","Drydock","Hellfire","Katabatic"],
         "cmd": "ServerSettings.MapRotation.add(Maps.Blitz.$)",
-        "cmd_condition": ""
+        "cmd_condition": "",
+        "depends_on": ["Rules.GameType being CTF"]
       },
       "Rabbit_Maps":{
+        "control_id": "Maps.RabbitMaps",
         "type": "toggle",
         "options": ["Drydock Night","Inferno","Miasma","Nightabatic","Outskirts","Quicksand","Sulfur Cove"],
         "cmd": "ServerSettings.MapRotation.add(Maps.Rabbit.$)",
-        "cmd_condition": ""
+        "cmd_condition": "",
+        "depends_on": ["Rules.GameType being Rabbit"]
       },
       "TDM_Maps":{
+        "control_id": "Maps.TDMMaps",
         "type": "toggle",
         "options": ["Drydock Night","Inferno","Miasma","Nightabatic","Outskirts","Quicksand","Sulfur Cove"],
         "cmd": "ServerSettings.MapRotation.add(Maps.TDM.$)",
-        "cmd_condition": ""
+        "cmd_condition": "",
+        "depends_on": ["Rules.GameType being TDM"]
       }
     }
   },
