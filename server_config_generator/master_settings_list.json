@@ -116,7 +116,7 @@
         "type": "toggle",
         "options": ["Map Voting"],
         "default": true,
-        "cmd": "ServerSettings.MapRotation.VotingEnabled = $",
+        "cmd": "ServerSettings.MapRotation.VotingEnabled = true",
         "cmd_condition": ""
       },
       "Map_Voting_Time":{
