@@ -353,7 +353,11 @@ function getUIParamValue(ID){
   var value;
   
   if(elem[0].type == "text" || elem[0].type == "textarea" || elem[0].type == "select-one" || elem[0].type == "number"){
-    value = elem[0].value;
+    if(elem[0].type == "text" || elem[0].type == "textarea"){
+      value = elem[0].value.split("'").join("").split('"').join("").split("/").join("").split("\\").join("").split(";").join("").split(":").join(""); //Terrible filtering
+    }else{
+      value = elem[0].value;
+    }
   }else if(elem[0].type == "checkbox"){
     value = elem[0].checked;
   }
