@@ -90,12 +90,14 @@
     var sdata;
     var hdata;
     var data_fetch_enable = 1;
+    var begin_fetch_time;
     function getServerData(){
       if(data_fetch_enable == 1){
         data_fetch_enable = 0;
         $(".refresh").addClass("refreshButtonIsRefreshing");
         $("title").html("Refreshing...");
         
+        begin_fetch_time = Date.now();
         $.ajax({
           dataType:"json",
           url:"old%20stuff/registered_servers.json",
@@ -108,6 +110,8 @@
               cache:false,
               success:function(data2){
                 sdata = data2;
+                const end_fetch_time = Date.now();
+                console.log('Server data loaded in ', ((end_fetch_time - begin_fetch_time) / 1000) + "s");
                 updateServerList();
                 updateCurrentlyOnline();
                 $(".refresh").removeClass("refreshButtonIsRefreshing");
